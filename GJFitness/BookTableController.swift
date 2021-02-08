@@ -30,6 +30,7 @@ class BookTableController: UITableViewController {
     
     @IBOutlet var MyBookTable: UITableView!
     
+    var selectedClasses = ""
     var items:[BookItem] = []
 
     var arrayClasses = ["Weight-training", "Boxing", "Yoga"]
@@ -79,5 +80,21 @@ class BookTableController: UITableViewController {
         return cell
     }
     
-  
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//
+        
+
+        let vc = self.storyboard?.instantiateViewController(identifier: "ticketDisplay") as! TicketViewController
+//
+        vc.myString = arrayClasses[indexPath.item]
+        vc.myCalen = calendarDisplay
+        vc.myRoomName = arrayRoomName[indexPath.item]
+        self.present(vc, animated: true, completion: nil)
+            print("You selected row #\(arrayClasses[indexPath.item])!")
+        }
+
+
 }
+    
+  
+

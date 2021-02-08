@@ -18,6 +18,9 @@
 		B591946D25CEE0F400F96136 /* ClassViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B591946C25CEE0F400F96136 /* ClassViewCell.swift */; };
 		B591947225CEFE3200F96136 /* BookTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B591947125CEFE3200F96136 /* BookTableController.swift */; };
 		B5F9DAF225D0133800A6FDEA /* BookViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F9DAF125D0133800A6FDEA /* BookViewCell.swift */; };
+		B5F9DAF725D0615100A6FDEA /* TicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F9DAF625D0615100A6FDEA /* TicketViewController.swift */; };
+		B5F9DAFC25D12A5C00A6FDEA /* TimeSlotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F9DAFB25D12A5B00A6FDEA /* TimeSlotController.swift */; };
+		B5F9DB0125D1389200A6FDEA /* RoomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F9DB0025D1389200A6FDEA /* RoomViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,9 @@
 		B591946C25CEE0F400F96136 /* ClassViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassViewCell.swift; sourceTree = "<group>"; };
 		B591947125CEFE3200F96136 /* BookTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableController.swift; sourceTree = "<group>"; };
 		B5F9DAF125D0133800A6FDEA /* BookViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewCell.swift; sourceTree = "<group>"; };
+		B5F9DAF625D0615100A6FDEA /* TicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketViewController.swift; sourceTree = "<group>"; };
+		B5F9DAFB25D12A5B00A6FDEA /* TimeSlotController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSlotController.swift; sourceTree = "<group>"; };
+		B5F9DB0025D1389200A6FDEA /* RoomViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +115,10 @@
 				B591943325CED92C00F96136 /* SceneDelegate.swift */,
 				B591943525CED92C00F96136 /* ViewController.swift */,
 				B591943725CED92C00F96136 /* Main.storyboard */,
+				B5F9DAFB25D12A5B00A6FDEA /* TimeSlotController.swift */,
+				B5F9DAF625D0615100A6FDEA /* TicketViewController.swift */,
 				B591947125CEFE3200F96136 /* BookTableController.swift */,
+				B5F9DB0025D1389200A6FDEA /* RoomViewCell.swift */,
 				B591946C25CEE0F400F96136 /* ClassViewCell.swift */,
 				B5F9DAF125D0133800A6FDEA /* BookViewCell.swift */,
 				B591943A25CED92D00F96136 /* Assets.xcassets */,
@@ -267,10 +276,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5F9DAFC25D12A5C00A6FDEA /* TimeSlotController.swift in Sources */,
 				B591943625CED92C00F96136 /* ViewController.swift in Sources */,
+				B5F9DB0125D1389200A6FDEA /* RoomViewCell.swift in Sources */,
 				B591943225CED92C00F96136 /* AppDelegate.swift in Sources */,
 				B591947225CEFE3200F96136 /* BookTableController.swift in Sources */,
 				B5F9DAF225D0133800A6FDEA /* BookViewCell.swift in Sources */,
+				B5F9DAF725D0615100A6FDEA /* TicketViewController.swift in Sources */,
 				B591943425CED92C00F96136 /* SceneDelegate.swift in Sources */,
 				B591946D25CEE0F400F96136 /* ClassViewCell.swift in Sources */,
 			);

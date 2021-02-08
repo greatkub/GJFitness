@@ -21,6 +21,13 @@ class ViewController: UIViewController {
     var selectedClass = ""
      var items: [ClassItem] = []
      var arrayClasses = ["Weight-training", "Boxing", "Yoga"]
+    
+    var calendarDisplay = "3 January 2021"
+    var arrayRoomName = ["Room1", "Room5", "Room2"]
+    var trainerDisplay = ["Krittamet Ch.", "Sanpawat S.", "Cleo P."]
+    var timeDisplay = ["10:00 - 11:00", "12:00 - 13:00", "14:00 - 15:00"]
+    var timeLimit = "1 hrs."
+    var numGroup = "20 per class"
      
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,17 +62,21 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate{
         return cell
     }
     
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//            // handle tap events
-//        selectedPlanet = arrayPlanets[indexPath.item]
-//        print(selectedPlanet)
-//        let vc = self.storyboard?.instantiateViewController(identifier: "PlanetDisplay") as! PlanetViewController
-//        vc.myString = selectedPlanet
-//        self.present(vc, animated: true, completion: nil)
-//            print("You selected cell #\(arrayPlanets[indexPath.item])!")
-//        }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+            // handle tap events
+        let vc = self.storyboard?.instantiateViewController(identifier: "timeSlot") as! TimeSlotController
+//
+        vc.myString = arrayClasses[indexPath.item]
+        vc.myCalen = calendarDisplay
+        vc.timeLimit = timeLimit
+        vc.member = numGroup
+        
+        self.present(vc, animated: true, completion: nil)
+            print("You selected row #\(arrayClasses[indexPath.item])!")
+        
+
     
-    
+    }
 }
 
 
