@@ -115,9 +115,6 @@
 		B591943025CED92C00F96136 /* GJFitness */ = {
 			isa = PBXGroup;
 			children = (
-				B5A9388E25D242F90082D4F1 /* SlotCollectionViewCell.swift */,
-				B5F9DAFB25D12A5B00A6FDEA /* TimeSlotController.swift */,
-				B5F9DB0025D1389200A6FDEA /* RoomViewCell.swift */,
 				B5D2384725D647010028661C /* Home */,
 				B5D2384A25D6498E0028661C /* Book */,
 				B591943125CED92C00F96136 /* AppDelegate.swift */,
@@ -170,6 +167,9 @@
 		B5D2384925D648440028661C /* SecondScene */ = {
 			isa = PBXGroup;
 			children = (
+				B5A9388E25D242F90082D4F1 /* SlotCollectionViewCell.swift */,
+				B5F9DAFB25D12A5B00A6FDEA /* TimeSlotController.swift */,
+				B5F9DB0025D1389200A6FDEA /* RoomViewCell.swift */,
 			);
 			path = SecondScene;
 			sourceTree = "<group>";
