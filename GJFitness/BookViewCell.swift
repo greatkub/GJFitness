@@ -19,3 +19,5 @@ class BookViewCell: UITableViewCell {
 
 
 }
+
+
