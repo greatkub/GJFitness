@@ -56,6 +56,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate{
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "classviewcell", for: indexPath) as! ClassViewCell
         
+        
         cell.classImageView.image = items[index].classImage
         cell.className.text = items[index].className
     
@@ -70,6 +71,9 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate{
         vc.myCalen = calendarDisplay
         vc.timeLimit = timeLimit
         vc.member = numGroup
+        vc.selected = indexPath.item
+        
+//        vc.modalPresentationStyle = .fullScreen
         
         self.present(vc, animated: true, completion: nil)
             print("You selected row #\(arrayClasses[indexPath.item])!")

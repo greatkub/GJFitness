@@ -17,6 +17,7 @@
 		B591945425CED92D00F96136 /* GJFitnessUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B591945325CED92D00F96136 /* GJFitnessUITests.swift */; };
 		B591946D25CEE0F400F96136 /* ClassViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B591946C25CEE0F400F96136 /* ClassViewCell.swift */; };
 		B591947225CEFE3200F96136 /* BookTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B591947125CEFE3200F96136 /* BookTableController.swift */; };
+		B5A9388F25D242F90082D4F1 /* SlotCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9388E25D242F90082D4F1 /* SlotCollectionViewCell.swift */; };
 		B5F9DAF225D0133800A6FDEA /* BookViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F9DAF125D0133800A6FDEA /* BookViewCell.swift */; };
 		B5F9DAF725D0615100A6FDEA /* TicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F9DAF625D0615100A6FDEA /* TicketViewController.swift */; };
 		B5F9DAFC25D12A5C00A6FDEA /* TimeSlotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F9DAFB25D12A5B00A6FDEA /* TimeSlotController.swift */; };
@@ -57,6 +58,7 @@
 		B591945525CED92D00F96136 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B591946C25CEE0F400F96136 /* ClassViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassViewCell.swift; sourceTree = "<group>"; };
 		B591947125CEFE3200F96136 /* BookTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableController.swift; sourceTree = "<group>"; };
+		B5A9388E25D242F90082D4F1 /* SlotCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotCollectionViewCell.swift; sourceTree = "<group>"; };
 		B5F9DAF125D0133800A6FDEA /* BookViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewCell.swift; sourceTree = "<group>"; };
 		B5F9DAF625D0615100A6FDEA /* TicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketViewController.swift; sourceTree = "<group>"; };
 		B5F9DAFB25D12A5B00A6FDEA /* TimeSlotController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSlotController.swift; sourceTree = "<group>"; };
@@ -111,16 +113,11 @@
 		B591943025CED92C00F96136 /* GJFitness */ = {
 			isa = PBXGroup;
 			children = (
+				B5D2384725D647010028661C /* Home */,
+				B5D2384A25D6498E0028661C /* Book */,
 				B591943125CED92C00F96136 /* AppDelegate.swift */,
 				B591943325CED92C00F96136 /* SceneDelegate.swift */,
-				B591943525CED92C00F96136 /* ViewController.swift */,
 				B591943725CED92C00F96136 /* Main.storyboard */,
-				B5F9DAFB25D12A5B00A6FDEA /* TimeSlotController.swift */,
-				B5F9DAF625D0615100A6FDEA /* TicketViewController.swift */,
-				B591947125CEFE3200F96136 /* BookTableController.swift */,
-				B5F9DB0025D1389200A6FDEA /* RoomViewCell.swift */,
-				B591946C25CEE0F400F96136 /* ClassViewCell.swift */,
-				B5F9DAF125D0133800A6FDEA /* BookViewCell.swift */,
 				B591943A25CED92D00F96136 /* Assets.xcassets */,
 				B591943C25CED92D00F96136 /* LaunchScreen.storyboard */,
 				B591943F25CED92D00F96136 /* Info.plist */,
@@ -144,6 +141,60 @@
 				B591945525CED92D00F96136 /* Info.plist */,
 			);
 			path = GJFitnessUITests;
+			sourceTree = "<group>";
+		};
+		B5D2384725D647010028661C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B5D2384825D648030028661C /* FirstScene */,
+				B5D2384925D648440028661C /* SecondScene */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B5D2384825D648030028661C /* FirstScene */ = {
+			isa = PBXGroup;
+			children = (
+				B591946C25CEE0F400F96136 /* ClassViewCell.swift */,
+				B591943525CED92C00F96136 /* ViewController.swift */,
+			);
+			path = FirstScene;
+			sourceTree = "<group>";
+		};
+		B5D2384925D648440028661C /* SecondScene */ = {
+			isa = PBXGroup;
+			children = (
+				B5A9388E25D242F90082D4F1 /* SlotCollectionViewCell.swift */,
+				B5F9DB0025D1389200A6FDEA /* RoomViewCell.swift */,
+				B5F9DAFB25D12A5B00A6FDEA /* TimeSlotController.swift */,
+			);
+			path = SecondScene;
+			sourceTree = "<group>";
+		};
+		B5D2384A25D6498E0028661C /* Book */ = {
+			isa = PBXGroup;
+			children = (
+				B5D2384E25D64A110028661C /* FirstScene */,
+				B5D2384F25D64A200028661C /* SecondScene */,
+			);
+			path = Book;
+			sourceTree = "<group>";
+		};
+		B5D2384E25D64A110028661C /* FirstScene */ = {
+			isa = PBXGroup;
+			children = (
+				B591947125CEFE3200F96136 /* BookTableController.swift */,
+				B5F9DAF125D0133800A6FDEA /* BookViewCell.swift */,
+			);
+			path = FirstScene;
+			sourceTree = "<group>";
+		};
+		B5D2384F25D64A200028661C /* SecondScene */ = {
+			isa = PBXGroup;
+			children = (
+				B5F9DAF625D0615100A6FDEA /* TicketViewController.swift */,
+			);
+			path = SecondScene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +329,7 @@
 			files = (
 				B5F9DAFC25D12A5C00A6FDEA /* TimeSlotController.swift in Sources */,
 				B591943625CED92C00F96136 /* ViewController.swift in Sources */,
+				B5A9388F25D242F90082D4F1 /* SlotCollectionViewCell.swift in Sources */,
 				B5F9DB0125D1389200A6FDEA /* RoomViewCell.swift in Sources */,
 				B591943225CED92C00F96136 /* AppDelegate.swift in Sources */,
 				B591947225CEFE3200F96136 /* BookTableController.swift in Sources */,
