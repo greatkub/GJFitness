@@ -21,6 +21,8 @@ class RoomItem {
 }
 class TimeSlotController: UIViewController {
 
+    @IBOutlet weak var mySlotTable: UITableView!
+    
     @IBOutlet var classImage: UIImageView!
     @IBOutlet var className: UILabel!
     @IBOutlet var calendar: UILabel!
@@ -31,12 +33,22 @@ class TimeSlotController: UIViewController {
     var myCalen = String()
     var timeLimit = String()
     var member = String()
+    var selected = Int()
     
     var items: [RoomItem] = []
 
     var room = ["Room1", "Room5", "Room2"]
     var trainer = ["Krittamet Ch.", "Sanpawat S.", "Cleo P."]
+    var timeDisplay2d = [[ "15" , "16"], ["17", "18", "19" , "20"],["21", "22", "23"]]
     
+    var timeDisplay3d = [[[ "1" , "2"], ["3", "4", "5" , "6"],["7", "8", "9"]],
+                         [[ "10" , "11"], ["12", "13", "14" , "15"],["16", "17", "18"]],
+                         [[ "19" , "20"], ["21", "22", "23" , "24"],["25", "26", "27"]]]
+    
+    
+    var timeDisplayColor = [[[UIColor.green , UIColor.green], [UIColor.green, UIColor.green, UIColor.green , UIColor.green],[UIColor.green, UIColor.green, UIColor.green]],
+                            [[ UIColor.green , UIColor.green], [UIColor.green, UIColor.green, UIColor.green , UIColor.green],[UIColor.green, UIColor.green, UIColor.green]],
+                            [[ UIColor.green , UIColor.green], [UIColor.green, UIColor.green, UIColor.green , UIColor.green],[UIColor.green, UIColor.green, UIColor.green]]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +64,7 @@ class TimeSlotController: UIViewController {
         for i in 0...room.count-1 {
             items.append(RoomItem(room: room[i], trainer: trainer[i]))
         }
+        
 
     }
 
@@ -78,6 +91,9 @@ extension TimeSlotController: UITableViewDataSource, UITableViewDelegate{
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "roomCell", for: indexPath) as! RoomViewCell
 
+       // cell.timeslots = timeDisplay2d[index]
+        cell.timeslots = timeDisplay3d[selected][index]
+        cell.timeslotsColor = timeDisplayColor[selected][index]
         cell.room.text = items[index].roomName
         cell.trainer.text = items[index].roomTrainer
         
@@ -86,7 +102,21 @@ extension TimeSlotController: UITableViewDataSource, UITableViewDelegate{
         
         return cell
     }
+    
+    
+    
+//    //new add
+//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        guard let tableViewCell = cell as? RoomViewCell else { return }
+//
+//        tableViewCell.setCollectionViewDataSourceDelegate(self, forRow: indexPath.row)
+//       // tableViewCell.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
+//    }
 
 
+    
 
 }
+
+
+
