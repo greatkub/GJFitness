@@ -8,6 +8,8 @@
 import UIKit
 
 class RoomViewCell: UITableViewCell {
+    
+
     @IBOutlet var room: UILabel!
     
     @IBOutlet var trainer: UILabel!
@@ -25,6 +27,11 @@ class RoomViewCell: UITableViewCell {
         self.slotCollection.delegate = self
         self.slotCollection.dataSource = self
     }
+    
+    
+    
+
+    
    
 }
 extension RoomViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -50,13 +57,24 @@ extension RoomViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
 //            }
 //        }
 //
+//        cell.viewController = self
         cell.displayTimeSlot.text = timeslots[indexPath.row]
         cell.displayTimeSlot.backgroundColor = timeslotsColor[indexPath.row]
+        
 
         return cell
     }
+    
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("Collection view at row \(collectionView.tag) selected index path \(timeslots[indexPath[1]])")
+        
+        NotificationCenter.default.post(name: .roomCellClicked, object: timeslots[indexPath.row])
+        
+        
     }
+    
+  
+
+    
 }

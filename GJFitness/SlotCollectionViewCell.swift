@@ -10,4 +10,6 @@ import UIKit
 class SlotCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var displayTimeSlot: UILabel!
+    
 }
+

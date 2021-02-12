@@ -21,6 +21,7 @@ class RoomItem {
 }
 class TimeSlotController: UIViewController {
 
+    
     @IBOutlet weak var mySlotTable: UITableView!
     
     @IBOutlet var classImage: UIImageView!
@@ -41,9 +42,9 @@ class TimeSlotController: UIViewController {
     var trainer = ["Krittamet Ch.", "Sanpawat S.", "Cleo P."]
     var timeDisplay2d = [[ "15" , "16"], ["17", "18", "19" , "20"],["21", "22", "23"]]
     
-    var timeDisplay3d = [[[ "1" , "2"], ["3", "4", "5" , "6"],["7", "8", "9"]],
-                         [[ "10" , "11"], ["12", "13", "14" , "15"],["16", "17", "18"]],
-                         [[ "19" , "20"], ["21", "22", "23" , "24"],["25", "26", "27"]]]
+    var timeDisplay3d = [[[ "10:00" , "12:00"], ["13:00", "14:00", "15:00" , "16:00"],["17:00", "18:00", "19:00"]],
+                         [[ "10:00" , "11:00"], ["12:00", "13:00", "14:00:00" , "15:00"],["13:00", "14:00", "15:00"]],
+                         [[ "19:00" , "20:00"], ["11:00", "12:00", "13:00" , "14:00"],["15:00", "16:00", "17:00"]]]
     
     
     var timeDisplayColor = [[[UIColor.green , UIColor.green], [UIColor.green, UIColor.green, UIColor.green , UIColor.green],[UIColor.green, UIColor.green, UIColor.green]],
@@ -65,8 +66,22 @@ class TimeSlotController: UIViewController {
             items.append(RoomItem(room: room[i], trainer: trainer[i]))
         }
         
-
+        NotificationCenter.default.addObserver(self, selector: #selector(cellRoomClicked(notification:)), name: .roomCellClicked, object: nil)
     }
+    
+    @objc func cellRoomClicked(notification: NSNotification) {
+        if let data = notification.object as? String {
+            let alert = UIAlertController(title: "Confirm ?", message: "\(data)", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
+                
+                print("Shit")
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    
 
 }
 extension TimeSlotController: UITableViewDataSource, UITableViewDelegate{
@@ -92,16 +107,20 @@ extension TimeSlotController: UITableViewDataSource, UITableViewDelegate{
         let cell = tableView.dequeueReusableCell(withIdentifier: "roomCell", for: indexPath) as! RoomViewCell
 
        // cell.timeslots = timeDisplay2d[index]
+        
         cell.timeslots = timeDisplay3d[selected][index]
         cell.timeslotsColor = timeDisplayColor[selected][index]
         cell.room.text = items[index].roomName
         cell.trainer.text = items[index].roomTrainer
         
         
+        
 //        cell.collecTime
         
         return cell
     }
+    
+  
     
     
     
@@ -111,6 +130,13 @@ extension TimeSlotController: UITableViewDataSource, UITableViewDelegate{
 //
 //        tableViewCell.setCollectionViewDataSourceDelegate(self, forRow: indexPath.row)
 //       // tableViewCell.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
+//    }
+//    func showAlert(title: String, message: String){
+//        let alert = UIAlertController(title: "Invalid Credentials", message: "Incorrect username or password", preferredStyle: .alert)
+//        let alertAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+//
+//        alert.addAction(alertAction)
+//        self.present(alert, animated: true, completion: nil)
 //    }
 
 
