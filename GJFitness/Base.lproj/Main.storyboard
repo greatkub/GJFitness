@@ -409,7 +409,7 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="roomCell" rowHeight="169" id="Aum-cI-GNb" customClass="RoomViewCell" customModule="GJFitness" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="169"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Aum-cI-GNb" id="RUX-Av-p8H">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Aum-cI-GNb" id="RUX-Av-p8H" customClass="TimeScheduleCollectionViewCell" customModule="GJFitness" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="169"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -453,7 +453,7 @@
                                                             </collectionViewCellContentView>
                                                             <size key="customSize" width="83" height="33"/>
                                                             <connections>
-                                                                <outlet property="displayTimeSlot" destination="Hnu-U2-QNR" id="zcV-Oe-DSY"/>
+                                                                <outlet property="displayTimeSlot" destination="Hnu-U2-QNR" id="buW-zE-aVS"/>
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>

@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1A278C8725D67AEB001B7306 /* TimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A278C8625D67AEB001B7306 /* TimeCell.swift */; };
 		1A87385F25D5979E00B9DAF7 /* CreateClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A87385E25D5979E00B9DAF7 /* CreateClassViewController.swift */; };
-		1A87386425D59CF500B9DAF7 /* TimeScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A87386325D59CF500B9DAF7 /* TimeScheduleViewController.swift */; };
 		1A89FE5325D250DA00A43667 /* Admin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A89FE5225D250DA00A43667 /* Admin.storyboard */; };
 		1A89FE5825D254ED00A43667 /* ClassListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A89FE5725D254ED00A43667 /* ClassListViewController.swift */; };
 		1A89FE6525D255BA00A43667 /* ClassListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A89FE6425D255BA00A43667 /* ClassListCell.swift */; };
+		1AC9561425D819790014D200 /* TimeScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC9561325D819790014D200 /* TimeScheduleViewController.swift */; };
+		1AC9562125D822A60014D200 /* RoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC9562025D822A60014D200 /* RoomCell.swift */; };
+		1AC9562625D826150014D200 /* TimeScheduleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC9562525D826150014D200 /* TimeScheduleCollectionViewCell.swift */; };
 		B5627E9425D6CDD7005970DE /* NotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5627E9325D6CDD7005970DE /* NotificationCenter.swift */; };
 		B591943225CED92C00F96136 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B591943125CED92C00F96136 /* AppDelegate.swift */; };
 		B591943425CED92C00F96136 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B591943325CED92C00F96136 /* SceneDelegate.swift */; };
@@ -49,12 +50,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1A278C8625D67AEB001B7306 /* TimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCell.swift; sourceTree = "<group>"; };
 		1A87385E25D5979E00B9DAF7 /* CreateClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateClassViewController.swift; sourceTree = "<group>"; };
-		1A87386325D59CF500B9DAF7 /* TimeScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeScheduleViewController.swift; sourceTree = "<group>"; };
 		1A89FE5225D250DA00A43667 /* Admin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Admin.storyboard; sourceTree = "<group>"; };
 		1A89FE5725D254ED00A43667 /* ClassListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassListViewController.swift; sourceTree = "<group>"; };
 		1A89FE6425D255BA00A43667 /* ClassListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassListCell.swift; sourceTree = "<group>"; };
+		1AC9561325D819790014D200 /* TimeScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeScheduleViewController.swift; sourceTree = "<group>"; };
+		1AC9562025D822A60014D200 /* RoomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCell.swift; sourceTree = "<group>"; };
+		1AC9562525D826150014D200 /* TimeScheduleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeScheduleCollectionViewCell.swift; sourceTree = "<group>"; };
 		B5627E9325D6CDD7005970DE /* NotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenter.swift; sourceTree = "<group>"; };
 		B591942E25CED92C00F96136 /* GJFitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GJFitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B591943125CED92C00F96136 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -135,8 +137,9 @@
 		1ADE3D9125D641DE0050B470 /* TimeSchedule */ = {
 			isa = PBXGroup;
 			children = (
-				1A87386325D59CF500B9DAF7 /* TimeScheduleViewController.swift */,
-				1A278C8625D67AEB001B7306 /* TimeCell.swift */,
+				1AC9561325D819790014D200 /* TimeScheduleViewController.swift */,
+				1AC9562025D822A60014D200 /* RoomCell.swift */,
+				1AC9562525D826150014D200 /* TimeScheduleCollectionViewCell.swift */,
 			);
 			path = TimeSchedule;
 			sourceTree = "<group>";
@@ -383,19 +386,20 @@
 			files = (
 				B5F9DAFC25D12A5C00A6FDEA /* TimeSlotController.swift in Sources */,
 				B591943625CED92C00F96136 /* ViewController.swift in Sources */,
+				1AC9562625D826150014D200 /* TimeScheduleCollectionViewCell.swift in Sources */,
+				1AC9561425D819790014D200 /* TimeScheduleViewController.swift in Sources */,
 				B5627E9425D6CDD7005970DE /* NotificationCenter.swift in Sources */,
 				B5A9388F25D242F90082D4F1 /* SlotCollectionViewCell.swift in Sources */,
 				B5F9DB0125D1389200A6FDEA /* RoomViewCell.swift in Sources */,
+				1AC9562125D822A60014D200 /* RoomCell.swift in Sources */,
 				1A89FE6525D255BA00A43667 /* ClassListCell.swift in Sources */,
 				B591943225CED92C00F96136 /* AppDelegate.swift in Sources */,
 				B591947225CEFE3200F96136 /* BookTableController.swift in Sources */,
 				1A89FE5825D254ED00A43667 /* ClassListViewController.swift in Sources */,
 				B5F9DAF225D0133800A6FDEA /* BookViewCell.swift in Sources */,
-				1A278C8725D67AEB001B7306 /* TimeCell.swift in Sources */,
 				B5F9DAF725D0615100A6FDEA /* TicketViewController.swift in Sources */,
 				B591943425CED92C00F96136 /* SceneDelegate.swift in Sources */,
 				B591946D25CEE0F400F96136 /* ClassViewCell.swift in Sources */,
-				1A87386425D59CF500B9DAF7 /* TimeScheduleViewController.swift in Sources */,
 				1A87385F25D5979E00B9DAF7 /* CreateClassViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,15 +7,15 @@
 
 import UIKit
 
-class ClassListItem {
-    var classImage: UIImage? = nil
-    var className: String = ""
-    
-    init(image: UIImage, name: String) {
-        self.classImage = image
-        self.className = name
-    }
-}
+//class ClassListItem {
+//    var classImage: UIImage? = nil
+//    var className: String = ""
+//
+//    init(image: UIImage, name: String) {
+//        self.classImage = image
+//        self.className = name
+//    }
+//}
 
 class ClassListViewController: UIViewController {
     @IBOutlet var classCollectionView: UICollectionView!
