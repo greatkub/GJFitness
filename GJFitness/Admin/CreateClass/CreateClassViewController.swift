@@ -7,12 +7,52 @@
 
 import UIKit
 
-class CreateClassViewController: UIViewController {
+class RoomNumberItem {
+    var roomNumber: String = ""
+    
+    init(roomNumber: String) {
+        self.roomNumber = roomNumber
+    }
+}
 
+class TimeItem {
+    var timeslot: String = ""
+    
+    init(timeslot: String) {
+        self.timeslot = timeslot
+    }
+}
+
+class CreateClassViewController: UIViewController {
+    
+    @IBOutlet weak var tfDatePicker: UITextField!
+    let datePicker = UIDatePicker()
+    
+    @IBOutlet var roomNumberCollectionView: UICollectionView!
+    @IBOutlet var roomTimeSlot:UICollectionView!
+    
+    var roomNumberItems: [RoomNumberItem] = []
+    var roomTimeSlots: [TimeItem] = []
+    
+    var roomNumbers = ["1", "2", "3", "4"]
+    var roomTimeSlotList = ["9:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00"]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        showDatePicker()
+        
+        roomNumberCollectionView.tag = 1
+        roomTimeSlot.tag = 2
+        
+        for i in 0...roomNumbers.count-1 {
+            roomNumberItems.append(RoomNumberItem(roomNumber: roomNumbers[i]))
+        }
+        
+        for i in 0...roomTimeSlotList.count-1 {
+            roomTimeSlots.append(TimeItem(timeslot: roomTimeSlotList[i]))
+        }
     }
     
     @IBAction func BackToClassList(_ sender: Any) {
@@ -21,4 +61,91 @@ class CreateClassViewController: UIViewController {
         }
     }
     
+    func showDatePicker() {
+        datePicker.datePickerMode = .date
+        
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        if #available(iOS 13.4, *) {
+            datePicker.preferredDatePickerStyle = .wheels
+            datePicker.sizeToFit()
+        }
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneDatePicker))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker))
+        
+        toolbar.setItems([doneButton, spaceButton, cancelButton], animated: true)
+
+        tfDatePicker.inputAccessoryView = toolbar
+        tfDatePicker.inputView = datePicker
+        
+    }
+       
+    @objc func doneDatePicker() {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        tfDatePicker.text = formatter.string(from: datePicker.date)
+
+        self.view.endEditing(true)
+    }
+
+    @objc func cancelDatePicker() {
+        self.view.endEditing(true)
+    }
+
+}
+
+extension CreateClassViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        switch collectionView.tag {
+        case 1:
+            return roomNumberItems.count
+            
+        default:
+            return roomTimeSlots.count
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let index = indexPath.row
+        
+        switch collectionView.tag {
+        case 1:
+            let roomCell = collectionView.dequeueReusableCell(withReuseIdentifier: "room_number_cell", for: indexPath) as! RoomNumberCell
+            roomCell.roomNumber.text = roomNumberItems[index].roomNumber
+            
+            return roomCell
+            
+        default:
+            let timeSlotCell = collectionView.dequeueReusableCell(withReuseIdentifier: "room_time_slot", for: indexPath) as! RoomTimeSlotCell
+            timeSlotCell.roomTimeSlot.text = roomTimeSlots[index].timeslot
+            
+            return timeSlotCell
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let numberOfItemsPerRow:CGFloat = 4
+        let spacingBetweenCells:CGFloat = 8
+        
+        let totalSpacing = (2 * 0) + ((numberOfItemsPerRow - 1) * spacingBetweenCells)
+
+        if let collection = self.roomNumberCollectionView {
+            let width = (collection.bounds.width - totalSpacing)/numberOfItemsPerRow
+            
+            return CGSize(width: width, height: 34)
+        } else {
+            return CGSize(width: 10, height: 10)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 8
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
 }

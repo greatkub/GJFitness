@@ -9,4 +9,11 @@ import UIKit
 
 class TimeScheduleCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var timeslot: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        timeslot.layer.cornerRadius = 5
+        timeslot.layer.masksToBounds = true
+    }
 }

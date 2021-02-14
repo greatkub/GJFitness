@@ -67,13 +67,12 @@ extension ClassListViewController: UICollectionViewDataSource, UICollectionViewD
             let spacingBetweenCells:CGFloat = 8
             
             let totalSpacing = (2 * 10) + ((numberOfItemsPerRow - 1) * spacingBetweenCells)
-        //Amount of total spacing in a row
             
             if let collection = self.classCollectionView {
                 let width = (collection.bounds.width - totalSpacing)/numberOfItemsPerRow
-                return CGSize(width: width, height: width + 30)
+                return CGSize(width: width, height: width + 65)
             }else{
-                return CGSize(width: 150, height: 200)
+                return CGSize(width: 124, height: 171)
             }
         }
     

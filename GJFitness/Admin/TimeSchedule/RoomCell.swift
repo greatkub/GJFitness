@@ -18,9 +18,15 @@ class RoomCell: UITableViewCell {
         self.slotCollection.delegate = self
         self.slotCollection.dataSource = self
     }
+    
+    @IBAction func DeleteRoomCell(_ sender: Any) {
+        NotificationCenter.default.post(name: .deleteRoomCell, object: nil)
+        print("Delete Room")
+
+    }
 }
 
-extension RoomCell: UICollectionViewDelegate, UICollectionViewDataSource {
+extension RoomCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return timeslotsList.count
     }
@@ -34,4 +40,31 @@ extension RoomCell: UICollectionViewDelegate, UICollectionViewDataSource {
     
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("Collection view at row \(collectionView.tag) selected index path \(timeslotsList[indexPath[1]])")
+        
+        NotificationCenter.default.post(name: .timeCellClicked, object: timeslotsList[indexPath.row])
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+            let numberOfItemsPerRow:CGFloat = 4
+            let spacingBetweenCells:CGFloat = 4
+            
+            let totalSpacing = (2 * 20) + ((numberOfItemsPerRow - 1) * spacingBetweenCells)
+            
+            if let collection = self.slotCollection {
+                let width = (collection.bounds.width - totalSpacing)/numberOfItemsPerRow
+                return CGSize(width: width, height: 34)
+            }else{
+                return CGSize(width: 84, height: 34)
+            }
+        }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 8
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
 }

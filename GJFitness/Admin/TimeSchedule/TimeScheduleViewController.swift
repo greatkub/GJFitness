@@ -41,7 +41,7 @@ class TimeScheduleViewController: UIViewController {
     var trainers = ["Krittamet Ch.", "Sanpawat S.", "Cleo P."]
     var time2d = [[ "15" , "16"], ["17", "18", "19" , "20"],["21", "22", "23"]]
     var time3d = [[[ "10:00" , "12:00"], ["13:00", "14:00", "15:00" , "16:00"],["17:00", "18:00", "19:00"]],
-                  [[ "10:00" , "11:00"], ["12:00", "13:00", "14:00:00" , "15:00"],["13:00", "14:00", "15:00"]],
+                  [[ "10:00" , "11:00"], ["12:00", "13:00", "14:00" , "15:00"],["13:00", "14:00", "15:00"]],
                   [[ "19:00" , "20:00"], ["11:00", "12:00", "13:00" , "14:00"],["15:00", "16:00", "17:00"]]]
     
     override func viewDidLoad() {
@@ -53,7 +53,28 @@ class TimeScheduleViewController: UIViewController {
         for i in 0...roomNumber.count-1 {
             rooms.append(RoomCellItem(roomName: roomNumber[i], trainerName: trainers[i]))
         }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(cellTimeClicked(notification:)), name: .timeCellClicked, object: nil)
+        
+//        NotificationCenter.default.addObserver(self, selector: #selector(deleteRoomCell(notification:)), name: .roomCellClicked, object: nil)
     }
+    
+    @objc func cellTimeClicked (notification: NSNotification) {
+        if let data = notification.object as? String {
+            let alert = UIAlertController(title: "Confirm ?", message: "\(data)", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
+                
+                print("Kuy")
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+//    @objc func deleteRoomCell(notification: NSNotification) {
+//        rooms.remove(at: indexPath.row)
+//        tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+//    }
     
     @IBAction func BackToClassList(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -82,5 +103,10 @@ extension TimeScheduleViewController: UITableViewDelegate, UITableViewDataSource
         return cell
     }
     
-    
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == UITableViewCell.EditingStyle.delete {
+//            rooms.remove(at: indexPath.row)
+//            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+//        }
+//    }
 }
