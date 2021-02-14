@@ -17,3 +17,4 @@ class TimeScheduleCollectionViewCell: UICollectionViewCell {
         timeslot.layer.masksToBounds = true
     }
 }
+ 

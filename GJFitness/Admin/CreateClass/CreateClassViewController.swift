@@ -39,6 +39,9 @@ class CreateClassViewController: UIViewController, UIImagePickerControllerDelega
     var roomNumbers = ["1", "2", "3", "4"]
     var roomTimeSlotList = ["9:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00"]
     
+    var count = 0
+    var count2 = 0
+//These one use for switch color while tap two times.
     override func viewDidLoad() {
         super.viewDidLoad()
         doneCreateButton.layer.cornerRadius = 15
@@ -160,17 +163,33 @@ extension CreateClassViewController: UICollectionViewDataSource, UICollectionVie
             return timeSlotCell
         }
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("HEEER item at \(indexPath.section)/\(indexPath.item) tapped")
-        
         switch collectionView.tag {
         case 1:
             let cell = collectionView.cellForItem(at: indexPath) as? RoomNumberCell
-            cell?.contentView.backgroundColor = .systemYellow
+            if count == 0 {
+                count = count + 1
+                cell?.contentView.backgroundColor = .systemYellow
+                
+            } else {
+                count = 0
+                cell?.contentView.backgroundColor = .systemGray3
+                
+            }
+            
         default:
             let cell = collectionView.cellForItem(at: indexPath) as? RoomTimeSlotCell
-            cell?.contentView.backgroundColor = .systemYellow
+            if count2 == 0 {
+                count2 = count2 + 1
+                cell?.contentView.backgroundColor = .systemYellow
+
+            } else {
+                count2 = 0
+                cell?.contentView.backgroundColor = .systemGray3
+
+            }
         }
     }
     
