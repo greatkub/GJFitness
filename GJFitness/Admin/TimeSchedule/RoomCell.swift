@@ -20,7 +20,7 @@ class RoomCell: UITableViewCell {
     }
     
     @IBAction func DeleteRoomCell(_ sender: Any) {
-        NotificationCenter.default.post(name: .deleteRoomCell, object: nil)
+        NotificationCenter.default.post(name: .deleteRoomCell, object: self.tag)
         print("Delete Room")
 
     }
@@ -70,4 +70,5 @@ extension RoomCell: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
+    
 }

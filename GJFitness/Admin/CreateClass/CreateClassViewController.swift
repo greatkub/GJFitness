@@ -23,7 +23,9 @@ class TimeItem {
     }
 }
 
-class CreateClassViewController: UIViewController {
+class CreateClassViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    @IBOutlet weak var doneCreateButton: UIButton!
+    @IBOutlet weak var imageAcces: UIImageView!
     
     @IBOutlet weak var tfDatePicker: UITextField!
     let datePicker = UIDatePicker()
@@ -37,9 +39,10 @@ class CreateClassViewController: UIViewController {
     var roomNumbers = ["1", "2", "3", "4"]
     var roomTimeSlotList = ["9:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00"]
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        doneCreateButton.layer.cornerRadius = 15
+        imageAcces.layer.cornerRadius = 12
         
         showDatePicker()
         
@@ -60,6 +63,40 @@ class CreateClassViewController: UIViewController {
             print("Back to class list screen")
         }
     }
+    
+    @IBAction func changePhoto(_ sender: Any) {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        
+        let actionSheet = UIAlertController(title: "Photo Source", message: "Choose a source", preferredStyle: .actionSheet)
+        
+        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action: UIAlertAction) in
+            imagePickerController.sourceType = .camera
+            self.present(imagePickerController, animated: true, completion: nil)
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { (action: UIAlertAction) in
+            imagePickerController.sourceType = .photoLibrary
+            self.present(imagePickerController, animated: true, completion: nil)
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(actionSheet, animated: true, completion:  nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let image = info[.originalImage] as! UIImage
+        
+        imageAcces.clipsToBounds = true
+        imageAcces.contentMode = .scaleAspectFill
+        imageAcces.image = image
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    
     
     func showDatePicker() {
         datePicker.datePickerMode = .date
@@ -136,6 +173,7 @@ extension CreateClassViewController: UICollectionViewDataSource, UICollectionVie
             let width = (collection.bounds.width - totalSpacing)/numberOfItemsPerRow
             
             return CGSize(width: width, height: 34)
+            
         } else {
             return CGSize(width: 10, height: 10)
         }

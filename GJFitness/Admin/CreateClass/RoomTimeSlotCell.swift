@@ -11,6 +11,8 @@ class RoomTimeSlotCell: UICollectionViewCell {
     @IBOutlet var roomTimeSlot: UILabel!
     
     override func awakeFromNib() {
+        super.awakeFromNib()
+
         roomTimeSlot.layer.cornerRadius = 5
         roomTimeSlot.layer.masksToBounds = true
     }

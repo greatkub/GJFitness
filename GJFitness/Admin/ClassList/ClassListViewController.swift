@@ -25,7 +25,6 @@ class ClassListViewController: UIViewController {
     
     @IBAction func CreateClass(_ sender: Any) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Admin", bundle:nil)
-
         let vc = storyBoard.instantiateViewController(withIdentifier: "CreateClassViewController") as? CreateClassViewController
         
         self.present(vc!, animated:true, completion:nil)
@@ -34,14 +33,14 @@ class ClassListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        items.append(ClassItem(image: #imageLiteral(resourceName: "Boxing"), name: "Earth"))
-        items.append(ClassItem(image: #imageLiteral(resourceName: "Weight-training"), name: "Test"))
-        items.append(ClassItem(image: #imageLiteral(resourceName: "Boxing"), name: "Earth"))
-        items.append(ClassItem(image: #imageLiteral(resourceName: "Weight-training"), name: "Test"))
-        items.append(ClassItem(image: #imageLiteral(resourceName: "Boxing"), name: "Earth"))
-        items.append(ClassItem(image: #imageLiteral(resourceName: "Weight-training"), name: "Test"))
-        items.append(ClassItem(image: #imageLiteral(resourceName: "Boxing"), name: "Earth"))
-        items.append(ClassItem(image: #imageLiteral(resourceName: "Weight-training"), name: "Test"))
+        items.append(ClassItem(image: #imageLiteral(resourceName: "Boxing"), name: "Kickboxing"))
+        items.append(ClassItem(image: #imageLiteral(resourceName: "Weight-training"), name: "Weight-Training"))
+        items.append(ClassItem(image: #imageLiteral(resourceName: "Boxing"), name: "Taewaodon"))
+        items.append(ClassItem(image: #imageLiteral(resourceName: "Weight-training"), name: "Taewaodon"))
+        items.append(ClassItem(image: #imageLiteral(resourceName: "Boxing"), name: "Taewaodon"))
+        items.append(ClassItem(image: #imageLiteral(resourceName: "Weight-training"), name: "Taewaodon"))
+        items.append(ClassItem(image: #imageLiteral(resourceName: "Boxing"), name: "Taewaodon"))
+        items.append(ClassItem(image: #imageLiteral(resourceName: "Weight-training"), name: "Taewaodon"))
     }
     
 }
