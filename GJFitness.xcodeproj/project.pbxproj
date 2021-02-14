@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A7C780725D9ADAA0024DCE1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7C780625D9ADAA0024DCE1 /* LoginViewController.swift */; };
+		1AC64F3325D9B19C008F60B8 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC64F3225D9B19C008F60B8 /* SignUpViewController.swift */; };
 		B5627E9425D6CDD7005970DE /* NotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5627E9325D6CDD7005970DE /* NotificationCenter.swift */; };
 		B591943225CED92C00F96136 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B591943125CED92C00F96136 /* AppDelegate.swift */; };
 		B591943425CED92C00F96136 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B591943325CED92C00F96136 /* SceneDelegate.swift */; };
@@ -43,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A7C780625D9ADAA0024DCE1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1AC64F3225D9B19C008F60B8 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		B5627E9325D6CDD7005970DE /* NotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenter.swift; sourceTree = "<group>"; };
 		B591942E25CED92C00F96136 /* GJFitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GJFitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B591943125CED92C00F96136 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +96,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A7C780225D9AD7F0024DCE1 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				1A7C780625D9ADAA0024DCE1 /* LoginViewController.swift */,
+				1AC64F3225D9B19C008F60B8 /* SignUpViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		B591942525CED92C00F96136 = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +128,7 @@
 		B591943025CED92C00F96136 /* GJFitness */ = {
 			isa = PBXGroup;
 			children = (
+				1A7C780225D9AD7F0024DCE1 /* Login */,
 				B5D2384725D647010028661C /* Home */,
 				B5D2384A25D6498E0028661C /* Book */,
 				B591943125CED92C00F96136 /* AppDelegate.swift */,
@@ -330,6 +344,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A7C780725D9ADAA0024DCE1 /* LoginViewController.swift in Sources */,
 				B5F9DAFC25D12A5C00A6FDEA /* TimeSlotController.swift in Sources */,
 				B591943625CED92C00F96136 /* ViewController.swift in Sources */,
 				B5627E9425D6CDD7005970DE /* NotificationCenter.swift in Sources */,
@@ -340,6 +355,7 @@
 				B5F9DAF225D0133800A6FDEA /* BookViewCell.swift in Sources */,
 				B5F9DAF725D0615100A6FDEA /* TicketViewController.swift in Sources */,
 				B591943425CED92C00F96136 /* SceneDelegate.swift in Sources */,
+				1AC64F3325D9B19C008F60B8 /* SignUpViewController.swift in Sources */,
 				B591946D25CEE0F400F96136 /* ClassViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,9 +13,14 @@ class TicketViewController: UIViewController {
     @IBOutlet var ticketClassName: UILabel!
     @IBOutlet var ticketCalendar: UILabel!
     @IBOutlet var ticketRoomName: UILabel!
+    @IBOutlet var ticketButton: UIButton!
+    @IBOutlet var QRImage: UIImageView!
+    
     var myString = String()
     var myCalen = String()
     var myRoomName = String()
+
+    var image: UIImage = UIImage(named: "qr_code_test")!
 
     @IBAction func goBack(_ sender: Any) {
         self.dismiss(animated: true)
@@ -26,13 +31,19 @@ class TicketViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
         ticketImage.image = UIImage(named: myString)
         ticketClassName.text = myString
         ticketCalendar.text = myCalen
         ticketRoomName.text = myRoomName
+        
+        ticketImage.layer.cornerRadius = 10
+        ticketImage.contentMode = .scaleAspectFill
+        ticketButton.layer.cornerRadius = 20
+        ticketButton.layer.masksToBounds = true
+        ticketButton.backgroundColor = .systemRed
+        
+        self.QRImage.image = #imageLiteral(resourceName: "qr_code_test")
     }
     
 

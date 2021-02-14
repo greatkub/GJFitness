@@ -11,5 +11,12 @@ class SlotCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var displayTimeSlot: UILabel!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        displayTimeSlot.layer.cornerRadius = 5
+        displayTimeSlot.layer.masksToBounds = true
+        
+    }
 }
 

@@ -16,6 +16,12 @@ class BookViewCell: UITableViewCell {
     @IBOutlet var bookTrainerName: UILabel!
     @IBOutlet var bookStartEnd: UILabel!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        bookImageView.layer.cornerRadius = 10
+        bookImageView.contentMode = .scaleAspectFill
+    }
 
 
 }

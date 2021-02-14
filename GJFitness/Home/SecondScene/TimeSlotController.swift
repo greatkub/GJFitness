@@ -51,9 +51,9 @@ class TimeSlotController: UIViewController {
                          [[ "19:00" , "20:00"], ["11:00", "12:00", "13:00" , "14:00"],["15:00", "16:00", "17:00"]]]
     
     
-    var timeDisplayColor = [[[UIColor.green , UIColor.green], [UIColor.green, UIColor.green, UIColor.green , UIColor.green],[UIColor.green, UIColor.green, UIColor.green]],
-                            [[ UIColor.green , UIColor.green], [UIColor.green, UIColor.green, UIColor.green , UIColor.green],[UIColor.green, UIColor.green, UIColor.green]],
-                            [[ UIColor.green , UIColor.green], [UIColor.green, UIColor.green, UIColor.green , UIColor.green],[UIColor.green, UIColor.green, UIColor.green]]]
+    var timeDisplayColor = [[[.systemGreen ,.systemGreen], [.systemGreen, .systemGreen, .systemGreen , .systemGreen],[.systemGreen, .systemGreen, .systemGreen]],
+                            [[ .systemGreen , .systemGreen], [.systemGreen, .systemGreen, .systemGreen , .systemGreen],[.systemGreen, .systemGreen, .systemGreen]],
+                            [[ .systemGreen , .systemGreen], [.systemGreen,.systemGreen, .systemGreen , UIColor.green],[.systemGreen, .systemGreen, .systemGreen]]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,6 +65,9 @@ class TimeSlotController: UIViewController {
         calendar.text = myCalen
         time.text = timeLimit
         numOfmember.text = member
+        
+        classImage.layer.cornerRadius = 10
+        classImage.contentMode = .scaleAspectFill
         
         for i in 0...room.count-1 {
             items.append(RoomItem(room: room[i], trainer: trainer[i]))
