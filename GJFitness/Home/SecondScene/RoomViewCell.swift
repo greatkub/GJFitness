@@ -15,7 +15,7 @@ class RoomViewCell: UITableViewCell {
     @IBOutlet var trainer: UILabel!
     
     @IBOutlet weak var slotCollection: UICollectionView!
-    var counter = 0
+    
 //    var timeDisplay = ["10:00", "12:00", "15:00", "16:00", "17:00" , "18:00"]
     
     var timeslotsColor:[UIColor] = []
@@ -45,19 +45,7 @@ extension RoomViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "slotTimeCell", for: indexPath) as! SlotCollectionViewCell
 
-    
-//        print(indexPath)
-//
-//        if indexPath.row < 3 {
-//            for i in 0...timeDisplay2d[indexPath.row].count-1 {
-//                if indexPath.row < 3 {
-//                    cell.displayTimeSlot.text = timeDisplay2d[indexPath.row][i]
-//                    print(timeDisplay2d[indexPath.row][i])
-//                }
-//            }
-//        }
-//
-//        cell.viewController = self
+
         cell.displayTimeSlot.text = timeslots[indexPath.row]
         cell.displayTimeSlot.backgroundColor = timeslotsColor[indexPath.row]
         

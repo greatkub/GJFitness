@@ -30,6 +30,10 @@ class TimeSlotController: UIViewController {
     @IBOutlet var time: UILabel!
     @IBOutlet var numOfmember: UILabel!
     
+    @IBAction func goBack(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
+    
     var myString = String()
     var myCalen = String()
     var timeLimit = String()
@@ -71,15 +75,29 @@ class TimeSlotController: UIViewController {
     
     @objc func cellRoomClicked(notification: NSNotification) {
         if let data = notification.object as? String {
-            let alert = UIAlertController(title: "Confirm ?", message: "\(data)", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Are you confirm to book?", message: "\(data)", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
                 
-                print("Shit")
+                
+                print("ok")
             }))
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
     }
+    
+//    @objc func bookSuccess(notification: NSNotification) {
+//        if let data = notification.object as? String {
+//            let alert = UIAlertController(title: "Book successfully", message: "\(data)", preferredStyle: .alert)
+//            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
+//
+//                print("done")
+//            }))
+//            self.present(alert, animated: true, completion: nil)
+//        }
+//    }
+    
+    
     
     
 
