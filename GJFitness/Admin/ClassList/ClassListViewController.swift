@@ -34,14 +34,14 @@ class ClassListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        items.append(ClassItem(image: #imageLiteral(resourceName: "Boxing"), name: "Earth"))
-        items.append(ClassItem(image: #imageLiteral(resourceName: "Weight-training"), name: "Test"))
-        items.append(ClassItem(image: #imageLiteral(resourceName: "Boxing"), name: "Earth"))
-        items.append(ClassItem(image: #imageLiteral(resourceName: "Weight-training"), name: "Test"))
-        items.append(ClassItem(image: #imageLiteral(resourceName: "Boxing"), name: "Earth"))
-        items.append(ClassItem(image: #imageLiteral(resourceName: "Weight-training"), name: "Test"))
-        items.append(ClassItem(image: #imageLiteral(resourceName: "Boxing"), name: "Earth"))
-        items.append(ClassItem(image: #imageLiteral(resourceName: "Weight-training"), name: "Test"))
+        items.append(ClassItem(image: #imageLiteral(resourceName: "Boxing"), name: "Kickboxing"))
+        items.append(ClassItem(image: #imageLiteral(resourceName: "Weight-training"), name: "Weight-Training"))
+        items.append(ClassItem(image: #imageLiteral(resourceName: "Boxing"), name: "Taewaodon"))
+        items.append(ClassItem(image: #imageLiteral(resourceName: "Weight-training"), name: "Taewaodon"))
+        items.append(ClassItem(image: #imageLiteral(resourceName: "Boxing"), name: "Taewaodon"))
+        items.append(ClassItem(image: #imageLiteral(resourceName: "Weight-training"), name: "Taewaodon"))
+        items.append(ClassItem(image: #imageLiteral(resourceName: "Boxing"), name: "Taewaodon"))
+        items.append(ClassItem(image: #imageLiteral(resourceName: "Weight-training"), name: "Taewaodon"))
     }
     
 }

@@ -46,7 +46,7 @@ class TimeScheduleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        classImageViewInfo.layer.cornerRadius = 10
         classImageViewInfo.image = classImage
         classNameInfo.text = classNameLabel
         
@@ -56,7 +56,7 @@ class TimeScheduleViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(cellTimeClicked(notification:)), name: .timeCellClicked, object: nil)
         
-//        NotificationCenter.default.addObserver(self, selector: #selector(deleteRoomCell(notification:)), name: .roomCellClicked, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(deleteRoomCell(notification:)), name: .roomCellClicked, object: nil)
     }
     
     @objc func cellTimeClicked (notification: NSNotification) {
@@ -71,10 +71,12 @@ class TimeScheduleViewController: UIViewController {
         }
     }
     
-//    @objc func deleteRoomCell(notification: NSNotification) {
-//        rooms.remove(at: indexPath.row)
-//        tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
-//    }
+    @objc func deleteRoomCell(notification: NSNotification) {
+        if let data = notification.object as? Int {
+//            rooms.remove(at: data)
+            
+        }
+    }
     
     @IBAction func BackToClassList(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -95,6 +97,7 @@ extension TimeScheduleViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let index = indexPath.row
         let cell = tableView.dequeueReusableCell(withIdentifier: "room_cell", for: indexPath) as! RoomCell
+        cell.tag = index
         
         cell.timeslotsList = time3d[selected][index]
         cell.roomNumber.text = rooms[index].roomName

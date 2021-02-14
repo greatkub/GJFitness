@@ -24,6 +24,8 @@ class TimeItem {
 }
 
 class CreateClassViewController: UIViewController {
+    @IBOutlet weak var doneCreateButton: UIButton!
+    @IBOutlet weak var imageAcces: UIImageView!
     
     @IBOutlet weak var tfDatePicker: UITextField!
     let datePicker = UIDatePicker()
@@ -37,9 +39,10 @@ class CreateClassViewController: UIViewController {
     var roomNumbers = ["1", "2", "3", "4"]
     var roomTimeSlotList = ["9:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00"]
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        doneCreateButton.layer.cornerRadius = 20
+        imageAcces.layer.cornerRadius = 12
         
         showDatePicker()
         
@@ -136,6 +139,7 @@ extension CreateClassViewController: UICollectionViewDataSource, UICollectionVie
             let width = (collection.bounds.width - totalSpacing)/numberOfItemsPerRow
             
             return CGSize(width: width, height: 34)
+            
         } else {
             return CGSize(width: 10, height: 10)
         }

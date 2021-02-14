@@ -19,5 +19,8 @@ class ClassListCell: UICollectionViewCell {
         classImageView.layer.cornerRadius = 10
         className.layer.cornerRadius = 10
         className.layer.masksToBounds = true
+        classImageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        className.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+
     }
 }
