@@ -96,8 +96,6 @@ class CreateClassViewController: UIViewController, UIImagePickerControllerDelega
         picker.dismiss(animated: true, completion: nil)
     }
     
-    
-    
     func showDatePicker() {
         datePicker.datePickerMode = .date
         
@@ -114,24 +112,24 @@ class CreateClassViewController: UIViewController, UIImagePickerControllerDelega
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker))
         
         toolbar.setItems([doneButton, spaceButton, cancelButton], animated: true)
-
+        
         tfDatePicker.inputAccessoryView = toolbar
         tfDatePicker.inputView = datePicker
         
     }
-       
+    
     @objc func doneDatePicker() {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"
         tfDatePicker.text = formatter.string(from: datePicker.date)
-
+        
         self.view.endEditing(true)
     }
-
+    
     @objc func cancelDatePicker() {
         self.view.endEditing(true)
     }
-
+    
 }
 
 extension CreateClassViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -163,12 +161,25 @@ extension CreateClassViewController: UICollectionViewDataSource, UICollectionVie
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("HEEER item at \(indexPath.section)/\(indexPath.item) tapped")
+        
+        switch collectionView.tag {
+        case 1:
+            let cell = collectionView.cellForItem(at: indexPath) as? RoomNumberCell
+            cell?.contentView.backgroundColor = .systemYellow
+        default:
+            let cell = collectionView.cellForItem(at: indexPath) as? RoomTimeSlotCell
+            cell?.contentView.backgroundColor = .systemYellow
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let numberOfItemsPerRow:CGFloat = 4
         let spacingBetweenCells:CGFloat = 8
         
         let totalSpacing = (2 * 0) + ((numberOfItemsPerRow - 1) * spacingBetweenCells)
-
+        
         if let collection = self.roomNumberCollectionView {
             let width = (collection.bounds.width - totalSpacing)/numberOfItemsPerRow
             
