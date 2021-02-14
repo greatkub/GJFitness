@@ -43,7 +43,10 @@ extension RoomCell: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("Collection view at row \(collectionView.tag) selected index path \(timeslotsList[indexPath[1]])")
         
-        NotificationCenter.default.post(name: .timeCellClicked, object: timeslotsList[indexPath.row])
+        
+        
+        
+        NotificationCenter.default.post(name: .timeCellClicked, object: [self.tag, timeslotsList[indexPath.row]])
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

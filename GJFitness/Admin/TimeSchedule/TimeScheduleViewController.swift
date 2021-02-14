@@ -60,9 +60,21 @@ class TimeScheduleViewController: UIViewController {
     }
     
     @objc func cellTimeClicked (notification: NSNotification) {
-        if let data = notification.object as? String {
+        if let data = notification.object as? [Int] {
             let alert = UIAlertController(title: "Confirm ?", message: "\(data)", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
+                
+                let vc = self.storyboard?.instantiateViewController(identifier: "memberviewcontroller") as! MemberViewController
+        
+                vc.getRoomName = String(data[0])
+                vc.getRoomNameFromTimeSchedule = String(data[1])
+                
+                
+//                vc.myString = arrayClasses[indexPath.item]
+//                vc.myCalen = calendarDisplay
+//                vc.myRoomName = arrayRoomName[indexPath.item]
+                self.present(vc, animated: true, completion: nil)
+                
                 
                 print("Kuy")
             }))
@@ -95,6 +107,8 @@ extension TimeScheduleViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let index = indexPath.row
         let cell = tableView.dequeueReusableCell(withIdentifier: "room_cell", for: indexPath) as! RoomCell
+        
+        cell.tag = indexPath.row
         
         cell.timeslotsList = time3d[selected][index]
         cell.roomNumber.text = rooms[index].roomName
