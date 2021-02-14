@@ -17,7 +17,10 @@ class TicketViewController: UIViewController {
     var myCalen = String()
     var myRoomName = String()
 
-
+    @IBAction func goBack(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
+    
 //    var room = ["Room 1", "Room2", "Room3"]
 //    var trainer = ["Krittamet Ch.", "Cleo Powell", "Saharat T."]
     

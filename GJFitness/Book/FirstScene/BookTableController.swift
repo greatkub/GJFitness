@@ -15,6 +15,7 @@ class BookItem {
     var bookTrainerName: String = ""
     var bookStartEnd: String = ""
     
+    
     init(image: UIImage, bookclass: String, calendar: String, room: String, trainer: String, time: String) {
         self.bookImage = image
         self.bookClassName = bookclass
