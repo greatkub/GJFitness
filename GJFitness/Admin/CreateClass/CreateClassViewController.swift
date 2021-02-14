@@ -23,7 +23,7 @@ class TimeItem {
     }
 }
 
-class CreateClassViewController: UIViewController {
+class CreateClassViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var doneCreateButton: UIButton!
     @IBOutlet weak var imageAcces: UIImageView!
     
@@ -41,7 +41,7 @@ class CreateClassViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        doneCreateButton.layer.cornerRadius = 20
+        doneCreateButton.layer.cornerRadius = 15
         imageAcces.layer.cornerRadius = 12
         
         showDatePicker()
@@ -63,6 +63,40 @@ class CreateClassViewController: UIViewController {
             print("Back to class list screen")
         }
     }
+    
+    @IBAction func changePhoto(_ sender: Any) {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        
+        let actionSheet = UIAlertController(title: "Photo Source", message: "Choose a source", preferredStyle: .actionSheet)
+        
+        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action: UIAlertAction) in
+            imagePickerController.sourceType = .camera
+            self.present(imagePickerController, animated: true, completion: nil)
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { (action: UIAlertAction) in
+            imagePickerController.sourceType = .photoLibrary
+            self.present(imagePickerController, animated: true, completion: nil)
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(actionSheet, animated: true, completion:  nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let image = info[.originalImage] as! UIImage
+        
+        imageAcces.clipsToBounds = true
+        imageAcces.contentMode = .scaleAspectFill
+        imageAcces.image = image
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    
     
     func showDatePicker() {
         datePicker.datePickerMode = .date

@@ -25,7 +25,6 @@ class ClassListViewController: UIViewController {
     
     @IBAction func CreateClass(_ sender: Any) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Admin", bundle:nil)
-
         let vc = storyBoard.instantiateViewController(withIdentifier: "CreateClassViewController") as? CreateClassViewController
         
         self.present(vc!, animated:true, completion:nil)
