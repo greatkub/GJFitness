@@ -13,8 +13,10 @@ class RoomNumberCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        roomNumber.layer.cornerRadius = 5
-        roomNumber.layer.masksToBounds = true
+        roomNumber.textColor = .white
+        self.contentView.backgroundColor = .systemGray3
+        self.contentView.layer.cornerRadius = 5
+        self.contentView.layer.masksToBounds = true
     }
 }
 
