@@ -10,7 +10,7 @@ import Foundation
 extension Notification.Name {
     static let roomCellClicked = Notification.Name(rawValue: "roomCellClicked")
     
-    static let deleteRoomCell = Notification.Name(rawValue: "deleteRoomCell")
+//    static let deleteRoomCell = Notification.Name(rawValue: "deleteRoomCell")
     
     static let timeCellClicked = Notification.Name(rawValue: "timeCellClicked")
 }

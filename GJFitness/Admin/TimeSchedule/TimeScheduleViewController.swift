@@ -56,7 +56,7 @@ class TimeScheduleViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(cellTimeClicked(notification:)), name: .timeCellClicked, object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(deleteRoomCell(notification:)), name: .roomCellClicked, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(deleteRoomCell(notification:)), name: .roomCellClicked, object: nil)
     }
     
     @objc func cellTimeClicked (notification: NSNotification) {
@@ -83,11 +83,23 @@ class TimeScheduleViewController: UIViewController {
         }
     }
     
-    @objc func deleteRoomCell(notification: NSNotification) {
-        if let data = notification.object as? Int {
-//            rooms.remove(at: data)
-            
+//    @objc func deleteRoomCell(notification: NSNotification) {
+//        if let data = notification.object as? Int {
+////            rooms.remove(at: data)
+//
+//        }
+//    }
+    
+    @IBAction func deleteRoom(_ sender: UIButton) {
+        let point = sender.convert(CGPoint.zero, to: timeSlotTable)
+        guard let indexpath = timeSlotTable.indexPathForRow(at: point)
+        else {
+            return
         }
+        
+        rooms.remove(at: indexpath.row)
+        timeSlotTable.deleteRows(at: [IndexPath(row: indexpath.row, section: 0)], with: .left)
+        timeSlotTable.endUpdates()
     }
     
     @IBAction func BackToClassList(_ sender: Any) {
