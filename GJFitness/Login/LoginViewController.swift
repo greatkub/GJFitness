@@ -28,15 +28,22 @@ class LoginViewController: UIViewController {
         
         let masterUsername = "great"
         let masterPassword = "0000"
+        let userUsername = "james"
+        let userPassword = "1111"
+        
         
         let username = usernameField.text ?? ""
         let password = passwordField.text ?? ""
         
-        if masterUsername == username && masterPassword == password {
+        if userUsername == username && userPassword == password {
             if let vc = self.storyboard?.instantiateViewController(identifier: "classList") {
                 present(vc, animated: true, completion: nil)
             }
             
+        } else if masterUsername == username && masterPassword == password {
+            if let vc = self.storyboard?.instantiateViewController(identifier: "classList") {
+                present(vc, animated: true, completion: nil)
+            }
         } else {
             let alert = UIAlertController(title: "Invalid Credentials", message: "Incorrect username or password", preferredStyle: .alert)
             
