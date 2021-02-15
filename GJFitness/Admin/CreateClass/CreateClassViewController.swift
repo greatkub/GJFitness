@@ -62,6 +62,11 @@ class CreateClassViewController: UIViewController, UIImagePickerControllerDelega
         }
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, with: event)
+    }
+    
     @IBAction func BackToClassList(_ sender: Any) {
         self.dismiss(animated: true) {
             print("Back to class list screen")
