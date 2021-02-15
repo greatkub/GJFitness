@@ -19,6 +19,11 @@ class RoomCell: UITableViewCell {
         self.slotCollection.dataSource = self
     }
     
+    @IBAction func DeleteRoomCell(_ sender: Any) {
+        NotificationCenter.default.post(name: .deleteRoomCell, object: self.tag)
+        print("Delete Room")
+
+    }
 }
 
 extension RoomCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
