@@ -16,6 +16,7 @@ class ClassItem {
         self.className = name
     }
 }
+
 class ViewController: UIViewController {
     @IBOutlet var classViewCollectionView: UICollectionView!
     @IBOutlet var profileImageView: UIImageView!
@@ -38,7 +39,9 @@ class ViewController: UIViewController {
         profileImageView.layer.masksToBounds = true
         profileImageView.layer.cornerRadius = profileImageView.bounds.width / 2
         profileImageView.image = UIImage(named:"profile.jpg")
-            self.view.addSubview(profileImageView)
+        self.view.addSubview(profileImageView)
+        
+        imgageClick()
         
         for i in 0...arrayClasses.count-1 {
             items.append(ClassItem(image: UIImage(imageLiteralResourceName: "\(arrayClasses[i])"), name: "\(arrayClasses[i])"))
@@ -48,6 +51,19 @@ class ViewController: UIViewController {
         //
     }
     
+    func imgageClick() {
+        let tapGR = UITapGestureRecognizer(target: self, action: #selector(self.imageTapped))
+        profileImageView.addGestureRecognizer(tapGR)
+        profileImageView.isUserInteractionEnabled = true
+    }
+    
+    @objc func imageTapped(sender: UITapGestureRecognizer) {
+        if sender.state == .ended {
+            print("UIImageView tapped")
+            
+            
+        }
+    }
     
 }
 
@@ -100,7 +116,6 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
         
         self.present(vc, animated: true, completion: nil)
         print("You selected row #\(arrayClasses[indexPath.item])!")
-        
         
         
     }
