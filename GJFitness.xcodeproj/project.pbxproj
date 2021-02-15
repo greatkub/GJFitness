@@ -120,8 +120,8 @@
 				1ADE3D9125D641DE0050B470 /* TimeSchedule */,
 				1ADE3D9025D641CD0050B470 /* CreateClass */,
 				1ADE3D8F25D641B30050B470 /* ClassList */,
-				1A89FE5225D250DA00A43667 /* Admin.storyboard */,
 				B5205FD425D972B900430198 /* MemberViewController.swift */,
+				1A89FE5225D250DA00A43667 /* Admin.storyboard */,
 				B5205FD925D975A400430198 /* MemberTableViewCell.swift */,
 			);
 			path = Admin;
