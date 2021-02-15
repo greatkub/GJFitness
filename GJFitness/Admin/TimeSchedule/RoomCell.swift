@@ -4,6 +4,7 @@
 //
 //  Created by James S on 13/2/2564 BE.
 //
+// change jame problem
 
 import UIKit
 
@@ -18,7 +19,6 @@ class RoomCell: UITableViewCell {
         self.slotCollection.delegate = self
         self.slotCollection.dataSource = self
     }
-  
 }
 
 extension RoomCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -39,9 +39,7 @@ extension RoomCell: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
         print("Collection view at row \(collectionView.tag) selected index path \(timeslotsList[indexPath[1]])")
         
         
-        
-        
-        NotificationCenter.default.post(name: .timeCellClicked, object: [self.tag, timeslotsList[indexPath.row]])
+        NotificationCenter.default.post(name: .timeCellClicked, object: (self.tag, timeslotsList[indexPath.row]))
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

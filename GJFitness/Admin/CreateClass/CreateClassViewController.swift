@@ -4,6 +4,7 @@
 //
 //  Created by James S on 11/2/2564 BE.
 //
+// change jame problem
 
 import UIKit
 
@@ -41,7 +42,7 @@ class CreateClassViewController: UIViewController, UIImagePickerControllerDelega
     
     var count = 0
     var count2 = 0
-//These one use for switch color while tap two times.
+    //These one use for switch color while tap two times.
     override func viewDidLoad() {
         super.viewDidLoad()
         doneCreateButton.layer.cornerRadius = 15
@@ -163,7 +164,7 @@ extension CreateClassViewController: UICollectionViewDataSource, UICollectionVie
             return timeSlotCell
         }
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("HEEER item at \(indexPath.section)/\(indexPath.item) tapped")
         switch collectionView.tag {
@@ -184,11 +185,11 @@ extension CreateClassViewController: UICollectionViewDataSource, UICollectionVie
             if count2 == 0 {
                 count2 = count2 + 1
                 cell?.contentView.backgroundColor = .systemYellow
-
+                
             } else {
                 count2 = 0
                 cell?.contentView.backgroundColor = .systemGray3
-
+                
             }
         }
     }

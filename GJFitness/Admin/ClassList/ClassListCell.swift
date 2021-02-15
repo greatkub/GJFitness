@@ -4,6 +4,8 @@
 //
 //  Created by James S on 9/2/2564 BE.
 //
+// change jame problem
+
 
 import UIKit
 
@@ -13,7 +15,7 @@ class ClassListCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-
+        
         classImageView.clipsToBounds = true
         classImageView.contentMode = .scaleAspectFill
         classImageView.layer.cornerRadius = 10
@@ -21,6 +23,6 @@ class ClassListCell: UICollectionViewCell {
         className.layer.masksToBounds = true
         classImageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         className.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
-
+        
     }
 }

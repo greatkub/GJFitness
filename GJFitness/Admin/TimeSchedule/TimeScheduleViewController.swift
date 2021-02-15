@@ -4,7 +4,7 @@
 //
 //  Created by James S on 13/2/2564 BE.
 //
-
+// change jame problem
 import UIKit
 
 class RoomCellItem {
@@ -53,41 +53,40 @@ class TimeScheduleViewController: UIViewController {
         for i in 0...roomNumber.count-1 {
             rooms.append(RoomCellItem(roomName: roomNumber[i], trainerName: trainers[i]))
         }
-        
         NotificationCenter.default.addObserver(self, selector: #selector(cellTimeClicked(notification:)), name: .timeCellClicked, object: nil)
         
     }
     
     @objc func cellTimeClicked (notification: NSNotification) {
-        if let data = notification.object as? [Int] {
-            let alert = UIAlertController(title: "Confirm ?", message: "\(data)", preferredStyle: .alert)
+        if let data = notification.object as? (Int, String) {
+            let alert = UIAlertController(title: "Confirm ?", message: "\(classNameLabel), \(roomNumber[data.0]) at ​\(data.1)", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
                 
                 let vc = self.storyboard?.instantiateViewController(identifier: "memberviewcontroller") as! MemberViewController
-        
-                vc.getRoomName = String(data[0])
-                vc.getRoomNameFromTimeSchedule = String(data[1])
                 
+                vc.getClassName = self.classNameLabel
+                vc.getImageClass = self.classImage
+                vc.getTrainerRoom = self.trainers[data.0]
+                vc.getRoomName = self.roomNumber[data.0]
+                vc.getRoomNameFromTimeSchedule = "\(data.1)"
                 
-//                vc.myString = arrayClasses[indexPath.item]
-//                vc.myCalen = calendarDisplay
-//                vc.myRoomName = arrayRoomName[indexPath.item]
+                //                vc.myString = arrayClasses[indexPath.item]
+                //                vc.myCalen = calendarDisplay
+                //                vc.myRoomName = arrayRoomName[indexPath.item]
                 self.present(vc, animated: true, completion: nil)
-                
                 
                 print("Kuy")
             }))
+            
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
     }
     
-    
     @IBAction func deleteRoom(_ sender: UIButton) {
         let point = sender.convert(CGPoint.zero, to: timeSlotTable)
-        guard let indexpath = timeSlotTable.indexPathForRow(at: point) else {
-            return
-        }
+        guard let indexpath = timeSlotTable.indexPathForRow(at: point)
+        else { return }
         
         rooms.remove(at: indexpath.row)
         timeSlotTable.beginUpdates()
@@ -124,12 +123,7 @@ extension TimeScheduleViewController: UITableViewDelegate, UITableViewDataSource
         cell.trainerName.text = rooms[index].roomTrainer
         
         return cell
+        
     }
-    
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == UITableViewCell.EditingStyle.delete {
-//            rooms.remove(at: indexPath.row)
-//            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
-//        }
-//    }
 }
+
