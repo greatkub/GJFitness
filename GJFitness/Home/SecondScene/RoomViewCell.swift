@@ -9,20 +9,20 @@ import UIKit
 
 class RoomViewCell: UITableViewCell {
     
-
+    
     @IBOutlet var room: UILabel!
     
     @IBOutlet var trainer: UILabel!
     
     @IBOutlet weak var slotCollection: UICollectionView!
-    var counter = 0
-//    var timeDisplay = ["10:00", "12:00", "15:00", "16:00", "17:00" , "18:00"]
+    
+    //    var timeDisplay = ["10:00", "12:00", "15:00", "16:00", "17:00" , "18:00"]
     
     var timeslotsColor:[UIColor] = []
     var timeslots: [String] = []
     
     override func awakeFromNib() {
-//        print(timeDisplay.count)
+        //        print(timeDisplay.count)
         
         self.slotCollection.delegate = self
         self.slotCollection.dataSource = self
@@ -30,51 +30,57 @@ class RoomViewCell: UITableViewCell {
     
     
     
-
     
-   
+    
+    
 }
-extension RoomViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
-    
-    
-    
+extension RoomViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return timeslots.count
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "slotTimeCell", for: indexPath) as! SlotCollectionViewCell
-
-    
-//        print(indexPath)
-//
-//        if indexPath.row < 3 {
-//            for i in 0...timeDisplay2d[indexPath.row].count-1 {
-//                if indexPath.row < 3 {
-//                    cell.displayTimeSlot.text = timeDisplay2d[indexPath.row][i]
-//                    print(timeDisplay2d[indexPath.row][i])
-//                }
-//            }
-//        }
-//
-//        cell.viewController = self
+        
         cell.displayTimeSlot.text = timeslots[indexPath.row]
         cell.displayTimeSlot.backgroundColor = timeslotsColor[indexPath.row]
         
-
         return cell
     }
     
-
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let numberOfItemsPerRow:CGFloat = 4
+        let spacingBetweenCells:CGFloat = 4
+        
+        let totalSpacing = (2 * 0) + ((numberOfItemsPerRow - 1) * spacingBetweenCells)
+        
+        if let collection = self.slotCollection {
+            let width = (collection.bounds.width - totalSpacing)/numberOfItemsPerRow
+            
+            return CGSize(width: width, height: 34)
+            
+        }else{
+            
+            return CGSize(width: 124, height: 171)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 8
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("Collection view at row \(collectionView.tag) selected index path \(timeslots[indexPath[1]])")
         
         NotificationCenter.default.post(name: .roomCellClicked, object: timeslots[indexPath.row])
         
-        
     }
     
-  
-
+    
+    
     
 }

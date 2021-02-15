@@ -30,6 +30,10 @@ class TimeSlotController: UIViewController {
     @IBOutlet var time: UILabel!
     @IBOutlet var numOfmember: UILabel!
     
+    @IBAction func goBack(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
+    
     var myString = String()
     var myCalen = String()
     var timeLimit = String()
@@ -47,9 +51,9 @@ class TimeSlotController: UIViewController {
                          [[ "19:00" , "20:00"], ["11:00", "12:00", "13:00" , "14:00"],["15:00", "16:00", "17:00"]]]
     
     
-    var timeDisplayColor = [[[UIColor.green , UIColor.green], [UIColor.green, UIColor.green, UIColor.green , UIColor.green],[UIColor.green, UIColor.green, UIColor.green]],
-                            [[ UIColor.green , UIColor.green], [UIColor.green, UIColor.green, UIColor.green , UIColor.green],[UIColor.green, UIColor.green, UIColor.green]],
-                            [[ UIColor.green , UIColor.green], [UIColor.green, UIColor.green, UIColor.green , UIColor.green],[UIColor.green, UIColor.green, UIColor.green]]]
+    var timeDisplayColor = [[[.systemGreen ,.systemGreen], [.systemGreen, .systemGreen, .systemGreen , .systemGreen],[.systemGreen, .systemGreen, .systemGreen]],
+                            [[ .systemGreen , .systemGreen], [.systemGreen, .systemGreen, .systemGreen , .systemGreen],[.systemGreen, .systemGreen, .systemGreen]],
+                            [[ .systemGreen , .systemGreen], [.systemGreen,.systemGreen, .systemGreen , UIColor.green],[.systemGreen, .systemGreen, .systemGreen]]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +66,9 @@ class TimeSlotController: UIViewController {
         time.text = timeLimit
         numOfmember.text = member
         
+        classImage.layer.cornerRadius = 10
+        classImage.contentMode = .scaleAspectFill
+        
         for i in 0...room.count-1 {
             items.append(RoomItem(room: room[i], trainer: trainer[i]))
         }
@@ -71,15 +78,29 @@ class TimeSlotController: UIViewController {
     
     @objc func cellRoomClicked(notification: NSNotification) {
         if let data = notification.object as? String {
-            let alert = UIAlertController(title: "Confirm ?", message: "\(data)", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Are you confirm to book?", message: "\(data)", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
                 
-                print("Shit")
+                
+                print("ok")
             }))
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
     }
+    
+//    @objc func bookSuccess(notification: NSNotification) {
+//        if let data = notification.object as? String {
+//            let alert = UIAlertController(title: "Book successfully", message: "\(data)", preferredStyle: .alert)
+//            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
+//
+//                print("done")
+//            }))
+//            self.present(alert, animated: true, completion: nil)
+//        }
+//    }
+    
+    
     
     
 
