@@ -3,8 +3,7 @@
 //  GJFitness
 //
 //  Created by James S on 13/2/2564 BE.
-//
-// change jame problem
+
 import UIKit
 
 class RoomCellItem {
@@ -39,9 +38,7 @@ class TimeScheduleViewController: UIViewController {
     var rooms: [RoomCellItem] = []
     var roomNumber = ["Room1", "Room2", "Room3"]
     var trainers = ["Krittamet Ch.", "Sanpawat S.", "Cleo P."]
-    var time2d = [[ "15" , "16"], ["17", "18", "19" , "20"],["21", "22", "23"]]
-    var time3d = [[[ "10:00" , "12:00"], ["13:00", "14:00", "15:00" , "16:00"],["17:00", "18:00", "19:00"]],
-                  [[ "10:00" , "11:00"], ["12:00", "13:00", "14:00" , "15:00"],["13:00", "14:00", "15:00"]],
+    var time3d = [[[ "09:00" , "10:00", "11:00", "12:00", "13:00", "14:00"], ["13:00", "14:00", "15:00" , "16:00"],["17:00", "18:00", "19:00"]], [[ "10:00" , "11:00"], ["12:00", "13:00", "14:00" , "15:00"],["13:00", "14:00", "15:00"]],
                   [[ "19:00" , "20:00"], ["11:00", "12:00", "13:00" , "14:00"],["15:00", "16:00", "17:00"]]]
     
     override func viewDidLoad() {
@@ -53,12 +50,14 @@ class TimeScheduleViewController: UIViewController {
         for i in 0...roomNumber.count-1 {
             rooms.append(RoomCellItem(roomName: roomNumber[i], trainerName: trainers[i]))
         }
+        
         NotificationCenter.default.addObserver(self, selector: #selector(cellTimeClicked(notification:)), name: .timeCellClicked, object: nil)
         
     }
     
     @objc func cellTimeClicked (notification: NSNotification) {
         if let data = notification.object as? (Int, String) {
+            
             let alert = UIAlertController(title: "Confirm ?", message: "\(classNameLabel), \(roomNumber[data.0]) at ​\(data.1)", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
                 
@@ -116,7 +115,7 @@ extension TimeScheduleViewController: UITableViewDelegate, UITableViewDataSource
         let cell = tableView.dequeueReusableCell(withIdentifier: "room_cell", for: indexPath) as! RoomCell
         cell.tag = index
         
-        cell.tag = indexPath.row
+//        cell.tag = indexPath.row
         
         cell.timeslotsList = time3d[selected][index]
         cell.roomNumber.text = rooms[index].roomName

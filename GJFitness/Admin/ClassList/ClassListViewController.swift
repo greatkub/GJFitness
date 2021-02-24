@@ -3,9 +3,6 @@
 //  GJFitness
 //
 //  Created by James S on 9/2/2564 BE.
-//
-// change jame problem
-
 
 import UIKit
 
@@ -18,6 +15,7 @@ class ClassListItem {
         self.className = name
     }
 }
+
 class ClassListViewController: UIViewController {
     @IBOutlet var classCollectionView: UICollectionView!
     @IBOutlet weak var createClass: UIButton!
@@ -27,10 +25,10 @@ class ClassListViewController: UIViewController {
     var items: [ClassListItem] = []
     
     @IBAction func CreateClass(_ sender: Any) {
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Admin", bundle:nil)
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Admin", bundle: nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: "CreateClassViewController") as? CreateClassViewController
         
-        self.present(vc!, animated:true, completion:nil)
+        self.present(vc!, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -69,7 +67,7 @@ extension ClassListViewController: UICollectionViewDataSource, UICollectionViewD
         if let collection = self.classCollectionView {
             let width = (collection.bounds.width - totalSpacing)/numberOfItemsPerRow
             return CGSize(width: width, height: width + 65)
-        }else{
+        } else{
             return CGSize(width: 124, height: 171)
         }
     }

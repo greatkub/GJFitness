@@ -12,10 +12,13 @@
 		1A89FE5325D250DA00A43667 /* Admin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A89FE5225D250DA00A43667 /* Admin.storyboard */; };
 		1A89FE5825D254ED00A43667 /* ClassListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A89FE5725D254ED00A43667 /* ClassListViewController.swift */; };
 		1A89FE6525D255BA00A43667 /* ClassListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A89FE6425D255BA00A43667 /* ClassListCell.swift */; };
+		1A9D993A25E4E4A900784990 /* TrainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9D993925E4E4A900784990 /* TrainerViewController.swift */; };
 		1AC9561425D819790014D200 /* TimeScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC9561325D819790014D200 /* TimeScheduleViewController.swift */; };
 		1AC9562125D822A60014D200 /* RoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC9562025D822A60014D200 /* RoomCell.swift */; };
 		1AC9562625D826150014D200 /* TimeScheduleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC9562525D826150014D200 /* TimeScheduleCollectionViewCell.swift */; };
 		1AC9563225D85B650014D200 /* RoomNumberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC9563125D85B650014D200 /* RoomNumberCell.swift */; };
+		7CBEDBCE9C60B18A7676BA7D /* Pods_GJFitness_GJFitnessUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0E9DB0BDA5F010C3B2A0A10 /* Pods_GJFitness_GJFitnessUITests.framework */; };
+		8CCD346D7E884AB6B6CEE2C7 /* Pods_GJFitnessTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC791209400284443E4FE846 /* Pods_GJFitnessTests.framework */; };
 		B5205FD525D972B900430198 /* MemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5205FD425D972B900430198 /* MemberViewController.swift */; };
 		B5205FDA25D975A400430198 /* MemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5205FD925D975A400430198 /* MemberTableViewCell.swift */; };
 		B5627E9425D6CDD7005970DE /* NotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5627E9325D6CDD7005970DE /* NotificationCenter.swift */; };
@@ -34,6 +37,7 @@
 		B5F9DAF725D0615100A6FDEA /* TicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F9DAF625D0615100A6FDEA /* TicketViewController.swift */; };
 		B5F9DAFC25D12A5C00A6FDEA /* TimeSlotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F9DAFB25D12A5B00A6FDEA /* TimeSlotController.swift */; };
 		B5F9DB0125D1389200A6FDEA /* RoomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F9DB0025D1389200A6FDEA /* RoomViewCell.swift */; };
+		C98AE2EF7729E516DD9C770C /* Pods_GJFitness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D65844AD85AB1477E7D685A7 /* Pods_GJFitness.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,10 +63,14 @@
 		1A89FE5225D250DA00A43667 /* Admin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Admin.storyboard; sourceTree = "<group>"; };
 		1A89FE5725D254ED00A43667 /* ClassListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassListViewController.swift; sourceTree = "<group>"; };
 		1A89FE6425D255BA00A43667 /* ClassListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassListCell.swift; sourceTree = "<group>"; };
+		1A9D993925E4E4A900784990 /* TrainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerViewController.swift; sourceTree = "<group>"; };
 		1AC9561325D819790014D200 /* TimeScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeScheduleViewController.swift; sourceTree = "<group>"; };
 		1AC9562025D822A60014D200 /* RoomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCell.swift; sourceTree = "<group>"; };
 		1AC9562525D826150014D200 /* TimeScheduleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeScheduleCollectionViewCell.swift; sourceTree = "<group>"; };
 		1AC9563125D85B650014D200 /* RoomNumberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomNumberCell.swift; sourceTree = "<group>"; };
+		71D84C2E9290F044DD9AD1B2 /* Pods-GJFitnessTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GJFitnessTests.debug.xcconfig"; path = "Target Support Files/Pods-GJFitnessTests/Pods-GJFitnessTests.debug.xcconfig"; sourceTree = "<group>"; };
+		90D46247924509E533D86B79 /* Pods-GJFitness-GJFitnessUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GJFitness-GJFitnessUITests.debug.xcconfig"; path = "Target Support Files/Pods-GJFitness-GJFitnessUITests/Pods-GJFitness-GJFitnessUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		963F4289623FD7F552FD82F2 /* Pods-GJFitness-GJFitnessUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GJFitness-GJFitnessUITests.release.xcconfig"; path = "Target Support Files/Pods-GJFitness-GJFitnessUITests/Pods-GJFitness-GJFitnessUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B5205FD425D972B900430198 /* MemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberViewController.swift; sourceTree = "<group>"; };
 		B5205FD925D975A400430198 /* MemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberTableViewCell.swift; sourceTree = "<group>"; };
 		B5627E9325D6CDD7005970DE /* NotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenter.swift; sourceTree = "<group>"; };
@@ -87,6 +95,12 @@
 		B5F9DAF625D0615100A6FDEA /* TicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketViewController.swift; sourceTree = "<group>"; };
 		B5F9DAFB25D12A5B00A6FDEA /* TimeSlotController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSlotController.swift; sourceTree = "<group>"; };
 		B5F9DB0025D1389200A6FDEA /* RoomViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewCell.swift; sourceTree = "<group>"; };
+		CA43EF46869AC954D9DBB9F5 /* Pods-GJFitness.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GJFitness.debug.xcconfig"; path = "Target Support Files/Pods-GJFitness/Pods-GJFitness.debug.xcconfig"; sourceTree = "<group>"; };
+		D65844AD85AB1477E7D685A7 /* Pods_GJFitness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GJFitness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4659D89550F0594767E2C15 /* Pods-GJFitnessTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GJFitnessTests.release.xcconfig"; path = "Target Support Files/Pods-GJFitnessTests/Pods-GJFitnessTests.release.xcconfig"; sourceTree = "<group>"; };
+		EC791209400284443E4FE846 /* Pods_GJFitnessTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GJFitnessTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0E9DB0BDA5F010C3B2A0A10 /* Pods_GJFitness_GJFitnessUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GJFitness_GJFitnessUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC14C5B1B6AFFD55A63E6867 /* Pods-GJFitness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GJFitness.release.xcconfig"; path = "Target Support Files/Pods-GJFitness/Pods-GJFitness.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C98AE2EF7729E516DD9C770C /* Pods_GJFitness.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CCD346D7E884AB6B6CEE2C7 /* Pods_GJFitnessTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CBEDBCE9C60B18A7676BA7D /* Pods_GJFitness_GJFitnessUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,14 +134,31 @@
 		1A89FE5125D24C7300A43667 /* Admin */ = {
 			isa = PBXGroup;
 			children = (
+				1A9D993825E4E48400784990 /* Trainer */,
+				1ACF2C1625E3CF2E00D05E95 /* Member */,
 				1ADE3D9125D641DE0050B470 /* TimeSchedule */,
 				1ADE3D9025D641CD0050B470 /* CreateClass */,
 				1ADE3D8F25D641B30050B470 /* ClassList */,
-				B5205FD425D972B900430198 /* MemberViewController.swift */,
 				1A89FE5225D250DA00A43667 /* Admin.storyboard */,
-				B5205FD925D975A400430198 /* MemberTableViewCell.swift */,
 			);
 			path = Admin;
+			sourceTree = "<group>";
+		};
+		1A9D993825E4E48400784990 /* Trainer */ = {
+			isa = PBXGroup;
+			children = (
+				1A9D993925E4E4A900784990 /* TrainerViewController.swift */,
+			);
+			path = Trainer;
+			sourceTree = "<group>";
+		};
+		1ACF2C1625E3CF2E00D05E95 /* Member */ = {
+			isa = PBXGroup;
+			children = (
+				B5205FD425D972B900430198 /* MemberViewController.swift */,
+				B5205FD925D975A400430198 /* MemberTableViewCell.swift */,
+			);
+			path = Member;
 			sourceTree = "<group>";
 		};
 		1ADE3D8F25D641B30050B470 /* ClassList */ = {
@@ -156,6 +190,29 @@
 			path = TimeSchedule;
 			sourceTree = "<group>";
 		};
+		38F85F27E55CB0B91B0082BD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D65844AD85AB1477E7D685A7 /* Pods_GJFitness.framework */,
+				F0E9DB0BDA5F010C3B2A0A10 /* Pods_GJFitness_GJFitnessUITests.framework */,
+				EC791209400284443E4FE846 /* Pods_GJFitnessTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		580D1F5A997E92927022CBFD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CA43EF46869AC954D9DBB9F5 /* Pods-GJFitness.debug.xcconfig */,
+				FC14C5B1B6AFFD55A63E6867 /* Pods-GJFitness.release.xcconfig */,
+				90D46247924509E533D86B79 /* Pods-GJFitness-GJFitnessUITests.debug.xcconfig */,
+				963F4289623FD7F552FD82F2 /* Pods-GJFitness-GJFitnessUITests.release.xcconfig */,
+				71D84C2E9290F044DD9AD1B2 /* Pods-GJFitnessTests.debug.xcconfig */,
+				E4659D89550F0594767E2C15 /* Pods-GJFitnessTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		B591942525CED92C00F96136 = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +220,8 @@
 				B591944725CED92D00F96136 /* GJFitnessTests */,
 				B591945225CED92D00F96136 /* GJFitnessUITests */,
 				B591942F25CED92C00F96136 /* Products */,
+				580D1F5A997E92927022CBFD /* Pods */,
+				38F85F27E55CB0B91B0082BD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -272,6 +331,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B591945825CED92D00F96136 /* Build configuration list for PBXNativeTarget "GJFitness" */;
 			buildPhases = (
+				5D054BA9B2C8A29E90B1DF02 /* [CP] Check Pods Manifest.lock */,
 				B591942A25CED92C00F96136 /* Sources */,
 				B591942B25CED92C00F96136 /* Frameworks */,
 				B591942C25CED92C00F96136 /* Resources */,
@@ -289,6 +349,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B591945B25CED92D00F96136 /* Build configuration list for PBXNativeTarget "GJFitnessTests" */;
 			buildPhases = (
+				13871599ADB7283B887B7E81 /* [CP] Check Pods Manifest.lock */,
 				B591944025CED92D00F96136 /* Sources */,
 				B591944125CED92D00F96136 /* Frameworks */,
 				B591944225CED92D00F96136 /* Resources */,
@@ -307,6 +368,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B591945E25CED92D00F96136 /* Build configuration list for PBXNativeTarget "GJFitnessUITests" */;
 			buildPhases = (
+				191287003694A200D10367B5 /* [CP] Check Pods Manifest.lock */,
 				B591944B25CED92D00F96136 /* Sources */,
 				B591944C25CED92D00F96136 /* Frameworks */,
 				B591944D25CED92D00F96136 /* Resources */,
@@ -391,6 +453,75 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		13871599ADB7283B887B7E81 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GJFitnessTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		191287003694A200D10367B5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GJFitness-GJFitnessUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5D054BA9B2C8A29E90B1DF02 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GJFitness-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B591942A25CED92C00F96136 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -410,6 +541,7 @@
 				1A89FE6525D255BA00A43667 /* ClassListCell.swift in Sources */,
 				B591943225CED92C00F96136 /* AppDelegate.swift in Sources */,
 				B591947225CEFE3200F96136 /* BookTableController.swift in Sources */,
+				1A9D993A25E4E4A900784990 /* TrainerViewController.swift in Sources */,
 				1A89FE5825D254ED00A43667 /* ClassListViewController.swift in Sources */,
 				B5F9DAF225D0133800A6FDEA /* BookViewCell.swift in Sources */,
 				1AC9563225D85B650014D200 /* RoomNumberCell.swift in Sources */,
@@ -589,6 +721,7 @@
 		};
 		B591945925CED92D00F96136 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA43EF46869AC954D9DBB9F5 /* Pods-GJFitness.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -609,6 +742,7 @@
 		};
 		B591945A25CED92D00F96136 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC14C5B1B6AFFD55A63E6867 /* Pods-GJFitness.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -629,6 +763,7 @@
 		};
 		B591945C25CED92D00F96136 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71D84C2E9290F044DD9AD1B2 /* Pods-GJFitnessTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -651,6 +786,7 @@
 		};
 		B591945D25CED92D00F96136 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4659D89550F0594767E2C15 /* Pods-GJFitnessTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -673,6 +809,7 @@
 		};
 		B591945F25CED92D00F96136 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90D46247924509E533D86B79 /* Pods-GJFitness-GJFitnessUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -693,6 +830,7 @@
 		};
 		B591946025CED92D00F96136 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 963F4289623FD7F552FD82F2 /* Pods-GJFitness-GJFitnessUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

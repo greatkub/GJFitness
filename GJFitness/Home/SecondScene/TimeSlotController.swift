@@ -109,11 +109,8 @@ extension TimeSlotController: UITableViewDataSource, UITableViewDelegate{
        // cell.timeslots = timeDisplay2d[index]
         
         cell.timeslots = timeDisplay3d[selected][index]
-        
         cell.timeslotsColor = timeDisplayColor[selected][index]
-        
         cell.room.text = items[index].roomName
-        
         cell.trainer.text = items[index].roomTrainer
         
         

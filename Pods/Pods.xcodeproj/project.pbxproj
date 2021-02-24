@@ -1,0 +1,755 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0DC2D5B377784E3459F0D8C9F9440C65 /* Pods-GJFitness-GJFitnessUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 746A6853DF0DB5427FA2D2AAF671723F /* Pods-GJFitness-GJFitnessUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		422D9FB2A8C56CDB077BDFA9FA7EB190 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		48928CD461CDAFB77FFBA82718011F8C /* Pods-GJFitness-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9468D7E0D9DCF6067C05CCE0F98BDCCF /* Pods-GJFitness-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4D645F945964762F21799461EC1CC4EB /* Pods-GJFitness-GJFitnessUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CD76DCBFF141ABE0E3459B0888FE5C92 /* Pods-GJFitness-GJFitnessUITests-dummy.m */; };
+		7E1D5F4D6B4F1D50E04E455ABC32A38E /* Pods-GJFitnessTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D54680CE8EC5D162639E9293FBA114D /* Pods-GJFitnessTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8DCB3414EC41057914A90E51D3406DBC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		906C3A6D4BF617CB943FCBFE7173E177 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		CD590B87A7FBB5CD1A1C44987BA0FBB1 /* Pods-GJFitnessTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D537EEF9E3AFD44329DF3FDE13D9FD4 /* Pods-GJFitnessTests-dummy.m */; };
+		DBFC551A410C9BB19441C50CB29430FE /* Pods-GJFitness-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B326B1E68A4EB12EFDB8E7D071D392 /* Pods-GJFitness-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		67075EC7AEDE1C2F5A71BD5BBB2161F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 144523BB99F58EFA6BC0C9A264886F97;
+			remoteInfo = "Pods-GJFitness";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0BD918663B4A89D4907DE36E9E690A23 /* Pods-GJFitnessTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GJFitnessTests-Info.plist"; sourceTree = "<group>"; };
+		1CD50A7732C288A768FD7F28BB673148 /* Pods-GJFitness-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GJFitness-acknowledgements.plist"; sourceTree = "<group>"; };
+		1EA8AD2AE73F07CBD29D31A40266674D /* Pods-GJFitness-GJFitnessUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GJFitness-GJFitnessUITests-Info.plist"; sourceTree = "<group>"; };
+		2A79668F430143903DD4CC8BCE69BEC2 /* Pods-GJFitness.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GJFitness.modulemap"; sourceTree = "<group>"; };
+		51F0FE4D091402EE758928DFAAE4815C /* Pods-GJFitness-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GJFitness-Info.plist"; sourceTree = "<group>"; };
+		5C650F537048D45EB38AFA64BBE5C46E /* Pods-GJFitnessTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GJFitnessTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		5D61639549660FB7C9397E061B7E81A8 /* Pods-GJFitness-GJFitnessUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GJFitness-GJFitnessUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		65E861DF89138447EAD4C1A620D6D418 /* Pods-GJFitness-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GJFitness-acknowledgements.markdown"; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		746A6853DF0DB5427FA2D2AAF671723F /* Pods-GJFitness-GJFitnessUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GJFitness-GJFitnessUITests-umbrella.h"; sourceTree = "<group>"; };
+		77B9187D492BCDF3153FFCD8EFE6D89E /* Pods-GJFitnessTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GJFitnessTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		7862871DA3A388DE33D9FB79AB7F8182 /* Pods-GJFitness.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GJFitness.debug.xcconfig"; sourceTree = "<group>"; };
+		9468D7E0D9DCF6067C05CCE0F98BDCCF /* Pods-GJFitness-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GJFitness-umbrella.h"; sourceTree = "<group>"; };
+		968A1E641E4EF33F4D7754BB1ABCF138 /* Pods-GJFitnessTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GJFitnessTests.release.xcconfig"; sourceTree = "<group>"; };
+		9D537EEF9E3AFD44329DF3FDE13D9FD4 /* Pods-GJFitnessTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GJFitnessTests-dummy.m"; sourceTree = "<group>"; };
+		9D54680CE8EC5D162639E9293FBA114D /* Pods-GJFitnessTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GJFitnessTests-umbrella.h"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A0A5868D8D843FAF488812D1EA41921C /* Pods_GJFitnessTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_GJFitnessTests.framework; path = "Pods-GJFitnessTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE08E935BE3FD2353F41D3E791229FE9 /* Pods-GJFitnessTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GJFitnessTests.modulemap"; sourceTree = "<group>"; };
+		C8C766E80EC15B2A9D8B8E61DF439CCD /* Pods_GJFitness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_GJFitness.framework; path = "Pods-GJFitness.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB27DADB8DD19F2F7B82AE0F92F0C5F4 /* Pods-GJFitness-GJFitnessUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GJFitness-GJFitnessUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		CD76DCBFF141ABE0E3459B0888FE5C92 /* Pods-GJFitness-GJFitnessUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GJFitness-GJFitnessUITests-dummy.m"; sourceTree = "<group>"; };
+		DE986C25E91829470753F94E74DB5F1F /* Pods-GJFitness-GJFitnessUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GJFitness-GJFitnessUITests.modulemap"; sourceTree = "<group>"; };
+		E81170CF8224534A9A02DAB5818C4287 /* Pods_GJFitness_GJFitnessUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_GJFitness_GJFitnessUITests.framework; path = "Pods-GJFitness-GJFitnessUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0D5C9A48E1E425A170B9F5AB615A610 /* Pods-GJFitness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GJFitness.release.xcconfig"; sourceTree = "<group>"; };
+		F28091B9711ECC20773BA9686B832654 /* Pods-GJFitnessTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GJFitnessTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F3023397064402697401CE9B75DCE035 /* Pods-GJFitness-GJFitnessUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GJFitness-GJFitnessUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F8B326B1E68A4EB12EFDB8E7D071D392 /* Pods-GJFitness-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GJFitness-dummy.m"; sourceTree = "<group>"; };
+		F91E1B3B529FD1E91176DECAEBEBDF9C /* Pods-GJFitness-GJFitnessUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GJFitness-GJFitnessUITests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7CB48DC19F454759564208B4787E7B36 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				422D9FB2A8C56CDB077BDFA9FA7EB190 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2124978C1F8DB28F3E03B786AB5D385 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DCB3414EC41057914A90E51D3406DBC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFFBB2248FF1A3BD4B8E9DBE2DA67C5F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				906C3A6D4BF617CB943FCBFE7173E177 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		16E6389E84FEF59F5A9A68CA4A60F3A5 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				FB6C74641663A41552C4A508F97EBC42 /* Pods-GJFitness */,
+				E17C24A36F5201E5763FD204EBDA4484 /* Pods-GJFitness-GJFitnessUITests */,
+				DA00178D081E4FBD09E82ECC8FA82BFA /* Pods-GJFitnessTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		A3CEF95A92568AE517DDACA3F1A74F12 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C8C766E80EC15B2A9D8B8E61DF439CCD /* Pods_GJFitness.framework */,
+				E81170CF8224534A9A02DAB5818C4287 /* Pods_GJFitness_GJFitnessUITests.framework */,
+				A0A5868D8D843FAF488812D1EA41921C /* Pods_GJFitnessTests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				A3CEF95A92568AE517DDACA3F1A74F12 /* Products */,
+				16E6389E84FEF59F5A9A68CA4A60F3A5 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DA00178D081E4FBD09E82ECC8FA82BFA /* Pods-GJFitnessTests */ = {
+			isa = PBXGroup;
+			children = (
+				AE08E935BE3FD2353F41D3E791229FE9 /* Pods-GJFitnessTests.modulemap */,
+				5C650F537048D45EB38AFA64BBE5C46E /* Pods-GJFitnessTests-acknowledgements.markdown */,
+				77B9187D492BCDF3153FFCD8EFE6D89E /* Pods-GJFitnessTests-acknowledgements.plist */,
+				9D537EEF9E3AFD44329DF3FDE13D9FD4 /* Pods-GJFitnessTests-dummy.m */,
+				0BD918663B4A89D4907DE36E9E690A23 /* Pods-GJFitnessTests-Info.plist */,
+				9D54680CE8EC5D162639E9293FBA114D /* Pods-GJFitnessTests-umbrella.h */,
+				F28091B9711ECC20773BA9686B832654 /* Pods-GJFitnessTests.debug.xcconfig */,
+				968A1E641E4EF33F4D7754BB1ABCF138 /* Pods-GJFitnessTests.release.xcconfig */,
+			);
+			name = "Pods-GJFitnessTests";
+			path = "Target Support Files/Pods-GJFitnessTests";
+			sourceTree = "<group>";
+		};
+		E17C24A36F5201E5763FD204EBDA4484 /* Pods-GJFitness-GJFitnessUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DE986C25E91829470753F94E74DB5F1F /* Pods-GJFitness-GJFitnessUITests.modulemap */,
+				5D61639549660FB7C9397E061B7E81A8 /* Pods-GJFitness-GJFitnessUITests-acknowledgements.markdown */,
+				CB27DADB8DD19F2F7B82AE0F92F0C5F4 /* Pods-GJFitness-GJFitnessUITests-acknowledgements.plist */,
+				CD76DCBFF141ABE0E3459B0888FE5C92 /* Pods-GJFitness-GJFitnessUITests-dummy.m */,
+				1EA8AD2AE73F07CBD29D31A40266674D /* Pods-GJFitness-GJFitnessUITests-Info.plist */,
+				746A6853DF0DB5427FA2D2AAF671723F /* Pods-GJFitness-GJFitnessUITests-umbrella.h */,
+				F3023397064402697401CE9B75DCE035 /* Pods-GJFitness-GJFitnessUITests.debug.xcconfig */,
+				F91E1B3B529FD1E91176DECAEBEBDF9C /* Pods-GJFitness-GJFitnessUITests.release.xcconfig */,
+			);
+			name = "Pods-GJFitness-GJFitnessUITests";
+			path = "Target Support Files/Pods-GJFitness-GJFitnessUITests";
+			sourceTree = "<group>";
+		};
+		FB6C74641663A41552C4A508F97EBC42 /* Pods-GJFitness */ = {
+			isa = PBXGroup;
+			children = (
+				2A79668F430143903DD4CC8BCE69BEC2 /* Pods-GJFitness.modulemap */,
+				65E861DF89138447EAD4C1A620D6D418 /* Pods-GJFitness-acknowledgements.markdown */,
+				1CD50A7732C288A768FD7F28BB673148 /* Pods-GJFitness-acknowledgements.plist */,
+				F8B326B1E68A4EB12EFDB8E7D071D392 /* Pods-GJFitness-dummy.m */,
+				51F0FE4D091402EE758928DFAAE4815C /* Pods-GJFitness-Info.plist */,
+				9468D7E0D9DCF6067C05CCE0F98BDCCF /* Pods-GJFitness-umbrella.h */,
+				7862871DA3A388DE33D9FB79AB7F8182 /* Pods-GJFitness.debug.xcconfig */,
+				F0D5C9A48E1E425A170B9F5AB615A610 /* Pods-GJFitness.release.xcconfig */,
+			);
+			name = "Pods-GJFitness";
+			path = "Target Support Files/Pods-GJFitness";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0827434F662EE56DF6F977DDAF48B40F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48928CD461CDAFB77FFBA82718011F8C /* Pods-GJFitness-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		970E090D4F8E3D925D41E504E20D9360 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E1D5F4D6B4F1D50E04E455ABC32A38E /* Pods-GJFitnessTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1868AB26C94343AA6D1524896869B02 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DC2D5B377784E3459F0D8C9F9440C65 /* Pods-GJFitness-GJFitnessUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0C85AABC87C6902354262F6D004F7F32 /* Pods-GJFitnessTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D4649FE0FD9094CE9E01909E64B5AFA /* Build configuration list for PBXNativeTarget "Pods-GJFitnessTests" */;
+			buildPhases = (
+				970E090D4F8E3D925D41E504E20D9360 /* Headers */,
+				FAFB3ADEE1225FE9AAB07354ACB7AA6D /* Sources */,
+				AFFBB2248FF1A3BD4B8E9DBE2DA67C5F /* Frameworks */,
+				54A92FCB097104916DAAF6A156C7B898 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7EAA644D51FEC1890987004BCC16BCF7 /* PBXTargetDependency */,
+			);
+			name = "Pods-GJFitnessTests";
+			productName = "Pods-GJFitnessTests";
+			productReference = A0A5868D8D843FAF488812D1EA41921C /* Pods_GJFitnessTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		144523BB99F58EFA6BC0C9A264886F97 /* Pods-GJFitness */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8C08C7AF579CBE327F89C9E0244CEC04 /* Build configuration list for PBXNativeTarget "Pods-GJFitness" */;
+			buildPhases = (
+				0827434F662EE56DF6F977DDAF48B40F /* Headers */,
+				A01C9AADF78B06E179707F72B719AB38 /* Sources */,
+				A2124978C1F8DB28F3E03B786AB5D385 /* Frameworks */,
+				2EF2A610BCDD1B27089FF63DB2B81F28 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-GJFitness";
+			productName = "Pods-GJFitness";
+			productReference = C8C766E80EC15B2A9D8B8E61DF439CCD /* Pods_GJFitness.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C389486B4BAFF5124D8EBA016F12EC64 /* Pods-GJFitness-GJFitnessUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B9A72C906D249074842C0520C5DD4E8A /* Build configuration list for PBXNativeTarget "Pods-GJFitness-GJFitnessUITests" */;
+			buildPhases = (
+				E1868AB26C94343AA6D1524896869B02 /* Headers */,
+				0B9F4444B6464C794D878A817D551D1A /* Sources */,
+				7CB48DC19F454759564208B4787E7B36 /* Frameworks */,
+				375704AC0C591E46889422A01FBFE41B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-GJFitness-GJFitnessUITests";
+			productName = "Pods-GJFitness-GJFitnessUITests";
+			productReference = E81170CF8224534A9A02DAB5818C4287 /* Pods_GJFitness_GJFitnessUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = A3CEF95A92568AE517DDACA3F1A74F12 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				144523BB99F58EFA6BC0C9A264886F97 /* Pods-GJFitness */,
+				C389486B4BAFF5124D8EBA016F12EC64 /* Pods-GJFitness-GJFitnessUITests */,
+				0C85AABC87C6902354262F6D004F7F32 /* Pods-GJFitnessTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2EF2A610BCDD1B27089FF63DB2B81F28 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		375704AC0C591E46889422A01FBFE41B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		54A92FCB097104916DAAF6A156C7B898 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0B9F4444B6464C794D878A817D551D1A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D645F945964762F21799461EC1CC4EB /* Pods-GJFitness-GJFitnessUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A01C9AADF78B06E179707F72B719AB38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBFC551A410C9BB19441C50CB29430FE /* Pods-GJFitness-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAFB3ADEE1225FE9AAB07354ACB7AA6D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD590B87A7FBB5CD1A1C44987BA0FBB1 /* Pods-GJFitnessTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7EAA644D51FEC1890987004BCC16BCF7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-GJFitness";
+			target = 144523BB99F58EFA6BC0C9A264886F97 /* Pods-GJFitness */;
+			targetProxy = 67075EC7AEDE1C2F5A71BD5BBB2161F0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		5642ADDACCCF6D9DC017E679789BCD14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0D5C9A48E1E425A170B9F5AB615A610 /* Pods-GJFitness.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-GJFitness/Pods-GJFitness-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-GJFitness/Pods-GJFitness.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6BFB68A8BD5A3127331552D02445525D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 968A1E641E4EF33F4D7754BB1ABCF138 /* Pods-GJFitnessTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-GJFitnessTests/Pods-GJFitnessTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-GJFitnessTests/Pods-GJFitnessTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		79BA3CAF26F305257DC21D62AC02CC65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F28091B9711ECC20773BA9686B832654 /* Pods-GJFitnessTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-GJFitnessTests/Pods-GJFitnessTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-GJFitnessTests/Pods-GJFitnessTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		963BD7925C123C698115AE45CD264E7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		B6A6899E9C4DBDB9D6C0AA45941B3A52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3023397064402697401CE9B75DCE035 /* Pods-GJFitness-GJFitnessUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-GJFitness-GJFitnessUITests/Pods-GJFitness-GJFitnessUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-GJFitness-GJFitnessUITests/Pods-GJFitness-GJFitnessUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C7940E3A3D963030BE871BCA775E1BF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7862871DA3A388DE33D9FB79AB7F8182 /* Pods-GJFitness.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-GJFitness/Pods-GJFitness-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-GJFitness/Pods-GJFitness.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E35964F1F815899B6134D775DC122A12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F91E1B3B529FD1E91176DECAEBEBDF9C /* Pods-GJFitness-GJFitnessUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-GJFitness-GJFitnessUITests/Pods-GJFitness-GJFitnessUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-GJFitness-GJFitnessUITests/Pods-GJFitness-GJFitnessUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E8256E1B894D64F9B6D6E0F27C2CABC5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0D4649FE0FD9094CE9E01909E64B5AFA /* Build configuration list for PBXNativeTarget "Pods-GJFitnessTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79BA3CAF26F305257DC21D62AC02CC65 /* Debug */,
+				6BFB68A8BD5A3127331552D02445525D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8256E1B894D64F9B6D6E0F27C2CABC5 /* Debug */,
+				963BD7925C123C698115AE45CD264E7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8C08C7AF579CBE327F89C9E0244CEC04 /* Build configuration list for PBXNativeTarget "Pods-GJFitness" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7940E3A3D963030BE871BCA775E1BF1 /* Debug */,
+				5642ADDACCCF6D9DC017E679789BCD14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B9A72C906D249074842C0520C5DD4E8A /* Build configuration list for PBXNativeTarget "Pods-GJFitness-GJFitnessUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6A6899E9C4DBDB9D6C0AA45941B3A52 /* Debug */,
+				E35964F1F815899B6134D775DC122A12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

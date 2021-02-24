@@ -3,8 +3,6 @@
 //  GJFitness
 //
 //  Created by James S on 14/2/2564 BE.
-//
-// change jame problem
 
 import UIKit
 
