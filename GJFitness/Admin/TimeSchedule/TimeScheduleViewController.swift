@@ -54,6 +54,30 @@ class TimeScheduleViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(cellTimeClicked(notification:)), name: .timeCellClicked, object: nil)
         
     }
+    @IBAction func addTrainerCell(_ sender: Any) {
+        promptForAnswer()
+    }
+    
+    private func promptForAnswer() {
+        let ac = UIAlertController(title: "Enter trainer name", message: nil, preferredStyle: .alert)
+        
+        ac.addTextField { (textField) in
+            textField.placeholder = "Trainer name"
+        }
+        
+        let addAction = UIAlertAction(title: "Add", style: .default) { (action:UIAlertAction) in
+            
+            let tfTrainerName = ac.textFields![0] as UITextField;
+            UserDefaults.standard.set(tfTrainerName.text, forKey: "Trainer_name")
+            
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        ac.addAction(addAction)
+        ac.addAction(cancelAction)
+        present(ac, animated: true)
+    }
     
     @objc func cellTimeClicked (notification: NSNotification) {
         if let data = notification.object as? (Int, String) {
@@ -80,6 +104,13 @@ class TimeScheduleViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
+    }
+    
+    @IBAction func editRoom(_ sender: UIButton) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Admin", bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "EditRoomViewController") as? EditRoomViewController
+        vc?.modalPresentationStyle = .popover
+        self.present(vc!, animated: true, completion: nil)
     }
     
     @IBAction func deleteRoom(_ sender: UIButton) {
@@ -115,7 +146,7 @@ extension TimeScheduleViewController: UITableViewDelegate, UITableViewDataSource
         let cell = tableView.dequeueReusableCell(withIdentifier: "room_cell", for: indexPath) as! RoomCell
         cell.tag = index
         
-//        cell.tag = indexPath.row
+        //        cell.tag = indexPath.row
         
         cell.timeslotsList = time3d[selected][index]
         cell.roomNumber.text = rooms[index].roomName

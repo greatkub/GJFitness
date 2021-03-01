@@ -40,6 +40,18 @@ class ClassListViewController: UIViewController {
         }
     }
     
+    @IBAction func deleteAll(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Delete All", message: "Do you confirm deleting all classes?", preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { action in
+            self.items.removeAll()
+            self.classCollectionView.reloadData()
+        
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(alert, animated: true)
+    }
 }
 
 extension ClassListViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout  {

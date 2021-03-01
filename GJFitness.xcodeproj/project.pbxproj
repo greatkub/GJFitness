@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A27BED325EBD38700BBC16E /* EditRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A27BED225EBD38700BBC16E /* EditRoomViewController.swift */; };
 		1A2C7E8A25D8E0A000639591 /* RoomTimeSlotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2C7E8925D8E0A000639591 /* RoomTimeSlotCell.swift */; };
 		1A87385F25D5979E00B9DAF7 /* CreateClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A87385E25D5979E00B9DAF7 /* CreateClassViewController.swift */; };
 		1A89FE5325D250DA00A43667 /* Admin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A89FE5225D250DA00A43667 /* Admin.storyboard */; };
@@ -58,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A27BED225EBD38700BBC16E /* EditRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRoomViewController.swift; sourceTree = "<group>"; };
 		1A2C7E8925D8E0A000639591 /* RoomTimeSlotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTimeSlotCell.swift; sourceTree = "<group>"; };
 		1A87385E25D5979E00B9DAF7 /* CreateClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateClassViewController.swift; sourceTree = "<group>"; };
 		1A89FE5225D250DA00A43667 /* Admin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Admin.storyboard; sourceTree = "<group>"; };
@@ -131,9 +133,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A27BED125EBD2EE00BBC16E /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				1A27BED225EBD38700BBC16E /* EditRoomViewController.swift */,
+			);
+			path = Edit;
+			sourceTree = "<group>";
+		};
 		1A89FE5125D24C7300A43667 /* Admin */ = {
 			isa = PBXGroup;
 			children = (
+				1A27BED125EBD2EE00BBC16E /* Edit */,
 				1A9D993825E4E48400784990 /* Trainer */,
 				1ACF2C1625E3CF2E00D05E95 /* Member */,
 				1ADE3D9125D641DE0050B470 /* TimeSchedule */,
@@ -547,6 +558,7 @@
 				1AC9563225D85B650014D200 /* RoomNumberCell.swift in Sources */,
 				B5F9DAF725D0615100A6FDEA /* TicketViewController.swift in Sources */,
 				B591943425CED92C00F96136 /* SceneDelegate.swift in Sources */,
+				1A27BED325EBD38700BBC16E /* EditRoomViewController.swift in Sources */,
 				B591946D25CEE0F400F96136 /* ClassViewCell.swift in Sources */,
 				1A87385F25D5979E00B9DAF7 /* CreateClassViewController.swift in Sources */,
 			);

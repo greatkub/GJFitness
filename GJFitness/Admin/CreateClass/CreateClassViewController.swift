@@ -32,6 +32,12 @@ class CreateClassViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet var roomNumberCollectionView: UICollectionView!
     @IBOutlet var roomTimeSlot:UICollectionView!
     
+    @IBOutlet var enterClassName: UITextField!
+    @IBOutlet var enterTrainerName: UITextField!
+    @IBOutlet var enterPeopleNo: UITextField!
+    
+    var stringClassName = String()
+    
     var roomNumberItems: [RoomNumberItem] = []
     var roomTimeSlots: [TimeItem] = []
     
@@ -118,7 +124,7 @@ class CreateClassViewController: UIViewController, UIImagePickerControllerDelega
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker))
         
-        toolbar.setItems([doneButton, spaceButton, cancelButton], animated: true)
+        toolbar.setItems([cancelButton, spaceButton, doneButton], animated: true)
         
         tfDatePicker.inputAccessoryView = toolbar
         tfDatePicker.inputView = datePicker
@@ -137,6 +143,13 @@ class CreateClassViewController: UIViewController, UIImagePickerControllerDelega
         self.view.endEditing(true)
     }
     
+    @IBAction func cretedDone(_ sender: Any) {
+//        let storyboard: UIStoryboard = UIStoryboard(name: "Admin", bundle: nil)
+//        let vc = storyboard.instantiateViewController(withIdentifier: "") as? CreateClassViewController
+//        vc?.enterClassName.text = stringClassName
+        
+        dismiss(animated: true, completion: nil)
+    }
 }
 
 extension CreateClassViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {

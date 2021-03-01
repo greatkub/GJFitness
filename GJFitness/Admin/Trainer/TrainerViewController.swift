@@ -34,14 +34,14 @@ class TrainerViewController: UIViewController {
             items.append(TrainerItem(trainerName: tableData[i].title, trainerPhone: tableData[i].subtitle))
             
         }
-    
+        
     }
     
     @IBAction func addTrainer(_ sender: Any) {
         promptForAnswer()
     }
     
-    func promptForAnswer() {
+    private func promptForAnswer() {
         let ac = UIAlertController(title: "Enter trainer name and phone numeber", message: nil, preferredStyle: .alert)
         
         ac.addTextField { (textField) in
@@ -50,11 +50,9 @@ class TrainerViewController: UIViewController {
         
         ac.addTextField { (textField) in
             textField.placeholder = "Phone number"
-            textField.isSecureTextEntry = true
         }
         
         let addAction = UIAlertAction(title: "Add", style: .default) { (action:UIAlertAction) in
-            //This is called when the user presses the login button.
             
             let tfTrainerName = ac.textFields![0] as UITextField;
             UserDefaults.standard.set(tfTrainerName.text, forKey: "Trainer_name")
@@ -89,7 +87,7 @@ extension TrainerViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-    
+        
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
