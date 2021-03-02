@@ -30,7 +30,7 @@ class CreateClassViewController: UIViewController, UIImagePickerControllerDelega
     let datePicker = UIDatePicker()
     
     @IBOutlet var roomNumberCollectionView: UICollectionView!
-    @IBOutlet var roomTimeSlot:UICollectionView!
+    @IBOutlet var roomTimeSlot: UICollectionView!
     
     @IBOutlet var enterClassName: UITextField!
     @IBOutlet var enterTrainerName: UITextField!

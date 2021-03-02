@@ -52,28 +52,25 @@ class TimeScheduleViewController: UIViewController {
         }
         
         NotificationCenter.default.addObserver(self, selector: #selector(cellTimeClicked(notification:)), name: .timeCellClicked, object: nil)
-        
     }
+    
     @IBAction func addTrainerCell(_ sender: Any) {
         promptForAnswer()
     }
     
     private func promptForAnswer() {
         let ac = UIAlertController(title: "Enter trainer name", message: nil, preferredStyle: .alert)
-        
         ac.addTextField { (textField) in
             textField.placeholder = "Trainer name"
         }
         
         let addAction = UIAlertAction(title: "Add", style: .default) { (action:UIAlertAction) in
-            
             let tfTrainerName = ac.textFields![0] as UITextField;
             UserDefaults.standard.set(tfTrainerName.text, forKey: "Trainer_name")
             
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        
         ac.addAction(addAction)
         ac.addAction(cancelAction)
         present(ac, animated: true)
@@ -98,7 +95,6 @@ class TimeScheduleViewController: UIViewController {
                 //                vc.myRoomName = arrayRoomName[indexPath.item]
                 self.present(vc, animated: true, completion: nil)
                 
-                print("Kuy")
             }))
             
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))

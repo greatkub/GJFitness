@@ -19,10 +19,10 @@ class TrainerItem {
 
 class TrainerViewController: UIViewController {
     var tableData = [
-        (title:"Krittamet Ch", subtitle: "095-123-3333"),
+        (title:"Krittamet Ch", subtitle: "092-315-2166"),
         (title:"James", subtitle: "035-123-333"),
-        (title:"Yong", subtitle: "091-123-323"),
-        (title:"Tiew", subtitle: "095-123-333")
+        (title:"Yong", subtitle: "085-084-8110"),
+        (title:"Tiew", subtitle: "095-772-3363")
     ]
     
     var items:[TrainerItem] = []
@@ -68,6 +68,16 @@ class TrainerViewController: UIViewController {
         ac.addAction(cancelAction)
         present(ac, animated: true)
     }
+    
+    private func callNumber(phoneNumber: String) {
+      if let phoneCallURL = URL(string: "tel://\(phoneNumber)") {
+        let application:UIApplication = UIApplication.shared
+        if (application.canOpenURL(phoneCallURL)) {
+            application.open(phoneCallURL, options: [:], completionHandler: nil)
+        }
+      }
+    }
+    
 }
 
 extension TrainerViewController: UITableViewDataSource, UITableViewDelegate {
@@ -87,6 +97,7 @@ extension TrainerViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        callNumber(phoneNumber: tableData[indexPath.row].subtitle)
         
     }
     
