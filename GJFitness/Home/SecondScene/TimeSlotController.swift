@@ -80,7 +80,18 @@ class TimeSlotController: UIViewController {
         if let data = notification.object as? String {
             let alert = UIAlertController(title: "Are you confirm to book?", message: "\(data)", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
-                
+                //picture
+                //classname
+                //roomname
+                //trainer
+                //time
+//                let vc = self.storyboard?.instantiateViewController(identifier: "timeSlot") as! TimeSlotController
+//                //
+//                vc.myString = arrayClasses[indexPath.item]
+//                vc.myCalen = calendarDisplay
+//                vc.timeLimit = timeLimit
+//                vc.member = numGroup
+//                vc.selected = indexPath.item
                 
                 print("ok")
             }))
@@ -88,6 +99,8 @@ class TimeSlotController: UIViewController {
             self.present(alert, animated: true, completion: nil)
         }
     }
+    
+    
     
 //    @objc func bookSuccess(notification: NSNotification) {
 //        if let data = notification.object as? String {
@@ -124,9 +137,9 @@ extension TimeSlotController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
          let index = indexPath.row
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "roomCell", for: indexPath) as! RoomViewCell
 
+    
        // cell.timeslots = timeDisplay2d[index]
         
         cell.timeslots = timeDisplay3d[selected][index]
@@ -141,9 +154,10 @@ extension TimeSlotController: UITableViewDataSource, UITableViewDelegate{
         return cell
     }
     
+   
+    
   
-    
-    
+  
     
 //    //new add
 //    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

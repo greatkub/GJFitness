@@ -21,6 +21,9 @@ class RoomViewCell: UITableViewCell {
     var timeslotsColor:[UIColor] = []
     var timeslots: [String] = []
     
+    //vc
+    var roomtable = String()
+    
     override func awakeFromNib() {
         //        print(timeDisplay.count)
         
@@ -74,7 +77,7 @@ extension RoomViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Collection view at row \(collectionView.tag) selected index path \(timeslots[indexPath[1]])")
+        print("Collection view at row \(collectionView.tag) selected index path \(timeslots[indexPath.row])")
         
         NotificationCenter.default.post(name: .roomCellClicked, object: timeslots[indexPath.row])
         

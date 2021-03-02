@@ -40,6 +40,13 @@ class BookTableController: UITableViewController {
     var trainerDisplay = ["Krittamet Ch.", "Sanpawat S.", "Cleo P."]
     var timeDisplay = ["10:00 - 11:00", "12:00 - 13:00", "14:00 - 15:00"]
     
+    //vc
+    var book_pictureAndClassname = String()
+    var book_calendar = String()
+    var book_roomName = String()
+    var book_trainer = String()
+    var book_time = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
