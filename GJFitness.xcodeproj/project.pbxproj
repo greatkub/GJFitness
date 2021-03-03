@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A0F7BE225EE1C940050F92D /* EditRoomNumberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0F7BE125EE1C940050F92D /* EditRoomNumberCell.swift */; };
+		1A0F7BE725EE1E510050F92D /* EditRoomTimeSlotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0F7BE625EE1E510050F92D /* EditRoomTimeSlotCell.swift */; };
 		1A27BED325EBD38700BBC16E /* EditRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A27BED225EBD38700BBC16E /* EditRoomViewController.swift */; };
 		1A2C7E8A25D8E0A000639591 /* RoomTimeSlotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2C7E8925D8E0A000639591 /* RoomTimeSlotCell.swift */; };
 		1A87385F25D5979E00B9DAF7 /* CreateClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A87385E25D5979E00B9DAF7 /* CreateClassViewController.swift */; };
@@ -59,6 +61,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A0F7BE125EE1C940050F92D /* EditRoomNumberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRoomNumberCell.swift; sourceTree = "<group>"; };
+		1A0F7BE625EE1E510050F92D /* EditRoomTimeSlotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRoomTimeSlotCell.swift; sourceTree = "<group>"; };
 		1A27BED225EBD38700BBC16E /* EditRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRoomViewController.swift; sourceTree = "<group>"; };
 		1A2C7E8925D8E0A000639591 /* RoomTimeSlotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTimeSlotCell.swift; sourceTree = "<group>"; };
 		1A87385E25D5979E00B9DAF7 /* CreateClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateClassViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +141,8 @@
 			isa = PBXGroup;
 			children = (
 				1A27BED225EBD38700BBC16E /* EditRoomViewController.swift */,
+				1A0F7BE125EE1C940050F92D /* EditRoomNumberCell.swift */,
+				1A0F7BE625EE1E510050F92D /* EditRoomTimeSlotCell.swift */,
 			);
 			path = Edit;
 			sourceTree = "<group>";
@@ -553,6 +559,7 @@
 				B591943225CED92C00F96136 /* AppDelegate.swift in Sources */,
 				B591947225CEFE3200F96136 /* BookTableController.swift in Sources */,
 				1A9D993A25E4E4A900784990 /* TrainerViewController.swift in Sources */,
+				1A0F7BE225EE1C940050F92D /* EditRoomNumberCell.swift in Sources */,
 				1A89FE5825D254ED00A43667 /* ClassListViewController.swift in Sources */,
 				B5F9DAF225D0133800A6FDEA /* BookViewCell.swift in Sources */,
 				1AC9563225D85B650014D200 /* RoomNumberCell.swift in Sources */,
@@ -560,6 +567,7 @@
 				B591943425CED92C00F96136 /* SceneDelegate.swift in Sources */,
 				1A27BED325EBD38700BBC16E /* EditRoomViewController.swift in Sources */,
 				B591946D25CEE0F400F96136 /* ClassViewCell.swift in Sources */,
+				1A0F7BE725EE1E510050F92D /* EditRoomTimeSlotCell.swift in Sources */,
 				1A87385F25D5979E00B9DAF7 /* CreateClassViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

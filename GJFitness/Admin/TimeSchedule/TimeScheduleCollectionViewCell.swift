@@ -11,7 +11,7 @@ class TimeScheduleCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        timeslot.textColor = .white
         timeslot.layer.cornerRadius = 5
         timeslot.layer.masksToBounds = true
     }
