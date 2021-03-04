@@ -34,27 +34,53 @@ class BookTableController: UITableViewController {
     var selectedClasses = ""
     var items:[BookItem] = []
 
-    var arrayClasses = ["Weight-training", "Boxing", "Yoga"]
-    var calendarDisplay = "3 January 2021"
-    var arrayRoomName = ["Room1", "Room5", "Room2"]
-    var trainerDisplay = ["Krittamet Ch.", "Sanpawat S.", "Cleo P."]
-    var timeDisplay = ["10:00 - 11:00", "12:00 - 13:00", "14:00 - 15:00"]
+//    var arrayClasses = ["Weight-training", "Boxing", "Yoga"]
+//    var calendarDisplay = "3 January 2021"
+//    var arrayRoomName = ["Room1", "Room5", "Room2"]
+//    var trainerDisplay = ["Krittamet Ch.", "Sanpawat S.", "Cleo P."]
+//    var timeDisplay = ["10:00 - 11:00", "12:00 - 13:00", "14:00 - 15:00"]
     
     //vc
-    var book_pictureAndClassname = String()
-    var book_calendar = String()
-    var book_roomName = String()
-    var book_trainer = String()
-    var book_time = String()
+//    var book_pictureAndClassname = String()
+//    var book_calendar = String()
+//    var book_roomName = String()
+//    var book_trainer = String()
+//    var book_time = String()
+    var book_counttimes = Int()
+    
+    var arr_book_pictureAndClassname = [String]()
+    var arr_book_calendar = [String]()
+    var arr_book_roomName = [String]()
+    var arr_book_trainer = [String]()
+    var arr_book_time = [String]()
+        
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        for i in 0...arrayClasses.count-1 {
-            items.append(BookItem(image:  UIImage(imageLiteralResourceName: arrayClasses[i]), bookclass:arrayClasses[i], calendar: calendarDisplay, room: arrayRoomName[i], trainer: trainerDisplay[i], time: timeDisplay[i]))
+//        arr_book_pictureAndClassname += [book_pictureAndClassname]
+//        arr_book_calendar += [book_calendar]
+//        arr_book_roomName += [book_roomName]
+//        arr_book_trainer += [book_trainer]
+//        arr_book_time += [book_time]
+//
+        if book_counttimes > 0 {
+            for i in 0...book_counttimes-1 {
+
+            items.append(BookItem(image: UIImage(imageLiteralResourceName: arr_book_pictureAndClassname[i])
+                                        , bookclass: arr_book_pictureAndClassname[i]
+                                        , calendar: arr_book_calendar[i]
+                                        , room: arr_book_roomName[i]
+                                        , trainer: arr_book_trainer[i]
+                                        , time: arr_book_time[i]))
+                     
 
 
+            }
+            
         }
+        
      
     }
 
@@ -94,12 +120,20 @@ class BookTableController: UITableViewController {
 
         let vc = self.storyboard?.instantiateViewController(identifier: "ticketDisplay") as! TicketViewController
 //
-        vc.myString = arrayClasses[indexPath.item]
-        vc.myCalen = calendarDisplay
-        vc.myRoomName = arrayRoomName[indexPath.item]
+//        vc.myString = arrayClasses[indexPath.item]
+//        vc.myCalen = calendarDisplay
+//        vc.myRoomName = arrayRoomName[indexPath.item]
+//        self.present(vc, animated: true, completion: nil)
+//            print("You selected row #\(arrayClasses[indexPath.item])!")
+        
+        vc.myString = self.arr_book_pictureAndClassname[indexPath.item]
+        vc.myCalen = self.arr_book_calendar[indexPath.item]
+        vc.myRoomName = self.arr_book_roomName[indexPath.item]
+        
         self.present(vc, animated: true, completion: nil)
-            print("You selected row #\(arrayClasses[indexPath.item])!")
-        }
+        print("upload book to ticket")
+        
+    }
 
 
 }

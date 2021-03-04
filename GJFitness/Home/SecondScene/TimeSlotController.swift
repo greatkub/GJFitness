@@ -40,6 +40,14 @@ class TimeSlotController: UIViewController {
     var member = String()
     var selected = Int()
     
+    //vc
+    var counttimes = 0
+    var book_pictureAndClassname = [String]()
+    var book_calendar = [String]()
+    var book_roomName = [String]()
+    var book_trainer = [String]()
+    var book_time = [String]()
+    
     var items: [RoomItem] = []
 
     var room = ["Room1", "Room5", "Room2"]
@@ -77,23 +85,45 @@ class TimeSlotController: UIViewController {
     }
     
     @objc func cellRoomClicked(notification: NSNotification) {
-        if let data = notification.object as? String {
-            let alert = UIAlertController(title: "Are you confirm to book?", message: "\(data)", preferredStyle: .alert)
+        if let data = notification.object as? (Int, String) {
+            let alert = UIAlertController(title: "Are you confirm to book?", message: "\(room[data.0]) at \(data.1)", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
                 //picture
                 //classname
                 //roomname
                 //trainer
                 //time
-//                let vc = self.storyboard?.instantiateViewController(identifier: "timeSlot") as! TimeSlotController
-//                //
+                let vc = self.storyboard?.instantiateViewController(identifier: "bookDisplay") as! BookTableController
+                self.counttimes += 1
+                self.book_pictureAndClassname += [self.myString]
+                self.book_calendar += [self.myCalen]
+                self.book_roomName += [self.room[data.0]]
+                self.book_trainer += [self.trainer[data.0]]
+                self.book_time += [data.1]
+//                vc.book_pictureAndClassname = self.myString
+//                vc.book_time = data.1
+//                vc.book_trainer = self.trainer[data.0]
+//                vc.book_calendar = self.myCalen
+//                vc.book_roomName = self.room[data.0]
+                vc.book_counttimes = self.counttimes
+                vc.arr_book_pictureAndClassname = self.book_pictureAndClassname
+                vc.arr_book_calendar = self.book_calendar
+                vc.arr_book_roomName = self.book_roomName
+                vc.arr_book_trainer = self.book_trainer
+                vc.arr_book_time = self.book_time
+                
+               
+            
+                self.present(vc, animated: true, completion: nil)
+                    print("upload timeslotVC to bookVC")
+                
 //                vc.myString = arrayClasses[indexPath.item]
 //                vc.myCalen = calendarDisplay
 //                vc.timeLimit = timeLimit
 //                vc.member = numGroup
 //                vc.selected = indexPath.item
                 
-                print("ok")
+                print("Ok \(self.counttimes)")
             }))
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)
@@ -138,7 +168,7 @@ extension TimeSlotController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
          let index = indexPath.row
         let cell = tableView.dequeueReusableCell(withIdentifier: "roomCell", for: indexPath) as! RoomViewCell
-
+        cell.tag = index
     
        // cell.timeslots = timeDisplay2d[index]
         
