@@ -38,7 +38,7 @@
 					<key>UISceneDelegateClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
 					<key>UISceneStoryboardFile</key>
-					<string>Admin</string>
+					<string>Main</string>
 				</dict>
 			</array>
 		</dict>
@@ -66,9 +66,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-        <string>tel</string>
-    </array>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>tel</string>
+	</array>
 </dict>
 </plist>

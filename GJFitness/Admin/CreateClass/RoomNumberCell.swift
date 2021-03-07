@@ -16,6 +16,20 @@ class RoomNumberCell: UICollectionViewCell {
         self.contentView.backgroundColor = .systemGray3
         self.contentView.layer.cornerRadius = 5
         self.contentView.layer.masksToBounds = true
+        
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(cellClickedonlyOnce(notification:)), name: .roomClickedOnlyOnce, object: nil)
+    }
+    
+    @objc func cellClickedonlyOnce (notification: NSNotification) {
+        if let data = notification.object as? Int {
+            if self.tag == data {
+                self.contentView.backgroundColor = .systemYellow
+            } else {
+                self.contentView.backgroundColor = .systemGray3
+            }
+            
+        }
     }
 }
 

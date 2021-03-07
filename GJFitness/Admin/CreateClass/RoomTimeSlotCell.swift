@@ -18,5 +18,8 @@ class RoomTimeSlotCell: UICollectionViewCell {
         self.contentView.backgroundColor = .systemGray3
         self.contentView.layer.cornerRadius = 5
         self.contentView.layer.masksToBounds = true
+        
+
     }
+
 }

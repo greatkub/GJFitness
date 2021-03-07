@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4Zo-Mt-7yA">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -411,10 +412,10 @@
             </objects>
             <point key="canvasLocation" x="1850.7246376811595" y="814.95535714285711"/>
         </scene>
-        <!--Login View Controller-->
+        <!--Login View Controller2-->
         <scene sceneID="8ZE-0N-Cof">
             <objects>
-                <viewController id="4Zo-Mt-7yA" customClass="LoginViewController" customModule="GJFitness" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="4Zo-Mt-7yA" customClass="LoginViewController2" customModule="GJFitness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u7t-IM-rsy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -448,7 +449,7 @@
                                 </constraints>
                                 <state key="normal" title="Sign up"/>
                                 <connections>
-                                    <action selector="goSignUpScreen:" destination="4Zo-Mt-7yA" eventType="touchUpInside" id="HyC-7D-gRp"/>
+                                    <action selector="goSignUpScreen:" destination="4Zo-Mt-7yA" eventType="touchUpInside" id="eNg-ST-esH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U3b-Wj-zcv">
@@ -459,7 +460,7 @@
                                 </constraints>
                                 <state key="normal" title="Sign in"/>
                                 <connections>
-                                    <action selector="login:" destination="4Zo-Mt-7yA" eventType="touchUpInside" id="o8q-kn-M9m"/>
+                                    <action selector="login:" destination="4Zo-Mt-7yA" eventType="touchUpInside" id="Aee-uT-P3v"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -484,21 +485,21 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="logoImageView" destination="VtK-4G-x2J" id="QYe-NW-K0A"/>
-                        <outlet property="passwordField" destination="LOq-d4-P9s" id="tPN-Zh-JEc"/>
-                        <outlet property="signinButton" destination="U3b-Wj-zcv" id="fjc-sI-ycH"/>
-                        <outlet property="signupButton" destination="eYk-cn-xDJ" id="d7u-dx-T89"/>
-                        <outlet property="usernameField" destination="DI6-gs-bpb" id="Wbn-bF-v6L"/>
+                        <outlet property="logoImageView" destination="VtK-4G-x2J" id="26t-Tm-fKx"/>
+                        <outlet property="passwordField" destination="LOq-d4-P9s" id="tXX-SH-LMx"/>
+                        <outlet property="signinButton" destination="U3b-Wj-zcv" id="Obm-hd-l6p"/>
+                        <outlet property="signupButton" destination="eYk-cn-xDJ" id="JJg-0n-Vto"/>
+                        <outlet property="usernameField" destination="DI6-gs-bpb" id="UZx-eJ-h6g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bec-l5-bXv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1101" y="-498"/>
         </scene>
-        <!--Sign Up View Controller-->
+        <!--Sign Up View Controller2-->
         <scene sceneID="4aS-vV-NSx">
             <objects>
-                <viewController storyboardIdentifier="signupScreen" modalPresentationStyle="fullScreen" id="knl-4Q-oOx" customClass="SignUpViewController" customModule="GJFitness" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signupScreen" modalPresentationStyle="fullScreen" id="knl-4Q-oOx" customClass="SignUpViewController2" customModule="GJFitness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kIn-sp-GYR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -577,7 +578,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.95145089289999996" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
-                                    <action selector="backToLogin:" destination="knl-4Q-oOx" eventType="touchUpInside" id="sX9-cO-2bQ"/>
+                                    <action selector="backToLogin:" destination="knl-4Q-oOx" eventType="touchUpInside" id="y2O-rc-bbm"/>
                                     <action selector="backToLogin:" destination="TCh-Vk-f0I" eventType="touchUpInside" id="yi3-H9-c2J"/>
                                     <action selector="goBack:" destination="Ap0-EV-ObS" eventType="touchUpInside" id="sdj-fe-k4G"/>
                                 </connections>
@@ -621,14 +622,14 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="confirmPasswordField" destination="qkX-W1-3re" id="RST-uu-qQ0"/>
-                        <outlet property="emailField" destination="vgi-do-Xoi" id="cO4-pZ-Kg7"/>
-                        <outlet property="firsnameField" destination="kSH-y8-fcu" id="nsr-cp-SKI"/>
-                        <outlet property="lastnameField" destination="mKP-dJ-BAE" id="i8i-9S-qBA"/>
-                        <outlet property="logoImgaeView" destination="Hcq-gI-Y8b" id="NIq-dk-QVB"/>
-                        <outlet property="passwordField" destination="a30-pZ-8HD" id="M1a-kw-5f7"/>
-                        <outlet property="signupButton" destination="Ppc-bf-oMm" id="ogJ-Xw-0pH"/>
-                        <outlet property="usernameField" destination="341-N4-TwA" id="pU7-A6-dLX"/>
+                        <outlet property="confirmPasswordField" destination="qkX-W1-3re" id="PyH-AC-BCv"/>
+                        <outlet property="emailField" destination="vgi-do-Xoi" id="zAb-6P-ihp"/>
+                        <outlet property="firsnameField" destination="kSH-y8-fcu" id="WsU-z3-yko"/>
+                        <outlet property="lastnameField" destination="mKP-dJ-BAE" id="bWe-9R-sOD"/>
+                        <outlet property="logoImgaeView" destination="Hcq-gI-Y8b" id="aN9-a1-XFw"/>
+                        <outlet property="passwordField" destination="a30-pZ-8HD" id="FPG-dO-Udk"/>
+                        <outlet property="signupButton" destination="Ppc-bf-oMm" id="E1A-No-KPf"/>
+                        <outlet property="usernameField" destination="341-N4-TwA" id="0XY-eF-Aa9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qa6-W5-B3M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

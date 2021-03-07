@@ -36,6 +36,8 @@
 		B591946D25CEE0F400F96136 /* ClassViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B591946C25CEE0F400F96136 /* ClassViewCell.swift */; };
 		B591947225CEFE3200F96136 /* BookTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B591947125CEFE3200F96136 /* BookTableController.swift */; };
 		B5A9388F25D242F90082D4F1 /* SlotCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9388E25D242F90082D4F1 /* SlotCollectionViewCell.swift */; };
+		B5C1633D25F107FE001BAA3A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C1633C25F107FE001BAA3A /* SignUpViewController.swift */; };
+		B5C1634225F10860001BAA3A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C1634125F10860001BAA3A /* LoginViewController.swift */; };
 		B5F9DAF225D0133800A6FDEA /* BookViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F9DAF125D0133800A6FDEA /* BookViewCell.swift */; };
 		B5F9DAF725D0615100A6FDEA /* TicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F9DAF625D0615100A6FDEA /* TicketViewController.swift */; };
 		B5F9DAFC25D12A5C00A6FDEA /* TimeSlotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F9DAFB25D12A5B00A6FDEA /* TimeSlotController.swift */; };
@@ -97,6 +99,8 @@
 		B591946C25CEE0F400F96136 /* ClassViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassViewCell.swift; sourceTree = "<group>"; };
 		B591947125CEFE3200F96136 /* BookTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableController.swift; sourceTree = "<group>"; };
 		B5A9388E25D242F90082D4F1 /* SlotCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotCollectionViewCell.swift; sourceTree = "<group>"; };
+		B5C1633C25F107FE001BAA3A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		B5C1634125F10860001BAA3A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B5F9DAF125D0133800A6FDEA /* BookViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewCell.swift; sourceTree = "<group>"; };
 		B5F9DAF625D0615100A6FDEA /* TicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketViewController.swift; sourceTree = "<group>"; };
 		B5F9DAFB25D12A5B00A6FDEA /* TimeSlotController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSlotController.swift; sourceTree = "<group>"; };
@@ -255,6 +259,7 @@
 		B591943025CED92C00F96136 /* GJFitness */ = {
 			isa = PBXGroup;
 			children = (
+				B5C1633325F10780001BAA3A /* LoginGJ */,
 				1A89FE5125D24C7300A43667 /* Admin */,
 				B5D2384725D647010028661C /* Home */,
 				B5D2384A25D6498E0028661C /* Book */,
@@ -285,6 +290,15 @@
 				B591945525CED92D00F96136 /* Info.plist */,
 			);
 			path = GJFitnessUITests;
+			sourceTree = "<group>";
+		};
+		B5C1633325F10780001BAA3A /* LoginGJ */ = {
+			isa = PBXGroup;
+			children = (
+				B5C1633C25F107FE001BAA3A /* SignUpViewController.swift */,
+				B5C1634125F10860001BAA3A /* LoginViewController.swift */,
+			);
+			path = LoginGJ;
 			sourceTree = "<group>";
 		};
 		B5D2384725D647010028661C /* Home */ = {
@@ -549,7 +563,9 @@
 				B591943625CED92C00F96136 /* ViewController.swift in Sources */,
 				1AC9562625D826150014D200 /* TimeScheduleCollectionViewCell.swift in Sources */,
 				1AC9561425D819790014D200 /* TimeScheduleViewController.swift in Sources */,
+				B5C1634225F10860001BAA3A /* LoginViewController.swift in Sources */,
 				B5627E9425D6CDD7005970DE /* NotificationCenter.swift in Sources */,
+				B5C1633D25F107FE001BAA3A /* SignUpViewController.swift in Sources */,
 				B5A9388F25D242F90082D4F1 /* SlotCollectionViewCell.swift in Sources */,
 				B5F9DB0125D1389200A6FDEA /* RoomViewCell.swift in Sources */,
 				B5205FD525D972B900430198 /* MemberViewController.swift in Sources */,

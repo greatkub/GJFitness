@@ -147,9 +147,15 @@ class CreateClassViewController: UIViewController, UIImagePickerControllerDelega
 //        let storyboard: UIStoryboard = UIStoryboard(name: "Admin", bundle: nil)
 //        let vc = storyboard.instantiateViewController(withIdentifier: "") as? CreateClassViewController
 //        vc?.enterClassName.text = stringClassName
-        
-        dismiss(animated: true, completion: nil)
+        let alert = UIAlertController(title: "", message: "​Create Successfully", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
+            
+            
+        }))
+        self.present(alert, animated: true, completion: nil)
+//        dismiss(animated: true, completion: nil)
     }
+
 }
 
 extension CreateClassViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -170,6 +176,7 @@ extension CreateClassViewController: UICollectionViewDataSource, UICollectionVie
         case 1:
             let roomCell = collectionView.dequeueReusableCell(withReuseIdentifier: "room_number_cell", for: indexPath) as! RoomNumberCell
             roomCell.roomNumber.text = roomNumberItems[index].roomNumber
+            roomCell.tag = indexPath.row
             
             return roomCell
             
@@ -186,15 +193,22 @@ extension CreateClassViewController: UICollectionViewDataSource, UICollectionVie
         switch collectionView.tag {
         case 1:
             let cell = collectionView.cellForItem(at: indexPath) as? RoomNumberCell
-            if count == 0 {
-                count = count + 1
-                cell?.contentView.backgroundColor = .systemYellow
-                
-            } else {
-                count = 0
-                cell?.contentView.backgroundColor = .systemGray3
-                
-            }
+            NotificationCenter.default.post(name: .roomClickedOnlyOnce, object: indexPath.row)
+            print(indexPath.row)
+            
+           
+//
+           
+
+//            if count == 0 {
+//                count = count + 1
+//                cell?.contentView.backgroundColor = .systemYellow
+//
+//            } else {
+//                count = 0
+//                cell?.contentView.backgroundColor = .systemGray3
+//
+//            }
             
         default:
             let cell = collectionView.cellForItem(at: indexPath) as? RoomTimeSlotCell
@@ -209,6 +223,8 @@ extension CreateClassViewController: UICollectionViewDataSource, UICollectionVie
             }
         }
     }
+    
+   
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let numberOfItemsPerRow:CGFloat = 4

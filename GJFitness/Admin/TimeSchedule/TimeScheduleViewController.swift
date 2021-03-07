@@ -107,17 +107,37 @@ class TimeScheduleViewController: UIViewController {
         let vc = storyBoard.instantiateViewController(withIdentifier: "EditRoomViewController") as? EditRoomViewController
         vc?.modalPresentationStyle = .popover
         self.present(vc!, animated: true, completion: nil)
+        
     }
     
     @IBAction func deleteRoom(_ sender: UIButton) {
-        let point = sender.convert(CGPoint.zero, to: timeSlotTable)
-        guard let indexpath = timeSlotTable.indexPathForRow(at: point)
-        else { return }
         
-        rooms.remove(at: indexpath.row)
-        timeSlotTable.beginUpdates()
-        timeSlotTable.deleteRows(at: [IndexPath(row: indexpath.row, section: 0)], with: .left)
-        timeSlotTable.endUpdates()
+        let alert = UIAlertController(title: "Confirm?", message: "​delete this room", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
+            
+            let point = sender.convert(CGPoint.zero, to: self.timeSlotTable)
+            guard let indexpath = self.timeSlotTable.indexPathForRow(at: point)
+            else { return }
+            
+            self.rooms.remove(at: indexpath.row)
+            self.timeSlotTable.beginUpdates()
+            self.timeSlotTable.deleteRows(at: [IndexPath(row: indexpath.row, section: 0)], with: .left)
+            self.timeSlotTable.endUpdates()
+            
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
+        
+//        let point = sender.convert(CGPoint.zero, to: timeSlotTable)
+//        guard let indexpath = timeSlotTable.indexPathForRow(at: point)
+//        else { return }
+//
+//        rooms.remove(at: indexpath.row)
+//        timeSlotTable.beginUpdates()
+//        timeSlotTable.deleteRows(at: [IndexPath(row: indexpath.row, section: 0)], with: .left)
+//        timeSlotTable.endUpdates()
         
     }
     

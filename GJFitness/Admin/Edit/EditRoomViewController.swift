@@ -62,6 +62,17 @@ class EditRoomViewController: UIViewController {
         }
 
     }
+    @IBAction func editroom_done(_ sender: UIButton) {
+        print("editroom done")
+        let alert = UIAlertController(title: "", message: "​Edit Successfully", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
+            
+            
+        }))
+        self.present(alert, animated: true, completion: nil)
+
+        
+    }
 }
 
 extension EditRoomViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -82,7 +93,8 @@ extension EditRoomViewController: UICollectionViewDataSource, UICollectionViewDe
         case 1:
             let roomCell = collectionView.dequeueReusableCell(withReuseIdentifier: "edit_room_number_cell", for: indexPath) as! EditRoomNumberCell
             roomCell.editRoomNumber.text = editRoomNumberItems[index].editRoomNumber
-            
+            roomCell.tag = indexPath.row
+
             return roomCell
             
         default:
@@ -98,15 +110,18 @@ extension EditRoomViewController: UICollectionViewDataSource, UICollectionViewDe
         switch collectionView.tag {
         case 1:
             let cell = collectionView.cellForItem(at: indexPath) as? EditRoomNumberCell
-            if count == 0 {
-                count = count + 1
-                cell?.contentView.backgroundColor = .systemYellow
-                
-            } else {
-                count = 0
-                cell?.contentView.backgroundColor = .systemGray3
-                
-            }
+            NotificationCenter.default.post(name: .editRoomClickedOnlyOnce, object: indexPath.row)
+            print(indexPath.row)
+            
+//            if count == 0 {
+//                count = count + 1
+//                cell?.contentView.backgroundColor = .systemYellow
+//
+//            } else {
+//                count = 0
+//                cell?.contentView.backgroundColor = .systemGray3
+//
+//            }
             
         default:
             let cell = collectionView.cellForItem(at: indexPath) as? EditRoomTimeSlotCell
