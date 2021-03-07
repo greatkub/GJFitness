@@ -22,6 +22,9 @@
 		1AC9563225D85B650014D200 /* RoomNumberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC9563125D85B650014D200 /* RoomNumberCell.swift */; };
 		7CBEDBCE9C60B18A7676BA7D /* Pods_GJFitness_GJFitnessUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0E9DB0BDA5F010C3B2A0A10 /* Pods_GJFitness_GJFitnessUITests.framework */; };
 		8CCD346D7E884AB6B6CEE2C7 /* Pods_GJFitnessTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC791209400284443E4FE846 /* Pods_GJFitnessTests.framework */; };
+		B5071E2225F52489004AD5F1 /* EditSlotCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5071E2125F52489004AD5F1 /* EditSlotCollectionViewCell.swift */; };
+		B5071E2725F524AB004AD5F1 /* EditRoomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5071E2625F524AB004AD5F1 /* EditRoomViewCell.swift */; };
+		B5071E2C25F524F7004AD5F1 /* EditTimeSlotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5071E2B25F524F7004AD5F1 /* EditTimeSlotViewController.swift */; };
 		B5205FD525D972B900430198 /* MemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5205FD425D972B900430198 /* MemberViewController.swift */; };
 		B5205FDA25D975A400430198 /* MemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5205FD925D975A400430198 /* MemberTableViewCell.swift */; };
 		B5627E9425D6CDD7005970DE /* NotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5627E9325D6CDD7005970DE /* NotificationCenter.swift */; };
@@ -79,6 +82,9 @@
 		71D84C2E9290F044DD9AD1B2 /* Pods-GJFitnessTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GJFitnessTests.debug.xcconfig"; path = "Target Support Files/Pods-GJFitnessTests/Pods-GJFitnessTests.debug.xcconfig"; sourceTree = "<group>"; };
 		90D46247924509E533D86B79 /* Pods-GJFitness-GJFitnessUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GJFitness-GJFitnessUITests.debug.xcconfig"; path = "Target Support Files/Pods-GJFitness-GJFitnessUITests/Pods-GJFitness-GJFitnessUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		963F4289623FD7F552FD82F2 /* Pods-GJFitness-GJFitnessUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GJFitness-GJFitnessUITests.release.xcconfig"; path = "Target Support Files/Pods-GJFitness-GJFitnessUITests/Pods-GJFitness-GJFitnessUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B5071E2125F52489004AD5F1 /* EditSlotCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSlotCollectionViewCell.swift; sourceTree = "<group>"; };
+		B5071E2625F524AB004AD5F1 /* EditRoomViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRoomViewCell.swift; sourceTree = "<group>"; };
+		B5071E2B25F524F7004AD5F1 /* EditTimeSlotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTimeSlotViewController.swift; sourceTree = "<group>"; };
 		B5205FD425D972B900430198 /* MemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberViewController.swift; sourceTree = "<group>"; };
 		B5205FD925D975A400430198 /* MemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberTableViewCell.swift; sourceTree = "<group>"; };
 		B5627E9325D6CDD7005970DE /* NotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenter.swift; sourceTree = "<group>"; };
@@ -234,6 +240,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		B5071E1D25F522F1004AD5F1 /* ThirdScene */ = {
+			isa = PBXGroup;
+			children = (
+				B5071E2125F52489004AD5F1 /* EditSlotCollectionViewCell.swift */,
+				B5071E2B25F524F7004AD5F1 /* EditTimeSlotViewController.swift */,
+				B5071E2625F524AB004AD5F1 /* EditRoomViewCell.swift */,
+			);
+			path = ThirdScene;
+			sourceTree = "<group>";
+		};
 		B591942525CED92C00F96136 = {
 			isa = PBXGroup;
 			children = (
@@ -334,6 +350,7 @@
 			children = (
 				B5D2384E25D64A110028661C /* FirstScene */,
 				B5D2384F25D64A200028661C /* SecondScene */,
+				B5071E1D25F522F1004AD5F1 /* ThirdScene */,
 			);
 			path = Book;
 			sourceTree = "<group>";
@@ -562,6 +579,7 @@
 				1A2C7E8A25D8E0A000639591 /* RoomTimeSlotCell.swift in Sources */,
 				B591943625CED92C00F96136 /* ViewController.swift in Sources */,
 				1AC9562625D826150014D200 /* TimeScheduleCollectionViewCell.swift in Sources */,
+				B5071E2225F52489004AD5F1 /* EditSlotCollectionViewCell.swift in Sources */,
 				1AC9561425D819790014D200 /* TimeScheduleViewController.swift in Sources */,
 				B5C1634225F10860001BAA3A /* LoginViewController.swift in Sources */,
 				B5627E9425D6CDD7005970DE /* NotificationCenter.swift in Sources */,
@@ -571,6 +589,7 @@
 				B5205FD525D972B900430198 /* MemberViewController.swift in Sources */,
 				1AC9562125D822A60014D200 /* RoomCell.swift in Sources */,
 				B5205FDA25D975A400430198 /* MemberTableViewCell.swift in Sources */,
+				B5071E2C25F524F7004AD5F1 /* EditTimeSlotViewController.swift in Sources */,
 				1A89FE6525D255BA00A43667 /* ClassListCell.swift in Sources */,
 				B591943225CED92C00F96136 /* AppDelegate.swift in Sources */,
 				B591947225CEFE3200F96136 /* BookTableController.swift in Sources */,
@@ -582,6 +601,7 @@
 				B5F9DAF725D0615100A6FDEA /* TicketViewController.swift in Sources */,
 				B591943425CED92C00F96136 /* SceneDelegate.swift in Sources */,
 				1A27BED325EBD38700BBC16E /* EditRoomViewController.swift in Sources */,
+				B5071E2725F524AB004AD5F1 /* EditRoomViewCell.swift in Sources */,
 				B591946D25CEE0F400F96136 /* ClassViewCell.swift in Sources */,
 				1A0F7BE725EE1E510050F92D /* EditRoomTimeSlotCell.swift in Sources */,
 				1A87385F25D5979E00B9DAF7 /* CreateClassViewController.swift in Sources */,

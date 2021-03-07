@@ -48,7 +48,7 @@ class TimeSlotController: UIViewController {
     var book_trainer = [String]()
     var book_time = [String]()
     
-    var items: [RoomItem] = []
+    var items: [EditRoomItem] = []
 
     var room = ["Room1", "Room5", "Room2"]
     var trainer = ["Krittamet Ch.", "Sanpawat S.", "Cleo P."]
@@ -78,7 +78,7 @@ class TimeSlotController: UIViewController {
         classImage.contentMode = .scaleAspectFill
         
         for i in 0...room.count-1 {
-            items.append(RoomItem(room: room[i], trainer: trainer[i]))
+            items.append(EditRoomItem(room: room[i], trainer: trainer[i]))
         }
         
         NotificationCenter.default.addObserver(self, selector: #selector(cellRoomClicked(notification:)), name: .roomCellClicked, object: nil)
@@ -114,14 +114,19 @@ class TimeSlotController: UIViewController {
                 
                
             
-                self.present(vc, animated: true, completion: nil)
-                    print("upload timeslotVC to bookVC")
+//                self.present(vc, animated: true, completion: nil)
+//                    print("upload timeslotVC to bookVC")
                 
-//                vc.myString = arrayClasses[indexPath.item]
-//                vc.myCalen = calendarDisplay
-//                vc.timeLimit = timeLimit
-//                vc.member = numGroup
-//                vc.selected = indexPath.item
+                let alert2 = UIAlertController(title: "", message: "​Book Successfully", preferredStyle: .alert)
+                alert2.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
+//                    vc.modalPresentationStyle = .fullScreen
+                    self.present(vc, animated: true, completion: nil)
+                    
+
+                    
+                }))
+                self.present(alert2, animated: true, completion: nil)
+
                 
                 print("Ok \(self.counttimes)")
             }))

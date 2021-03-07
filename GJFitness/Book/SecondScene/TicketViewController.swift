@@ -26,6 +26,22 @@ class TicketViewController: UIViewController {
         self.dismiss(animated: true)
     }
     
+    @IBAction func goEdit(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(identifier: "EditBookDisplay") as! EditTimeSlotViewController
+        vc.modalPresentationStyle = .fullScreen
+        
+
+          vc.myStringED = self.myString
+          vc.myCalenED = self.myCalen
+//          vc.myRoomNameED = self.myRoomName
+        
+        self.present(vc, animated: true, completion: nil)
+
+  
+        
+        
+    }
+    
 //    var room = ["Room 1", "Room2", "Room3"]
 //    var trainer = ["Krittamet Ch.", "Cleo Powell", "Saharat T."]
     
@@ -44,6 +60,8 @@ class TicketViewController: UIViewController {
         ticketButton.backgroundColor = .systemRed
         
         self.QRImage.image = #imageLiteral(resourceName: "qr_code_test")
+        
+        
     }
     
 

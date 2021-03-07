@@ -13,5 +13,6 @@ extension Notification.Name {
     static let roomClickedOnlyOnce = Notification.Name(rawValue: "roomClickedOnlyOnce")
     static let editRoomClickedOnlyOnce = Notification.Name(rawValue: "editClickedOnlyOnce")
 
+    static let roomCellClickedED = Notification.Name(rawValue: "roomCellClickedED")
 
 }
