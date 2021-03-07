@@ -6,6 +6,7 @@ target 'GJFitness' do
   use_frameworks!
 
   # Pods for GJFitness
+  pod 'Alamofire'
 
   target 'GJFitnessTests' do
     inherit! :search_paths
