@@ -5,24 +5,15 @@
 //  Created by James S on 9/2/2564 BE.
 
 import UIKit
-
-class ClassListItem {
-    var classImage: UIImage? = nil
-    var className: String = ""
-    
-    init(image: UIImage, name: String) {
-        self.classImage = image
-        self.className = name
-    }
-}
+import Alamofire
+import ObjectMapper
 
 class ClassListViewController: UIViewController {
     @IBOutlet var classCollectionView: UICollectionView!
     @IBOutlet weak var createClass: UIButton!
     
-    var arrayClasses = ["Weight-training", "Boxing", "Yoga", "Weight-training", "Boxing", "Yoga", "Weight-training", "Boxing", "Yoga", "Weight-training", "Boxing", "Yoga"]
-    
-    var items: [ClassListItem] = []
+    var all_classes: AllClasses? = nil
+    let url = "https://89982d07ef6a.ngrok.io/class"
     
     @IBAction func CreateClass(_ sender: Any) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Admin", bundle: nil)
@@ -33,10 +24,23 @@ class ClassListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        for i in 0...arrayClasses.count-1 {
-            items.append(ClassListItem(image: UIImage(imageLiteralResourceName: "\(arrayClasses[i])"), name: "\(arrayClasses[i])"))
-            
+      
+        requestClassAPI()
+    }
+    
+    func updateDataToUI() {
+        classCollectionView.reloadData()
+    }
+    
+    func requestClassAPI() {
+        AF.request(url).responseString { (response) in
+            if let value = response.value,
+               let classResponse = Mapper<AllClasses>().map(JSONString: value) {
+                self.all_classes = classResponse
+                print(value)
+                print(classResponse)
+                self.updateDataToUI()
+            }
         }
     }
     
@@ -44,7 +48,7 @@ class ClassListViewController: UIViewController {
         let alert = UIAlertController(title: "Delete All", message: "Do you confirm deleting all classes?", preferredStyle: .alert)
 
         alert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { action in
-            self.items.removeAll()
+//            self.items.removeAll()
             self.classCollectionView.reloadData()
         
         }))
@@ -57,15 +61,18 @@ class ClassListViewController: UIViewController {
 extension ClassListViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout  {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return items.count
+        return all_classes?.classes.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let index = indexPath.row
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "class_list_cell", for: indexPath) as! ClassListCell
-        cell.classImageView.image = items[index].classImage
-        cell.className.text = items[index].className
+        
+        let url = URL(string: (all_classes?.classes[index].picture_url)!)
+        let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+        cell.classImageView.image = UIImage(data: data!)
+        cell.className?.text = all_classes?.classes[index].class_name
         
         return cell
     }
@@ -90,8 +97,9 @@ extension ClassListViewController: UICollectionViewDataSource, UICollectionViewD
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Admin", bundle: nil)
         let vc = mainStoryboard.instantiateViewController(withIdentifier: "TimeScheduleViewController") as? TimeScheduleViewController
         
-        vc?.classNameLabel = items[indexPath.row].className
-        vc?.classImage = items[indexPath.row].classImage!
+        vc?.class_detail = (all_classes?.classes[indexPath.row])
+        
+//        vc?.classImage = items[indexPath.row].classImage!
         self.present(vc!, animated: true, completion: nil)
         
     }

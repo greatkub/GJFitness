@@ -5,6 +5,8 @@
 //  Created by James S on 13/2/2564 BE.
 
 import UIKit
+import Alamofire
+import ObjectMapper
 
 class RoomCellItem {
     var roomName: String = ""
@@ -27,6 +29,11 @@ class TimeScheduleViewController: UIViewController {
     @IBOutlet var timeslot: UILabel!
     @IBOutlet var members: UILabel!
     
+    var all_classes: AllClasses? = nil
+    var class_detail: ClassEx? = nil
+    let urlClass = "https://89982d07ef6a.ngrok.io/class"
+    let urlRoom = ""
+        
     var classNameLabel = ""
     var classImage = UIImage()
     
@@ -34,7 +41,7 @@ class TimeScheduleViewController: UIViewController {
     var myMember = String()
     var timeLimit = String()
     var selected = Int()
-    
+        
     var rooms: [RoomCellItem] = []
     var roomNumber = ["Room1", "Room2", "Room3"]
     var trainers = ["Krittamet Ch.", "Sanpawat S.", "Cleo P."]
@@ -51,9 +58,26 @@ class TimeScheduleViewController: UIViewController {
             rooms.append(RoomCellItem(roomName: roomNumber[i], trainerName: trainers[i]))
         }
         
+        updataDataToUI()
+        
         NotificationCenter.default.addObserver(self, selector: #selector(cellTimeClicked(notification:)), name: .timeCellClicked, object: nil)
     }
     
+    func updataDataToUI() {
+        guard let class_detail = class_detail else {
+            return
+        }
+        
+        let url = URL(string: class_detail.picture_url)
+        let data = try? Data(contentsOf: url!)
+        
+        classImageViewInfo.image = UIImage(data: data!)
+        classNameInfo.text = class_detail.class_name
+        date.text = class_detail.class_date
+        timeslot.text = "10 hrs"
+        members.text = "\(class_detail.people_number) per class"
+    }
+  
     @IBAction func addTrainerCell(_ sender: Any) {
         promptForAnswer()
     }
@@ -78,7 +102,6 @@ class TimeScheduleViewController: UIViewController {
     
     @objc func cellTimeClicked (notification: NSNotification) {
         if let data = notification.object as? (Int, String) {
-            
             let alert = UIAlertController(title: "Confirm ?", message: "\(classNameLabel), \(roomNumber[data.0]) at ​\(data.1)", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
                 
@@ -93,6 +116,8 @@ class TimeScheduleViewController: UIViewController {
                 //                vc.myString = arrayClasses[indexPath.item]
                 //                vc.myCalen = calendarDisplay
                 //                vc.myRoomName = arrayRoomName[indexPath.item]
+                
+                vc.class_detail = self.class_detail
                 self.present(vc, animated: true, completion: nil)
                 
             }))
@@ -161,9 +186,7 @@ extension TimeScheduleViewController: UITableViewDelegate, UITableViewDataSource
         let index = indexPath.row
         let cell = tableView.dequeueReusableCell(withIdentifier: "room_cell", for: indexPath) as! RoomCell
         cell.tag = index
-        
-        //        cell.tag = indexPath.row
-        
+       
         cell.timeslotsList = time3d[selected][index]
         cell.roomNumber.text = rooms[index].roomName
         cell.trainerName.text = rooms[index].roomTrainer

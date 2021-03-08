@@ -5,6 +5,8 @@
 //  Created by Krittamet Chuwongworaphinit on 14/2/2564 BE.
 
 import UIKit
+import Alamofire
+import ObjectMapper
 
 class memberItem {
     var member: String = ""
@@ -22,8 +24,13 @@ class MemberViewController: UIViewController {
     @IBOutlet var roomName: UILabel!
     @IBOutlet var roomTime: UILabel!
     @IBOutlet var trainerName: UILabel!
-    @IBOutlet weak var className: UILabel!
+    @IBOutlet var className: UILabel!
     @IBOutlet var classImage: UIImageView!
+    @IBOutlet var date: UILabel!
+    @IBOutlet var timeslot: UILabel!
+    @IBOutlet var people_number: UILabel!
+    
+    var class_detail: ClassEx? = nil
     
     var getImageClass = UIImage()
     var getClassName = String()
@@ -48,7 +55,25 @@ class MemberViewController: UIViewController {
         roomName.text = getRoomName
         trainerName.text = getTrainerRoom
         
+        updateDataToUI()
+
     }
+    
+    func updateDataToUI() {
+        guard let class_detail = class_detail else {
+            return
+        }
+        
+        let url = URL(string: class_detail.picture_url)
+        let data = try? Data(contentsOf: url!)
+        
+        classImage.image = UIImage(data: data!)
+        className.text = class_detail.class_name
+        date.text = class_detail.class_date
+        timeslot.text = "10 hrs"
+        people_number.text = "\(class_detail.people_number) per class"
+    }
+    
     
     @IBAction func BackToRoomList(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)

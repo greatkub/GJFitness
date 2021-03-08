@@ -7,6 +7,8 @@
 
 
 import UIKit
+import Alamofire
+import ObjectMapper
 
 class SignUpViewController2: UIViewController {
     
@@ -21,7 +23,7 @@ class SignUpViewController2: UIViewController {
     
     @IBOutlet var signupButton: UIButton!
     
-    
+    let urlUser = "https://b4f2a22da508.ngrok.io/insert-user"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +44,30 @@ class SignUpViewController2: UIViewController {
         
         logoImgaeView.image = UIImage(named:"logo")
         self.view.addSubview(logoImgaeView)
+    }
+    
+    @IBAction func doneSignUp(_ sender: Any) {
+        postUserAPI(first_name: firsnameField.text!, last_name: lastnameField.text!, username: usernameField.text!, password: passwordField.text!, email: emailField.text!)
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    func postUserAPI(first_name: String, last_name: String, username: String, password: String, email: String) {
+        let parametersUserPost = ["first_name": first_name,
+                                  "last_name": last_name,
+                                  "username": username,
+                                  "password": password,
+                                  "email": email]
+        
+        AF.request(urlUser, method: .post, parameters: parametersUserPost, encoding: JSONEncoding.default).responseJSON(completionHandler: { response in
+            switch response.result {
+                case .success(let data):
+                    
+                    print("Insert user successfully")
+                case .failure(let error):
+                    print(error.errorDescription)
+                }
+        })
     }
     
 }
