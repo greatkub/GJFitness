@@ -7,6 +7,11 @@ target 'GJFitness' do
 
   # Pods for GJFitness
   pod 'Alamofire'
+  pod 'ObjectMapper'
+  # Add the Firebase pod for Google Analytics
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
 
   target 'GJFitnessTests' do
     inherit! :search_paths
