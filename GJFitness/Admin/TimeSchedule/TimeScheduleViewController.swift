@@ -31,7 +31,6 @@ class TimeScheduleViewController: UIViewController {
     
     var all_classes: AllClasses? = nil
     var class_detail: ClassEx? = nil
-    let urlClass = "https://89982d07ef6a.ngrok.io/class"
     let urlRoom = ""
         
     var classNameLabel = ""

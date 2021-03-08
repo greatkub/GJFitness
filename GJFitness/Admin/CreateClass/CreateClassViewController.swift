@@ -5,6 +5,7 @@
 //  Created by James S on 11/2/2564 BE.
 
 import UIKit
+import Alamofire
 
 class RoomNumberItem {
     var roomNumber: String = ""
@@ -23,6 +24,7 @@ class TimeItem {
 }
 
 class CreateClassViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
     @IBOutlet weak var doneCreateButton: UIButton!
     @IBOutlet weak var imageAcces: UIImageView!
     
@@ -40,6 +42,9 @@ class CreateClassViewController: UIViewController, UIImagePickerControllerDelega
     
     var roomNumberItems: [RoomNumberItem] = []
     var roomTimeSlots: [TimeItem] = []
+    
+    var classes: ClassEx? = nil
+    let urlCreateClass = "https://72e77520f8d7.ngrok.io/insert-class"
     
     var roomNumbers = ["1", "2", "3", "4"]
     var roomTimeSlotList = ["9:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00"]
@@ -76,6 +81,7 @@ class CreateClassViewController: UIViewController, UIImagePickerControllerDelega
             print("Back to class list screen")
         }
     }
+    
     
     @IBAction func changePhoto(_ sender: Any) {
         let imagePickerController = UIImagePickerController()
@@ -144,16 +150,42 @@ class CreateClassViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     @IBAction func cretedDone(_ sender: Any) {
-//        let storyboard: UIStoryboard = UIStoryboard(name: "Admin", bundle: nil)
-//        let vc = storyboard.instantiateViewController(withIdentifier: "") as? CreateClassViewController
-//        vc?.enterClassName.text = stringClassName
-        let alert = UIAlertController(title: "", message: "​Create Successfully", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
+        let parameters: [String: Any] = [
+            "class_name": enterClassName.text!,
+            "picture_url": "https://i.pinimg.com/originals/13/9b/c0/139bc04adcfd5bec7235370d7ff43f40.jpg",
+            "trainer_id": 1000,
+            "people_number": enterPeopleNo.text!,
+            "class_date": tfDatePicker.text!,
+            "room_id": 1000,
+            "schedule_time_id": 1000
+        ]
+        
+        AF.request(urlCreateClass, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON(completionHandler: { response in
+            print(response.response?.statusCode)
             
+            switch response.result {
+            case .success(let _):
+                
+                print("Insert successfully")
+                
+                let alert = UIAlertController(title: "", message: "​Create Successfully", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
+                    self.dismiss(animated: true, completion: nil)
+                }
+                ))
+                
+                self.present(alert, animated: true, completion: nil)
+                
+            case .failure(let error):
+                print(error.errorDescription)
+                let alert = UIAlertController(title: "", message: "​Create Failed", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in }
+                ))
+                
+                self.present(alert, animated: true, completion: nil)
+            }
+        })
             
-        }))
-        self.present(alert, animated: true, completion: nil)
-//        dismiss(animated: true, completion: nil)
     }
 
 }

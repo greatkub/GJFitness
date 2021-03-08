@@ -23,7 +23,7 @@ class SignUpViewController2: UIViewController {
     
     @IBOutlet var signupButton: UIButton!
     
-    let urlUser = "https://b4f2a22da508.ngrok.io/insert-user"
+    let urlUser = "https://72e77520f8d7.ngrok.io/insert-user"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,12 +61,12 @@ class SignUpViewController2: UIViewController {
         
         AF.request(urlUser, method: .post, parameters: parametersUserPost, encoding: JSONEncoding.default).responseJSON(completionHandler: { response in
             switch response.result {
-                case .success(let data):
-                    
-                    print("Insert user successfully")
-                case .failure(let error):
-                    print(error.errorDescription)
-                }
+            case .success(let data):
+                
+                print("Insert user successfully")
+            case .failure(let error):
+                print(error.errorDescription)
+            }
         })
     }
     
