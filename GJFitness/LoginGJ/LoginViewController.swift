@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class LoginViewController2: UIViewController {
     
@@ -17,6 +18,8 @@ class LoginViewController2: UIViewController {
     @IBOutlet var signinButton: UIButton!
     @IBOutlet var signupButton: UIButton!
     
+    var urlLogin = "https://b4f2a22da508.ngrok.io/login"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,15 +28,14 @@ class LoginViewController2: UIViewController {
     }
     
     @IBAction func login(_ sender: Any) {
-        
-        let masterUsername = "jame"
-        let masterPassword = "0000"
+       
         let trainerUsername = "great"
         let trainerPassword = "1111"
         
         
         let username = usernameField.text ?? ""
         let password = passwordField.text ?? ""
+        
         
         if trainerUsername == username && trainerPassword == password {
             
@@ -43,18 +45,43 @@ class LoginViewController2: UIViewController {
             present(vc, animated: true, completion: nil)
         }
         
-        if masterUsername == username && masterPassword == password {
-            if let vc = self.storyboard?.instantiateViewController(identifier: "classList") {
-                present(vc, animated: true, completion: nil)
+        let parameters: [String: Any] = [
+            "username": usernameField.text!,
+            "password": passwordField.text!
+        ]
+        
+        AF.request(urlLogin, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON(completionHandler: { response in
+            print(response.response?.statusCode)
+            
+            switch response.result {
+            case .success(let _):
+                print("Insert successfully")
+                
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "classList") as UIViewController
+                
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true, completion: nil)
+                
+            case .failure(let error):
+                print(error.errorDescription)
+                
             }
-            
-        } else {
-            let alert = UIAlertController(title: "Invalid Credentials", message: "Incorrect username or password", preferredStyle: .alert)
-            
-            let alertAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alert.addAction(alertAction)
-            present(alert, animated: true, completion: nil)
-        }
+        })
+        
+//        if masterUsername == username && masterPassword == password {
+//
+////            if let vc = self.storyboard?.instantiateViewController(identifier: "classList") {
+////                present(vc, animated: true, completion: nil)
+////            }
+//
+//        } else {
+//            let alert = UIAlertController(title: "Invalid Credentials", message: "Incorrect username or password", preferredStyle: .alert)
+//
+//            let alertAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+//            alert.addAction(alertAction)
+//            present(alert, animated: true, completion: nil)
+//        }
     }
     
     @IBAction func goSignUpScreen(_ sender: Any) {

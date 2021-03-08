@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="R7c-VJ-8Gt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="R7c-VJ-8Gt">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -93,6 +93,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Trainer" image="rectangle.stack.person.crop" catalog="system" id="pfs-uN-gYV"/>
+                    <connections>
+                        <outlet property="trainerTableView" destination="PCs-No-cdw" id="iHe-bj-hdw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JMD-aL-6Kb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -746,8 +749,11 @@
                     <connections>
                         <outlet property="classImage" destination="ED5-OA-Sw7" id="buR-MS-vOs"/>
                         <outlet property="className" destination="OSV-vZ-ReE" id="uv0-m7-fLW"/>
+                        <outlet property="date" destination="BqM-pM-far" id="cHZ-BB-fwa"/>
+                        <outlet property="people_number" destination="43P-fg-cMM" id="u2k-lv-TFt"/>
                         <outlet property="roomName" destination="iIG-3w-pc7" id="974-cU-QJk"/>
                         <outlet property="roomTime" destination="rh4-fu-Zgu" id="gJe-Xr-6w3"/>
+                        <outlet property="timeslot" destination="bKF-t6-z49" id="AUD-Ta-iuR"/>
                         <outlet property="trainerName" destination="wkG-0x-f5B" id="pZG-fm-l14"/>
                     </connections>
                 </viewController>

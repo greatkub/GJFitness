@@ -6,35 +6,68 @@
 //
 
 import UIKit
-
-class TrainerItem {
-    var trainerName: String = ""
-    var trainerPhone: String = ""
-    
-    init(trainerName: String, trainerPhone: String) {
-        self.trainerName = trainerName
-        self.trainerPhone = trainerPhone
-    }
-}
+import Alamofire
+import ObjectMapper
 
 class TrainerViewController: UIViewController {
-    var tableData = [
-        (title:"Krittamet Ch", subtitle: "092-315-2166"),
-        (title:"James", subtitle: "035-123-333"),
-        (title:"Yong", subtitle: "085-084-8110"),
-        (title:"Tiew", subtitle: "095-772-3363")
-    ]
+    @IBOutlet var trainerTableView: UITableView!
     
-    var items:[TrainerItem] = []
+    var trainer: Trainer? = nil
+    let url = "https://6937bf31f896.ngrok.io/trainer"
+    let url2 = "https://6937bf31f896.ngrok.io/insert-trainer"
+    let urlTrainerDelete = "https://6937bf31f896.ngrok.io/delete-trainer"
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        trainerTableView.dataSource = self
+        trainerTableView.delegate = self
         
-        for i in 0...tableData.count-1 {
-            items.append(TrainerItem(trainerName: tableData[i].title, trainerPhone: tableData[i].subtitle))
+//        deleteTrainerItemAPI(id: (trainer?.trainers.id)!)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        requestTrainerAPI()
+    }
+    
+    func updateDataToUI() {
+        trainerTableView.reloadData()
+    }
+    
+    func requestTrainerAPI() {
+        AF.request(url).responseString { (response) in
+            if let value = response.value,
+               let trainerResponse = Mapper<Trainer>().map(JSONString: value) {
+                self.trainer = trainerResponse
+                self.updateDataToUI()
+            }
             
         }
-        
+    }
+    
+    func postTrainerAPI(first_name: String, last_name: String, phone_number: String) {
+        AF.request(url2, method: .post, parameters: ["first_name": first_name, "last_name": last_name, "phone_number": phone_number], encoding: JSONEncoding.default).responseJSON(completionHandler: { response in
+            switch response.result {
+                case .success(let data):
+                    
+                    print("Insert successfully")
+                    self.requestTrainerAPI()
+                case .failure(let error):
+                    print(error.errorDescription)
+                }
+        })
+    }
+    
+    func deleteTrainerItemAPI(id: Int) {
+        AF.request(urlTrainerDelete, method: .post, parameters: ["id": id], encoding: JSONEncoding.default).responseJSON(completionHandler: { response in
+            switch response.result {
+                case .success(let data):
+                    
+                    print("Insert successfully")
+                    self.requestTrainerAPI()
+                case .failure(let error):
+                    print(error.errorDescription)
+                }
+        })
     }
     
     @IBAction func addTrainer(_ sender: Any) {
@@ -45,7 +78,11 @@ class TrainerViewController: UIViewController {
         let ac = UIAlertController(title: "Enter trainer name and phone numeber", message: nil, preferredStyle: .alert)
         
         ac.addTextField { (textField) in
-            textField.placeholder = "Trainer name"
+            textField.placeholder = "Trainer first name"
+        }
+        
+        ac.addTextField { (textField) in
+            textField.placeholder = "Trainer last name"
         }
         
         ac.addTextField { (textField) in
@@ -54,11 +91,17 @@ class TrainerViewController: UIViewController {
         
         let addAction = UIAlertAction(title: "Add", style: .default) { (action:UIAlertAction) in
             
-            let tfTrainerName = ac.textFields![0] as UITextField;
-            UserDefaults.standard.set(tfTrainerName.text, forKey: "Trainer_name")
+            let tfTrainerName = ac.textFields![0] as UITextField
+            UserDefaults.standard.set(tfTrainerName.text, forKey: "Trainer_first_name")
             
-            let tfTrainerPhone = ac.textFields![1] as UITextField
+            let tfTrainerLastName = ac.textFields![1] as UITextField
+            UserDefaults.standard.set(tfTrainerLastName.text, forKey: "Trainer_last_name")
+            
+            let tfTrainerPhone = ac.textFields![2] as UITextField
             UserDefaults.standard.set(tfTrainerPhone.text, forKey: "Phone_number")
+
+            //Post function here
+            self.postTrainerAPI(first_name: tfTrainerName.text!, last_name: tfTrainerLastName.text!, phone_number: tfTrainerPhone.text!)
             
         }
         
@@ -82,29 +125,30 @@ class TrainerViewController: UIViewController {
 
 extension TrainerViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tableData.count
+        return trainer?.trainers.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let index = indexPath.row
         let cell = tableView.dequeueReusableCell(withIdentifier: "trainer_cell")!
         
-        cell.textLabel?.text = tableData[index].title
-        cell.detailTextLabel?.text = tableData[index].subtitle
+        cell.textLabel?.text = "\(trainer!.trainers[index].first_name ) \(trainer!.trainers[index].last_name)"
+        cell.detailTextLabel?.text = trainer?.trainers[index].phone_number
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        callNumber(phoneNumber: tableData[indexPath.row].subtitle)
-        
+        if let trainer = trainer {
+            callNumber(phoneNumber: trainer.trainers[indexPath.row].phone_number)
+        }
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
-            tableData.remove(at: indexPath.row)
+            self.trainer?.trainers.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
         

@@ -20,6 +20,6 @@ class ClassListCell: UICollectionViewCell {
         className.layer.masksToBounds = true
         classImageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         className.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
-        
+        className.textColor = .white
     }
 }
