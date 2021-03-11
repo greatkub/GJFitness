@@ -13,7 +13,8 @@ class ClassListViewController: UIViewController {
     @IBOutlet weak var createClass: UIButton!
     
     var all_classes: AllClasses? = nil
-    let url = "https://89982d07ef6a.ngrok.io/class"
+    let url = "https://b759807fe12e.ngrok.io/class"
+    let urlDeleteClass = "https://b759807fe12e.ngrok.io/delete-all-class"
     
     @IBAction func CreateClass(_ sender: Any) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Admin", bundle: nil)
@@ -24,7 +25,11 @@ class ClassListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+        
+        requestClassAPI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         requestClassAPI()
     }
     
@@ -44,13 +49,26 @@ class ClassListViewController: UIViewController {
         }
     }
     
+    func deleteClass() {
+        AF.request(urlDeleteClass).responseString { (response) in
+            if let value = response.value,
+               let classResponse = Mapper<AllClasses>().map(JSONString: value) {
+                self.all_classes = classResponse
+                print(value)
+                print(classResponse)
+                self.updateDataToUI()
+            }
+        }
+    }
+    
     @IBAction func deleteAll(_ sender: UIButton) {
         let alert = UIAlertController(title: "Delete All", message: "Do you confirm deleting all classes?", preferredStyle: .alert)
-
-        alert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { action in
-//            self.items.removeAll()
-            self.classCollectionView.reloadData()
         
+        alert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { action in
+            //            self.items.removeAll()
+            self.deleteClass()
+            self.classCollectionView.reloadData()
+            
         }))
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
@@ -99,7 +117,7 @@ extension ClassListViewController: UICollectionViewDataSource, UICollectionViewD
         
         vc?.class_detail = (all_classes?.classes[indexPath.row])
         
-//        vc?.classImage = items[indexPath.row].classImage!
+        //        vc?.classImage = items[indexPath.row].classImage!
         self.present(vc!, animated: true, completion: nil)
         
     }

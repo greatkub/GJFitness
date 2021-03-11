@@ -61,12 +61,12 @@ class SignUpViewController2: UIViewController {
         
         AF.request(urlUser, method: .post, parameters: parametersUserPost, encoding: JSONEncoding.default).responseJSON(completionHandler: { response in
             switch response.result {
-                case .success(let data):
-                    
-                    print("Insert user successfully")
-                case .failure(let error):
-                    print(error.errorDescription)
-                }
+            case .success(let data):
+                
+                print("Insert user successfully")
+            case .failure(let error):
+                print(error.errorDescription)
+            }
         })
     }
     

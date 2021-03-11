@@ -13,9 +13,10 @@ class TrainerViewController: UIViewController {
     @IBOutlet var trainerTableView: UITableView!
     
     var trainer: Trainer? = nil
-    let url = "https://6937bf31f896.ngrok.io/trainer"
-    let url2 = "https://6937bf31f896.ngrok.io/insert-trainer"
-    let urlTrainerDelete = "https://6937bf31f896.ngrok.io/delete-trainer"
+    var trainers: Trainers? = nil
+    let url = "https://b759807fe12e.ngrok.io/trainer"
+    let url2 = "https://b759807fe12e.ngrok.io/insert-trainer"
+    let urlTrainerDelete = "https://b759807fe12e.ngrok.io/delete-trainer"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -150,6 +151,11 @@ extension TrainerViewController: UITableViewDataSource, UITableViewDelegate {
         if editingStyle == .delete {
             self.trainer?.trainers.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            deleteTrainerItemAPI(id: indexPath.row)
+            trainerTableView.reloadData()
+            
+            
         }
         
     }

@@ -5,6 +5,8 @@
 //  Created by James S on 11/2/2564 BE.
 
 import UIKit
+import Alamofire
+import FirebaseStorage
 
 class RoomNumberItem {
     var roomNumber: String = ""
@@ -23,6 +25,7 @@ class TimeItem {
 }
 
 class CreateClassViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
     @IBOutlet weak var doneCreateButton: UIButton!
     @IBOutlet weak var imageAcces: UIImageView!
     
@@ -41,12 +44,15 @@ class CreateClassViewController: UIViewController, UIImagePickerControllerDelega
     var roomNumberItems: [RoomNumberItem] = []
     var roomTimeSlots: [TimeItem] = []
     
+    var classes: ClassEx? = nil
+    let urlCreateClass = "https://b759807fe12e.ngrok.io/insert-class"
+    
     var roomNumbers = ["1", "2", "3", "4"]
     var roomTimeSlotList = ["9:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00"]
     
     var count = 0
     var count2 = 0
-    //These one use for switch color while tap two times.
+
     override func viewDidLoad() {
         super.viewDidLoad()
         doneCreateButton.layer.cornerRadius = 15
@@ -77,6 +83,7 @@ class CreateClassViewController: UIViewController, UIImagePickerControllerDelega
         }
     }
     
+    
     @IBAction func changePhoto(_ sender: Any) {
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
@@ -102,6 +109,7 @@ class CreateClassViewController: UIViewController, UIImagePickerControllerDelega
         imageAcces.clipsToBounds = true
         imageAcces.contentMode = .scaleAspectFill
         imageAcces.image = image
+        
         picker.dismiss(animated: true, completion: nil)
     }
     
@@ -144,18 +152,44 @@ class CreateClassViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     @IBAction func cretedDone(_ sender: Any) {
-//        let storyboard: UIStoryboard = UIStoryboard(name: "Admin", bundle: nil)
-//        let vc = storyboard.instantiateViewController(withIdentifier: "") as? CreateClassViewController
-//        vc?.enterClassName.text = stringClassName
-        let alert = UIAlertController(title: "", message: "​Create Successfully", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
+        let parameters: [String: Any] = [
+            "class_name": enterClassName.text!,
+            "picture_url": "https://wallpapercave.com/wp/wp4299988.jpg",
+            "trainer_id": 1000,
+            "people_number": enterPeopleNo.text!,
+            "class_date": tfDatePicker.text!,
+            "room_id": 1000,
+            "schedule_time_id": 1000
+        ]
+        
+        AF.request(urlCreateClass, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON(completionHandler: { response in
+            print(response.response?.statusCode)
             
-            
-        }))
-        self.present(alert, animated: true, completion: nil)
-//        dismiss(animated: true, completion: nil)
+            switch response.result {
+            case .success(let _):
+                
+                print("Insert successfully")
+                
+                let alert = UIAlertController(title: "", message: "​Create Successfully", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
+                    self.dismiss(animated: true, completion: nil)
+                }
+                ))
+                
+                self.present(alert, animated: true, completion: nil)
+                
+            case .failure(let error):
+                print(error.errorDescription)
+                let alert = UIAlertController(title: "", message: "​Create Failed", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in }
+                ))
+                
+                self.present(alert, animated: true, completion: nil)
+            }
+        })
+        
     }
-
+    
 }
 
 extension CreateClassViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -196,20 +230,6 @@ extension CreateClassViewController: UICollectionViewDataSource, UICollectionVie
             NotificationCenter.default.post(name: .roomClickedOnlyOnce, object: indexPath.row)
             print(indexPath.row)
             
-           
-//
-           
-
-//            if count == 0 {
-//                count = count + 1
-//                cell?.contentView.backgroundColor = .systemYellow
-//
-//            } else {
-//                count = 0
-//                cell?.contentView.backgroundColor = .systemGray3
-//
-//            }
-            
         default:
             let cell = collectionView.cellForItem(at: indexPath) as? RoomTimeSlotCell
             if count2 == 0 {
@@ -223,8 +243,6 @@ extension CreateClassViewController: UICollectionViewDataSource, UICollectionVie
             }
         }
     }
-    
-   
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let numberOfItemsPerRow:CGFloat = 4
@@ -249,4 +267,5 @@ extension CreateClassViewController: UICollectionViewDataSource, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
+    
 }
