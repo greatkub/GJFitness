@@ -6,6 +6,7 @@
 
 import UIKit
 import Alamofire
+import FirebaseStorage
 
 class RoomNumberItem {
     var roomNumber: String = ""
@@ -44,14 +45,14 @@ class CreateClassViewController: UIViewController, UIImagePickerControllerDelega
     var roomTimeSlots: [TimeItem] = []
     
     var classes: ClassEx? = nil
-    let urlCreateClass = "https://72e77520f8d7.ngrok.io/insert-class"
+    let urlCreateClass = "https://b759807fe12e.ngrok.io/insert-class"
     
     var roomNumbers = ["1", "2", "3", "4"]
     var roomTimeSlotList = ["9:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00"]
     
     var count = 0
     var count2 = 0
-    //These one use for switch color while tap two times.
+
     override func viewDidLoad() {
         super.viewDidLoad()
         doneCreateButton.layer.cornerRadius = 15
@@ -108,6 +109,7 @@ class CreateClassViewController: UIViewController, UIImagePickerControllerDelega
         imageAcces.clipsToBounds = true
         imageAcces.contentMode = .scaleAspectFill
         imageAcces.image = image
+        
         picker.dismiss(animated: true, completion: nil)
     }
     
@@ -152,7 +154,7 @@ class CreateClassViewController: UIViewController, UIImagePickerControllerDelega
     @IBAction func cretedDone(_ sender: Any) {
         let parameters: [String: Any] = [
             "class_name": enterClassName.text!,
-            "picture_url": "https://i.pinimg.com/originals/13/9b/c0/139bc04adcfd5bec7235370d7ff43f40.jpg",
+            "picture_url": "https://wallpapercave.com/wp/wp4299988.jpg",
             "trainer_id": 1000,
             "people_number": enterPeopleNo.text!,
             "class_date": tfDatePicker.text!,
@@ -185,9 +187,9 @@ class CreateClassViewController: UIViewController, UIImagePickerControllerDelega
                 self.present(alert, animated: true, completion: nil)
             }
         })
-            
+        
     }
-
+    
 }
 
 extension CreateClassViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -228,20 +230,6 @@ extension CreateClassViewController: UICollectionViewDataSource, UICollectionVie
             NotificationCenter.default.post(name: .roomClickedOnlyOnce, object: indexPath.row)
             print(indexPath.row)
             
-           
-//
-           
-
-//            if count == 0 {
-//                count = count + 1
-//                cell?.contentView.backgroundColor = .systemYellow
-//
-//            } else {
-//                count = 0
-//                cell?.contentView.backgroundColor = .systemGray3
-//
-//            }
-            
         default:
             let cell = collectionView.cellForItem(at: indexPath) as? RoomTimeSlotCell
             if count2 == 0 {
@@ -255,8 +243,6 @@ extension CreateClassViewController: UICollectionViewDataSource, UICollectionVie
             }
         }
     }
-    
-   
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let numberOfItemsPerRow:CGFloat = 4
@@ -281,4 +267,5 @@ extension CreateClassViewController: UICollectionViewDataSource, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
+    
 }

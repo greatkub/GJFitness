@@ -13,8 +13,8 @@ class ClassListViewController: UIViewController {
     @IBOutlet weak var createClass: UIButton!
     
     var all_classes: AllClasses? = nil
-    let url = "https://72e77520f8d7.ngrok.io/class"
-    let urlDeleteClass = "https://72e77520f8d7.ngrok.io/delete-all-class"
+    let url = "https://b759807fe12e.ngrok.io/class"
+    let urlDeleteClass = "https://b759807fe12e.ngrok.io/delete-all-class"
     
     @IBAction func CreateClass(_ sender: Any) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Admin", bundle: nil)

@@ -14,9 +14,9 @@ class TrainerViewController: UIViewController {
     
     var trainer: Trainer? = nil
     var trainers: Trainers? = nil
-    let url = "https://72e77520f8d7.ngrok.io/trainer"
-    let url2 = "https://72e77520f8d7.ngrok.io/insert-trainer"
-    let urlTrainerDelete = "https://72e77520f8d7.ngrok.io/delete-trainer"
+    let url = "https://b759807fe12e.ngrok.io/trainer"
+    let url2 = "https://b759807fe12e.ngrok.io/insert-trainer"
+    let urlTrainerDelete = "https://b759807fe12e.ngrok.io/delete-trainer"
     
     override func viewDidLoad() {
         super.viewDidLoad()
