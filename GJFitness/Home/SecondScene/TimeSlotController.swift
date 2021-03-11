@@ -24,15 +24,29 @@ class TimeSlotController: UIViewController {
     
     @IBOutlet weak var mySlotTable: UITableView!
     
+//    @IBOutlet weak var classImageViewInfo: UIImageView!
+//    @IBOutlet weak var classNameInfo: UILabel!
+//
     @IBOutlet var classImage: UIImageView!
     @IBOutlet var className: UILabel!
     @IBOutlet var calendar: UILabel!
     @IBOutlet var time: UILabel!
     @IBOutlet var numOfmember: UILabel!
+
     
     @IBAction func goBack(_ sender: Any) {
         self.dismiss(animated: true)
     }
+    
+    //new add 
+    var all_classes: AllClasses? = nil
+    var class_detail: ClassEx? = nil
+//    let urlClass = "https://89982d07ef6a.ngrok.io/class"
+    let urlRoom = ""
+    
+    var classNameLabel = ""
+    var classImage2 = UIImage()
+    
     
     var myString = String()
     var myCalen = String()
@@ -42,13 +56,14 @@ class TimeSlotController: UIViewController {
     
     //vc
     var counttimes = 0
+    var book_picture = [UIImage]()
     var book_pictureAndClassname = [String]()
     var book_calendar = [String]()
     var book_roomName = [String]()
     var book_trainer = [String]()
     var book_time = [String]()
     
-    var items: [EditRoomItem] = []
+    var items: [RoomItem] = []
 
     var room = ["Room1", "Room5", "Room2"]
     var trainer = ["Krittamet Ch.", "Sanpawat S.", "Cleo P."]
@@ -65,36 +80,60 @@ class TimeSlotController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        classImage.layer.cornerRadius = 10
+        classImage.image = classImage2
+        className.text = classNameLabel
 
         // Do any additional setup after loading the view.
         
-        classImage.image = UIImage(named: myString)
-        className.text = myString
-        calendar.text = myCalen
-        time.text = timeLimit
-        numOfmember.text = member
-        
-        classImage.layer.cornerRadius = 10
-        classImage.contentMode = .scaleAspectFill
+//        classImage.image = UIImage(named: myString)
+//        className.text = myString
+//        calendar.text = myCalen
+//        time.text = timeLimit
+//        numOfmember.text = member
+//        
+//        classImage.layer.cornerRadius = 10
+//        classImage.contentMode = .scaleAspectFill
         
         for i in 0...room.count-1 {
-            items.append(EditRoomItem(room: room[i], trainer: trainer[i]))
+            items.append(RoomItem(room: room[i], trainer: trainer[i]))
         }
+        
+        updataDataToUI()
+
         
         NotificationCenter.default.addObserver(self, selector: #selector(cellRoomClicked(notification:)), name: .roomCellClicked, object: nil)
     }
+    
+    func updataDataToUI() {
+        guard let class_detail = class_detail else {
+            return
+        }
+        
+        let url = URL(string: class_detail.picture_url)
+        let data = try? Data(contentsOf: url!)
+        
+        classImage.image = UIImage(data: data!)
+        className.text = class_detail.class_name
+        calendar.text = class_detail.class_date
+        time.text = "10 hrs"
+        numOfmember.text = "\(class_detail.people_number) per class"
+    }
+    
+
     
     @objc func cellRoomClicked(notification: NSNotification) {
         if let data = notification.object as? (Int, String) {
             let alert = UIAlertController(title: "Are you confirm to book?", message: "\(room[data.0]) at \(data.1)", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
-                //picture
-                //classname
-                //roomname
-                //trainer
-                //time
+                
+                
+                
+                
                 let vc = self.storyboard?.instantiateViewController(identifier: "bookDisplay") as! BookTableController
                 self.counttimes += 1
+                self.book_picture += [self.classImage2]
                 self.book_pictureAndClassname += [self.myString]
                 self.book_calendar += [self.myCalen]
                 self.book_roomName += [self.room[data.0]]
@@ -105,7 +144,10 @@ class TimeSlotController: UIViewController {
 //                vc.book_trainer = self.trainer[data.0]
 //                vc.book_calendar = self.myCalen
 //                vc.book_roomName = self.room[data.0]
+                
+                
                 vc.book_counttimes = self.counttimes
+                vc.arr_book_picture = self.book_picture
                 vc.arr_book_pictureAndClassname = self.book_pictureAndClassname
                 vc.arr_book_calendar = self.book_calendar
                 vc.arr_book_roomName = self.book_roomName
@@ -120,7 +162,7 @@ class TimeSlotController: UIViewController {
                 let alert2 = UIAlertController(title: "", message: "​Book Successfully", preferredStyle: .alert)
                 alert2.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
 //                    vc.modalPresentationStyle = .fullScreen
-                    self.present(vc, animated: true, completion: nil)
+//                    self.present(vc, animated: true, completion: nil)
                     
 
                     

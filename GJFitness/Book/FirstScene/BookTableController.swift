@@ -30,6 +30,8 @@ class BookItem {
 class BookTableController: UITableViewController {
     
     @IBOutlet var MyBookTable: UITableView!
+    var class_detail: ClassEx? = nil
+
     
     var selectedClasses = ""
     var items:[BookItem] = []
@@ -48,6 +50,7 @@ class BookTableController: UITableViewController {
 //    var book_time = String()
     var book_counttimes = Int()
     
+    var arr_book_picture = [UIImage]()
     var arr_book_pictureAndClassname = [String]()
     var arr_book_calendar = [String]()
     var arr_book_roomName = [String]()

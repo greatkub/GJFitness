@@ -23,7 +23,7 @@ class SignUpViewController2: UIViewController {
     
     @IBOutlet var signupButton: UIButton!
     
-    let urlUser = "https://b4f2a22da508.ngrok.io/insert-user"
+    let urlUser = "https://b759807fe12e.ngrok.io/insert-user"
     
     override func viewDidLoad() {
         super.viewDidLoad()

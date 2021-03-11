@@ -21,7 +21,6 @@
 		1A89FE5825D254ED00A43667 /* ClassListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A89FE5725D254ED00A43667 /* ClassListViewController.swift */; };
 		1A89FE6525D255BA00A43667 /* ClassListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A89FE6425D255BA00A43667 /* ClassListCell.swift */; };
 		1A9D993A25E4E4A900784990 /* TrainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9D993925E4E4A900784990 /* TrainerViewController.swift */; };
-		1AA0BC0C25F555C1003C7E1F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1AA0BC0B25F555C1003C7E1F /* GoogleService-Info.plist */; };
 		1AC9561425D819790014D200 /* TimeScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC9561325D819790014D200 /* TimeScheduleViewController.swift */; };
 		1AC9562125D822A60014D200 /* RoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC9562025D822A60014D200 /* RoomCell.swift */; };
 		1AC9562625D826150014D200 /* TimeScheduleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC9562525D826150014D200 /* TimeScheduleCollectionViewCell.swift */; };
@@ -86,7 +85,6 @@
 		1A89FE5725D254ED00A43667 /* ClassListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassListViewController.swift; sourceTree = "<group>"; };
 		1A89FE6425D255BA00A43667 /* ClassListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassListCell.swift; sourceTree = "<group>"; };
 		1A9D993925E4E4A900784990 /* TrainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerViewController.swift; sourceTree = "<group>"; };
-		1AA0BC0B25F555C1003C7E1F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1AC9561325D819790014D200 /* TimeScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeScheduleViewController.swift; sourceTree = "<group>"; };
 		1AC9562025D822A60014D200 /* RoomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCell.swift; sourceTree = "<group>"; };
 		1AC9562525D826150014D200 /* TimeScheduleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeScheduleCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -311,7 +309,6 @@
 				B591943C25CED92D00F96136 /* LaunchScreen.storyboard */,
 				B591943F25CED92D00F96136 /* Info.plist */,
 				B5627E9325D6CDD7005970DE /* NotificationCenter.swift */,
-				1AA0BC0B25F555C1003C7E1F /* GoogleService-Info.plist */,
 			);
 			path = GJFitness;
 			sourceTree = "<group>";
@@ -508,7 +505,6 @@
 			files = (
 				1A89FE5325D250DA00A43667 /* Admin.storyboard in Resources */,
 				B591943E25CED92D00F96136 /* LaunchScreen.storyboard in Resources */,
-				1AA0BC0C25F555C1003C7E1F /* GoogleService-Info.plist in Resources */,
 				B591943B25CED92D00F96136 /* Assets.xcassets in Resources */,
 				B591943925CED92C00F96136 /* Main.storyboard in Resources */,
 			);
